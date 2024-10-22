@@ -159,6 +159,33 @@
         </div>
     </nav>
     <section class="church-section" style="margin-top: 6rem;">
+
+        <?php
+        $apiKey = 'AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8';
+        $folderId = '1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4';
+
+        $url = "https://www.googleapis.com/drive/v3/files?q='1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4'+in+parents&orderBy=modifiedTime desc&key=AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8";
+
+
+        // Mendapatkan konten dari API
+        $response = file_get_contents($apiUrl);
+        $files = json_decode($response, true);
+
+        if (!empty($files['files'])) {
+            // Menampilkan file terbaru
+            $latestFile = $files['files'][0];
+            $fileName = $latestFile['name'];
+            $fileUrl = "https://drive.google.com/file/d/{$latestFile['id']}/view?usp=sharing";
+
+            echo "<a href='$fileUrl' target='_blank'>$fileName</a>";
+        } else {
+            echo "Tidak ada file yang ditemukan.";
+        }
+
+
+        ?>
+
+
         <div class="container">
             <h1 class="text-center mt-5 mb-5">MEDIA SOSIAL Immanuel Community</h1>
             <div class="row">
@@ -355,6 +382,16 @@
                 navbarToggler.classList.add('active');
             }
         });
+
+        setInterval(function() {
+            $.ajax({
+                url: 'get_latest_warta.php',
+                method: 'GET',
+                success: function(data) {
+                    $('#latestWarta').html(data); // Ganti isi elemen dengan file terbaru
+                }
+            });
+        }, 60000); // Cek setiap 60 detik
     </script>
 </body>
 

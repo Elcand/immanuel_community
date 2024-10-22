@@ -7,7 +7,7 @@
     </div>
 </section>
 
-<section id="churches" class="churches-section py-5" style="padding-top: 20px;">
+<section id="churches" class="churches-section py-5" style="padding-top: 30px;">
     <div class="container">
         <h2 class="text-center mb-4 display-3 font-weight-bold">Immanuel Community </h2>
         <p class="text-center mb-4" style="font-weight: normal; font-size: 16px">
@@ -18,17 +18,12 @@
             <div class="col-md-6">
                 <h3 class="display-4 text-center font-weight-bold">Visi</h3>
                 <p class="text-left" style="font-weight: normal; font-size: 16px">
-                    Menjadi komunitas yang berakar kuat dalam iman kepada Kristus, yang terus bertumbuh dalam pengenalan akan Tuhan, serta berkontribusi aktif dalam masyarakat melalui kasih dan pelayanan.
-                </p>
+                    Membangun Gereja Menuju Kepenuhan Kristus </p>
             </div>
             <div class="col-md-6">
                 <h3 class="display-4 text-center font-weight-bold">Misi</h3>
                 <p class="text-left" style="font-weight: normal; font-size: 16px">
-                    1. Menguatkan iman jemaat melalui pengajaran yang berlandaskan pada Alkitab, ibadah yang penuh kesungguhan, dan kegiatan pembinaan spiritual yang terstruktur. <br>
-                    2. Membangun komunitas yang peduli dengan menyediakan tempat bagi setiap anggota untuk saling mendukung dan berinteraksi dalam kasih persaudaraan. <br>
-                    3. Melayani masyarakat dengan kasih Kristus melalui program-program sosial, seperti bantuan bagi yang membutuhkan, pendidikan, dan pemberdayaan ekonomi. <br>
-                    4. Mengembangkan generasi muda dengan fokus pada pendidikan spiritual dan karakter, serta mempersiapkan mereka untuk menghadapi tantangan zaman dengan iman yang kuat. <br>
-                    5. Berpartisipasi dalam misi global dengan mendukung kegiatan misi untuk memberitakan Injil dan membantu gereja-gereja di berbagai belahan dunia. <br>
+
                 </p>
             </div>
         </div>
@@ -76,8 +71,8 @@
                 /* Sesuaikan untuk tampilan kecil */
             }
 
-            .churches-section {
-                padding-top: 5px;
+            #churches-section {
+                padding-top: 20px;
                 /* Sesuaikan untuk tampilan kecil */
             }
         }
