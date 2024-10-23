@@ -13,16 +13,31 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        form {
+        .login-container {
             border: 3px solid #f1f1f1;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         input[type=text],
         input[type=password] {
             width: 100%;
-            padding: 12px 20px;
+            padding: 12px 15px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
@@ -32,7 +47,7 @@
         button {
             background-color: #04AA6D;
             color: white;
-            padding: 14px 20px;
+            padding: 14px;
             margin: 8px 0;
             border: none;
             cursor: pointer;
@@ -43,64 +58,36 @@
             opacity: 0.8;
         }
 
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-        }
-
-        .imgcontainer {
-            text-align: center;
-            margin: 24px 0 12px 0;
-        }
-
-        img.avatar {
-            width: 40%;
-            border-radius: 50%;
-        }
-
-        .container {
-            padding: 16px;
-        }
-
-        span.psw {
-            float: right;
-            padding-top: 16px;
-        }
-
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
-
-            .cancelbtn {
-                width: 100%;
-            }
+        .remember-me {
+            margin: 10px 0;
         }
     </style>
 </head>
 
 <body>
 
-    <h2 align="center" style="margin-top:5%">Login Form</h2>
+    <div class="login-container">
+        <h2>Login Form</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+            </div>
 
-    <form method="post">
+            <div class="form-group">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+            </div>
 
-        <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <div class="remember-me">
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
 
             <button type="submit" name="login">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-        </div>
-
-    </form>
+        </form>
+    </div>
 
 </body>
 
