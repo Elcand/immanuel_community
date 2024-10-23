@@ -13,7 +13,7 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: url('your-image-url.jpg') no-repeat center center fixed; /* Ganti dengan URL gambar kamu */
+            background: url('../assets/img/img_7.png') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -25,7 +25,7 @@
             border: 3px solid #f1f1f1;
             border-radius: 10px;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparan */
+            background-color: rgba(255, 255, 255, 0.8); 
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 400px;
         }
