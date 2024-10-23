@@ -106,7 +106,7 @@
             color: white;
         }
 
-        .ch text-ce bg-secondary rounded mb-2nterurard p-5 {
+        .church-card {
             background: rgba(0, 0, 0, 0.5);
             border-radius: 8px;
             padding: 20px;
@@ -159,31 +159,47 @@
         </div>
     </nav>
     <section class="church-section" style="margin-top: 6rem;">
+        <div id="latestWarta"></div>
 
         <?php
         $apiKey = 'AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8';
         $folderId = '1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4';
 
-        $url = "https://www.googleapis.com/drive/v3/files?q='1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4'+in+parents&orderBy=modifiedTime desc&key=AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8";
+        $url = "https://www.googleapis.com/drive/v3/files?q='$folderId'+in+parents&orderBy=modifiedTime desc&key=$apiKey";
 
+        // Inisialisasi cURL
+        $ch = curl_init();
 
-        // Mendapatkan konten dari API
-        $response = file_get_contents($apiUrl);
-        $files = json_decode($response, true);
+        // Set opsi untuk cURL
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        if (!empty($files['files'])) {
-            // Menampilkan file terbaru
-            $latestFile = $files['files'][0];
-            $fileName = $latestFile['name'];
-            $fileUrl = "https://drive.google.com/file/d/{$latestFile['id']}/view?usp=sharing";
+        // Eksekusi cURL dan mendapatkan hasilnya
+        $response = curl_exec($ch);
 
-            echo "<a href='$fileUrl' target='_blank'>$fileName</a>";
+        // Cek jika terjadi kesalahan
+        if (curl_errno($ch)) {
+            echo 'Error: ' . curl_error($ch);
         } else {
-            echo "Tidak ada file yang ditemukan.";
+            // Menutup cURL
+            curl_close($ch);
+
+            $files = json_decode($response, true);
+
+            if (!empty($files['files'])) {
+                // Menampilkan file terbaru
+                $latestFile = $files['files'][0];
+                $fileName = $latestFile['name'];
+                $fileUrl = "https://drive.google.com/file/d/{$latestFile['id']}/view?usp=sharing";
+
+                echo "<a href='$fileUrl' target='_blank'>$fileName</a>";
+            } else {
+                echo "Tidak ada file yang ditemukan.";
+            }
         }
-
-
         ?>
+
+
 
 
         <div class="container">
@@ -355,7 +371,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Jl. Letjen Suprapto No.32, Kota Semarang, Jawa Tengah</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
                         <p><i class="fas fa-building"></i>yayasan.immanuel.semarang@gmail.com</p>
                         <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
                         <p><i class="fas fa-calendar-alt"></i> Hari Ibadah: Minggu, 09:00 AM & 18:00 PM</p>
@@ -368,6 +384,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/jquery/jquery-3.5.1.min.js"></script>
     <script>
         // Mendapatkan elemen tombol navbar
         const navbarToggler = document.querySelector('.navbar-toggler');
