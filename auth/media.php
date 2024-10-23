@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="../assets/img/logo.png">
     <style>
         html {
@@ -158,49 +158,53 @@
             </ul>
         </div>
     </nav>
+
     <section class="church-section" style="margin-top: 6rem;">
         <div id="latestWarta"></div>
 
         <?php
+        // PHP code for Google Drive API remains the same
         $apiKey = 'AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8';
         $folderId = '1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4';
 
         $url = "https://www.googleapis.com/drive/v3/files?q='$folderId'+in+parents&orderBy=modifiedTime desc&key=$apiKey";
 
-        // Inisialisasi cURL
+        // Initialize cURL
         $ch = curl_init();
-
-        // Set opsi untuk cURL
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        // Eksekusi cURL dan mendapatkan hasilnya
         $response = curl_exec($ch);
 
-        // Cek jika terjadi kesalahan
         if (curl_errno($ch)) {
             echo 'Error: ' . curl_error($ch);
         } else {
-            // Menutup cURL
             curl_close($ch);
-
             $files = json_decode($response, true);
-
             if (!empty($files['files'])) {
-                // Menampilkan file terbaru
                 $latestFile = $files['files'][0];
                 $fileName = $latestFile['name'];
                 $fileUrl = "https://drive.google.com/file/d/{$latestFile['id']}/view?usp=sharing";
-
                 echo "<a href='$fileUrl' target='_blank'>$fileName</a>";
             } else {
-                echo "Tidak ada file yang ditemukan.";
+                echo "No files found.";
             }
         }
+
+        $response = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error: ' . curl_error($ch);
+        } else {
+            curl_close($ch);
+            echo "Response: " . $response; // Tambahkan ini untuk melihat respons
+            $files = json_decode($response, true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                echo 'Error decoding JSON: ' . json_last_error_msg(); // Menampilkan error JSON
+            }
+            // ... kode lainnya
+        }
+
+
         ?>
-
-
-
 
         <div class="container">
             <h1 class="text-center mt-5 mb-5">MEDIA SOSIAL Immanuel Community</h1>
@@ -371,29 +375,26 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
-                        <p><i class="fas fa-building"></i>yayasan.immanuel.semarang@gmail.com</p>
-                        <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
-                        <p><i class="fas fa-calendar-alt"></i> Hari Ibadah: Minggu, 09:00 AM & 18:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
+                        <p><i class="fas fa-envelope"></i> yayasan.immanuel.semarang@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> (024) 8414207 / 8418978</p>
+                        <p><i class="fas fa-calendar-alt"></i> Minggu, 09:00 AM & 18:00 PM</p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/jquery/jquery-3.5.1.min.js"></script>
+
+
     <script>
-        // Mendapatkan elemen tombol navbar
         const navbarToggler = document.querySelector('.navbar-toggler');
         const navbarCollapse = document.querySelector('#navbarNav');
 
-        // Tambahkan event listener untuk toggle click
         navbarToggler.addEventListener('click', function() {
-            // Jika navbar collapse terbuka, tambahkan kelas active, jika tidak, hapus
             if (navbarCollapse.classList.contains('show')) {
                 navbarToggler.classList.remove('active');
             } else {
@@ -406,10 +407,10 @@
                 url: 'get_latest_warta.php',
                 method: 'GET',
                 success: function(data) {
-                    $('#latestWarta').html(data); // Ganti isi elemen dengan file terbaru
+                    $('#latestWarta').html(data);
                 }
             });
-        }, 60000); // Cek setiap 60 detik
+        }, 60000);
     </script>
 </body>
 
