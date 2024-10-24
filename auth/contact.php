@@ -227,24 +227,24 @@
             <i class="fas fa-bars" style="color: white;"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="../index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../auth/church.php">Churches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../auth/services.php">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../auth/media.php">Media</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../auth/contact.php">Contact us</a>
-        </li>
-      </ul>
-    </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../auth/church.php">Churches</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../auth/services.php">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../auth/media.php">Media</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../auth/contact.php">Contact us</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <section class="contact-section py-5" style="margin-top: 8rem; margin-bottom: 6.5rem;">
@@ -296,12 +296,15 @@
                 <div class="col-md-6">
                     <div class="contact-info">
                         <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
-                        <p><i class="fas fa-building"></i>yayasan.immanuel.semarang@gmail.com</p>
+                        <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
                         <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
                         <p><i class="fas fa-calendar-alt"></i> Hari Ibadah: Minggu, 09:00 AM & 18:00 PM</p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="copyright" style="text-align: center; margin-top: 3rem; font-size: 15px;">
+            <p>&copy; 2024 <a style="font-weight: bold; text-align:center;">Immanuel Community</a>. All Rights Reserved.</p>
         </div>
     </footer>
 

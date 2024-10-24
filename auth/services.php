@@ -365,14 +365,18 @@
                 <div class="col-md-6">
                     <div class="contact-info">
                         <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
-                        <p><i class="fas fa-building"></i>yayasan.immanuel.semarang@gmail.com</p>
+                        <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
                         <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
                         <p><i class="fas fa-calendar-alt"></i> Hari Ibadah: Minggu, 09:00 AM & 18:00 PM</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="copyright" style="text-align: center; margin-top: 3rem; font-size: 15px;">
+            <p>&copy; 2024 <a style="font-weight: bold; text-align:center;">Immanuel Community</a>. All Rights Reserved.</p>
+        </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

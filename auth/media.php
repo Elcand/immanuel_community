@@ -163,24 +163,33 @@
         <div id="latestWarta"></div>
 
         <?php
-        // PHP code for Google Drive API remains the same
+        // API Key dan Folder ID untuk Google Drive
         $apiKey = 'AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8';
         $folderId = '1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4';
 
+        // URL untuk mengakses file di dalam folder Google Drive
         $url = "https://www.googleapis.com/drive/v3/files?q='$folderId'+in+parents&orderBy=modifiedTime desc&key=$apiKey";
 
-        // Initialize cURL
+        // Inisialisasi cURL
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1); // Nonaktifkan HTTP/2
+        curl_setopt($ch, CURLOPT_VERBOSE, true); // Tambahkan debugging
+
+        // Eksekusi cURL
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
             echo 'Error: ' . curl_error($ch);
         } else {
-            curl_close($ch);
+            curl_close($ch); // Tutup cURL setelah mendapatkan respons
             $files = json_decode($response, true);
-            if (!empty($files['files'])) {
+
+            // Cek apakah ada file yang ditemukan
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                echo 'Error decoding JSON: ' . json_last_error_msg(); // Menampilkan error JSON jika ada
+            } elseif (!empty($files['files'])) {
                 $latestFile = $files['files'][0];
                 $fileName = $latestFile['name'];
                 $fileUrl = "https://drive.google.com/file/d/{$latestFile['id']}/view?usp=sharing";
@@ -189,21 +198,6 @@
                 echo "No files found.";
             }
         }
-
-        $response = curl_exec($ch);
-        if (curl_errno($ch)) {
-            echo 'Error: ' . curl_error($ch);
-        } else {
-            curl_close($ch);
-            echo "Response: " . $response; // Tambahkan ini untuk melihat respons
-            $files = json_decode($response, true);
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                echo 'Error decoding JSON: ' . json_last_error_msg(); // Menampilkan error JSON
-            }
-            // ... kode lainnya
-        }
-
-
         ?>
 
         <div class="container">
@@ -375,13 +369,16 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
-                        <p><i class="fas fa-envelope"></i> yayasan.immanuel.semarang@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> (024) 8414207 / 8418978</p>
-                        <p><i class="fas fa-calendar-alt"></i> Minggu, 09:00 AM & 18:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
+                        <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
+                        <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
+                        <p><i class="fas fa-calendar-alt"></i> Hari Ibadah: Minggu, 09:00 AM & 18:00 PM</p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="copyright" style="text-align: center; margin-top: 3rem; font-size: 15px;">
+            <p>&copy; 2024 <a style="font-weight: bold; text-align:center;">Immanuel Community</a>. All Rights Reserved.</p>
         </div>
     </footer>
 
