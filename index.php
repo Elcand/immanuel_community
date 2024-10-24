@@ -302,9 +302,36 @@
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link">
+              Creative Tim
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link">
+              About Us
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link">
+              Blog
+            </a>
+          </li>
+        </ul>
+        <div class="copyright">
+          ©
+          <script>
+            document.write(new Date().getFullYear())
+          </script>2018 made with <i class="tim-icons icon-heart-2"></i> by
+          <a href="javascript:void(0)" target="_blank">Creative Tim</a> for a better web.
+        </div>
+      </div>
+    </footer>
     <div class="copyright" style="text-align: center; margin-top: 3rem; font-size: 15px;">
       <p>&copy; 2024 <a style="font-weight: bold;">Immanuel Community</a>. All Rights Reserved.</p>
-
     </div>
   </footer>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
