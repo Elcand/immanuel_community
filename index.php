@@ -298,36 +298,13 @@
             <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
             <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
             <p><i class="fas fa-calendar-alt"></i> Hari Ibadah: Minggu, 09:00 AM & 18:00 PM</p>
-
-            <div class="container-fluid">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a href="javascript:void(0)" class="nav-link">
-                    Creative Tim
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="javascript:void(0)" class="nav-link">
-                    About Us
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="javascript:void(0)" class="nav-link">
-                    Blog
-                  </a>
-                </li>
-              </ul>
-              <div class="copyright">
-                ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>2018 made with <i class="tim-icons icon-heart-2"></i> by
-                <a href="javascript:void(0)" target="_blank">Creative Tim</a> for a better web.
-              </div>
-            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="copyright" style="text-align: center; margin-top: 3rem; font-size: 15px;">
+      © 2024 made with <i class="tim-icons icon-heart-2"></i> by
+      <a style="font-weight: bold;">Immanuel Community</a>
     </div>
   </footer>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
