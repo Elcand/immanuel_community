@@ -303,8 +303,8 @@
       </div>
     </div>
     <div class="copyright" style="text-align: center; margin-top: 3rem; font-size: 15px;">
-      © 2024 made with <i class="tim-icons icon-heart-2"></i> by
-      <a style="font-weight: bold;">Immanuel Community</a>
+      <p>&copy; 2024 <a style="font-weight: bold;">Immanuel Community</a>. All Rights Reserved.</p>
+
     </div>
   </footer>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
