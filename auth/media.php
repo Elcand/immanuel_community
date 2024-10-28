@@ -160,45 +160,37 @@
     </nav>
 
     <section class="church-section" style="margin-top: 6rem;">
-        <div id="latestWarta"></div>
+        <h2>Pratinjau PDF Terbaru</h2>
+        <canvas id="pdf-canvas" width="600"></canvas>
 
-        <?php
-        // API Key dan Folder ID untuk Google Drive
-        $apiKey = 'AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8';
-        $folderId = '1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4';
+        <script src="assets/bootstrap/pdfjs-4.7.76-dist/pdf.js"></script>
+        <script>
+            const url = 'URL_PDF_YANG_BISA_DI_UNDUH'; // Ganti dengan URL file PDF Anda yang bisa diakses langsung
 
-        // URL untuk mengakses file di dalam folder Google Drive
-        $url = "https://www.googleapis.com/drive/v3/files?q='$folderId'+in+parents&orderBy=modifiedTime desc&key=$apiKey";
+            // Atur lokasi worker PDF.js
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/bootstrap/pdfjs-4.7.76-dist/pdf.worker.js';
 
-        // Inisialisasi cURL
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1); // Nonaktifkan HTTP/2
-        curl_setopt($ch, CURLOPT_VERBOSE, true); // Tambahkan debugging
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                pdf.getPage(1).then(page => {
+                    const scale = 1.5;
+                    const viewport = page.getViewport({
+                        scale
+                    });
+                    const canvas = document.getElementById('pdf-canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
 
-        // Eksekusi cURL
-        $response = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            echo 'Error: ' . curl_error($ch);
-        } else {
-            curl_close($ch); // Tutup cURL setelah mendapatkan respons
-            $files = json_decode($response, true);
-
-            // Cek apakah ada file yang ditemukan
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                echo 'Error decoding JSON: ' . json_last_error_msg(); // Menampilkan error JSON jika ada
-            } elseif (!empty($files['files'])) {
-                $latestFile = $files['files'][0];
-                $fileName = $latestFile['name'];
-                $fileUrl = "https://drive.google.com/file/d/{$latestFile['id']}/view?usp=sharing";
-                echo "<a href='$fileUrl' target='_blank'>$fileName</a>";
-            } else {
-                echo "No files found.";
-            }
-        }
-        ?>
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext);
+                });
+            }).catch(error => {
+                console.error('Error loading PDF:', error);
+            });
+        </script>
 
         <div class="container">
             <h1 class="text-center mt-5 mb-5">MEDIA SOSIAL Immanuel Community</h1>
@@ -353,7 +345,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <footer class="footer">
@@ -384,19 +375,13 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-
 
     <script>
         const navbarToggler = document.querySelector('.navbar-toggler');
         const navbarCollapse = document.querySelector('#navbarNav');
 
         navbarToggler.addEventListener('click', function() {
-            if (navbarCollapse.classList.contains('show')) {
-                navbarToggler.classList.remove('active');
-            } else {
-                navbarToggler.classList.add('active');
-            }
+            navbarToggler.classList.toggle('active');
         });
 
         setInterval(function() {
