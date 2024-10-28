@@ -13,7 +13,7 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: url('assets/img/img_7.png') no-repeat center center fixed;
+            background: url('../assets/img/img_7.png') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             display: flex;
