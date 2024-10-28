@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<?php include('layouts/header.php'); ?>
 
 <div class="row">
     <div class="col-md-12">
@@ -10,6 +10,9 @@
                 </h4>
             </div>
             <div class="card-body">
+
+                    
+
                 <form action="code.php" method="POST">
                     <div class="row">
                         <div class="col-md-6">
@@ -20,32 +23,25 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label>No Tlp</label>
-                                <input type="text" name="tlp" class="form-control">
+                                <label>No Phone</label>
+                                <input type="text" name="phone" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
-
+                                <div class="mb-3">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
                         </div>
                         <div class="col-md-6">
-
+                                <div class="mb-3">
+                                <label>Password</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
                         </div>
-                        <div class="col-md-6">
 
-                        </div>
-                        <div class="col-md-6">
 
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control">
-                    </div>
+                  
                     <div class="mb-3">
                         <label>Pilih Role</label>
                         <select name="role" class="form-select">
