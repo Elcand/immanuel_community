@@ -160,37 +160,37 @@
     </nav>
 
     <section class="church-section" style="margin-top: 6rem;">
-        <h2>Pratinjau PDF Terbaru</h2>
-        <canvas id="pdf-canvas" width="600"></canvas>
+        <?php
+        $apiKey = 'AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8'; // Ganti dengan API Key Anda
+        $folderId = '1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4'; // ID folder Anda
 
         <script src="../assets/bootstrap/pdfjs-4.7.76-dist/pdf.js"></script>
         <script>
             const url = 'URL_PDF_YANG_BISA_DI_UNDUH'; // Ganti dengan URL file PDF Anda yang bisa diakses langsung
 
-            // Atur lokasi worker PDF.js
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/bootstrap/pdfjs-4.7.76-dist/pdf.worker.js';
+        // Inisialisasi cURL
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
 
-            pdfjsLib.getDocument(url).promise.then(pdf => {
-                pdf.getPage(1).then(page => {
-                    const scale = 1.5;
-                    const viewport = page.getViewport({
-                        scale
-                    });
-                    const canvas = document.getElementById('pdf-canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                });
-            }).catch(error => {
-                console.error('Error loading PDF:', error);
-            });
-        </script>
+        if (curl_errno($ch)) {
+            echo 'Error: ' . curl_error($ch);
+        } else {
+            curl_close($ch);
+            $files = json_decode($response, true);
+            if (!empty($files['files'])) {
+                foreach ($files['files'] as $file) {
+                    $fileName = $file['name'];
+                    $fileId = $file['id'];
+                    $fileUrl = "https://drive.google.com/file/d/$fileId/view?usp=sharing";
+                    echo "<p><a href='$fileUrl' target='_blank'>$fileName</a></p>";
+                }
+            } else {
+                echo "No files found in the folder.";
+            }
+        }
+        ?>
 
         <div class="container">
             <h1 class="text-center mt-5 mb-5">MEDIA SOSIAL Immanuel Community</h1>

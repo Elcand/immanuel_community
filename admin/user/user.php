@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<?php include('layouts/header.php'); ?>
 
 <div class="row">
     <div class="col-md-12">
@@ -11,13 +11,15 @@
             </div>
             <div class="card-body">
 
+                <?php alertMessage(); ?>
+
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nama</th>
                             <th>Email</th>
-                            <th>No Tlp</th>
+                            <th>No Phone</th>
                             <th>Action</th>
                         </tr>
                     <tbody>
@@ -25,7 +27,7 @@
                             <td>1</td>
                             <td>nama</td>
                             <td>email</td>
-                            <td>no tlp</td>
+                            <td>no phone</td>
                             <td>
                                 <a href="user-edit.php" class="btn btn-success btn-sm">Edit</a>
                                 <a href="user-delete.php" class="btn btn-danger btn-sm mx-2">Hapus</a>

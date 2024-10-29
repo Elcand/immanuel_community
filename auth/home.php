@@ -1,4 +1,4 @@
-<section id="home" class="home-section d-flex align-items-center justify-content-center" style="margin-bottom: -50px;">
+<section id="home" class="home-section d-flex align-items-center justify-content-center" style="margin-bottom: -20px;">
     <video autoplay muted loop playsinline class="background-video">
         <source src="assets/video/welcome.mp4" type="video/mp4">
     </video>
@@ -7,7 +7,7 @@
     </div>
 </section>
 
-<section id="churches" class="churches-section py-5" style="padding-top: 30px;">
+<section id="churches" class="churches-section py-5" style="padding-top: 50px;">
     <div class="container">
         <h2 class="text-center mb-4 display-3 font-weight-bold">Immanuel Community </h2>
         <p class="text-center mb-4" style="font-weight: normal; font-size: 16px">
