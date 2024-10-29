@@ -164,9 +164,8 @@
         $apiKey = 'AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8'; // Ganti dengan API Key Anda
         $folderId = '1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4'; // ID folder Anda
 
-        <script src="../assets/bootstrap/pdfjs-4.7.76-dist/pdf.js"></script>
-        <script>
-            const url = 'URL_PDF_YANG_BISA_DI_UNDUH'; // Ganti dengan URL file PDF Anda yang bisa diakses langsung
+        // URL untuk mengambil file dalam folder
+        $url = "https://www.googleapis.com/drive/v3/files?q='$folderId'+in+parents&key=$apiKey&fields=files(id,name,thumbnailLink)";
 
         // Inisialisasi cURL
         $ch = curl_init();
@@ -184,13 +183,25 @@
                     $fileName = $file['name'];
                     $fileId = $file['id'];
                     $fileUrl = "https://drive.google.com/file/d/$fileId/view?usp=sharing";
-                    echo "<p><a href='$fileUrl' target='_blank'>$fileName</a></p>";
+
+                    // Cek apakah thumbnailLink tersedia
+                    $thumbnailLink = isset($file['thumbnailLink']) ? $file['thumbnailLink'] : 'default-thumbnail.jpg'; // gunakan gambar default jika thumbnailLink tidak ada
+
+                    // Menampilkan thumbnail dengan link ke file
+                    echo "<div style='display: inline-block; text-align: center; margin: 10px; justify-content: center'>
+                        <a href='$fileUrl' target='_blank'>
+                            <img src='$thumbnailLink' style='width: 150px; height: auto;'>
+                            <p>$fileName</p>
+                        </a>
+                      </div>";
                 }
             } else {
                 echo "No files found in the folder.";
             }
         }
         ?>
+
+
 
         <div class="container">
             <h1 class="text-center mt-5 mb-5">MEDIA SOSIAL Immanuel Community</h1>
