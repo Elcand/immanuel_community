@@ -163,7 +163,7 @@
         <h2>Pratinjau PDF Terbaru</h2>
         <canvas id="pdf-canvas" width="600"></canvas>
 
-        <script src="assets/bootstrap/pdfjs-4.7.76-dist/pdf.js"></script>
+        <script src="../assets/bootstrap/pdfjs-4.7.76-dist/pdf.js"></script>
         <script>
             const url = 'URL_PDF_YANG_BISA_DI_UNDUH'; // Ganti dengan URL file PDF Anda yang bisa diakses langsung
 
