@@ -6,7 +6,7 @@
     function validate($inputData){
         global $conn;
 
-        return mysqli_real_escape_string($conn,$inputData);
+        return mysqli_real_escape_string($conn, $inputData);
     }
 
         function redirect($url, $status)

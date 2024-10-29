@@ -1,4 +1,4 @@
-<?php include('layouts/header.php'); ?>
+<?php include('includes/header.php'); ?>
 
 <div class="row">
     <div class="col-md-12">

@@ -1,4 +1,4 @@
-<?php include('layouts/header.php'); ?>
+<?php include('../admin/includes/header.php'); ?>
 
 <div class="row">
     <div class="col-md-12">
@@ -11,7 +11,7 @@
             </div>
             <div class="card-body">
 
-                    
+                    <?= alertMessage(); ?>
 
                 <form action="code.php" method="POST">
                     <div class="row">

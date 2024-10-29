@@ -108,14 +108,11 @@
                 <label>
                     <input type="checkbox" name="remember"> Remember me
                 </label>
-                <a href="#">Forgot password?</a>
             </div>
 
             <button type="submit" class="btn-login">Login</button>
-            <p>Don’t have an account? <a href="#" class="signup-link">Register</a></p>
         </form>
     </div>
 
 </body>
-
 </html>
