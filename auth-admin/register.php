@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Immanuel Community|Login</title>
+    <title>Immanuel Community|Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +18,7 @@
             margin: 0;
             overflow: hidden;
         }
-        .login-container {
+        .register-container {
             width: 400px;
             padding: 40px;
             border-radius: 15px;
@@ -29,7 +30,7 @@
             text-align: center;
             color: #fff;
         }
-        .login-container h2 {
+        .register-container h2 {
             font-size: 1.8em;
             font-weight: 600;
             margin-bottom: 20px;
@@ -45,7 +46,7 @@
         .form-control::placeholder {
             color: #e0e0e0;
         }
-        .btn-login {
+        .btn-register {
             background-color: #04AA6D;
             color: white;
             font-weight: bold;
@@ -55,22 +56,8 @@
             cursor: pointer;
             width: 100%;
         }
-        .btn-login:hover {
+        .btn-register:hover {
             background-color: #037a4f;
-        }
-        .remember-me {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9em;
-            color: #ddd;
-        }
-        .remember-me a {
-            color: #04AA6D;
-            text-decoration: none;
-        }
-        .remember-me a:hover {
-            text-decoration: underline;
         }
         .signup-link {
             color: #04AA6D;
@@ -84,23 +71,26 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Welcome</h2>
-        <?php
+    <div class="register-container">
+        <h2>Register</h2>
+        <?php 
         if (isset($_GET['message']) && $_GET['message'] == "error") {
-            echo "<div class='alert alert-danger'>Invalid login credentials.</div>";
+            echo "<div class='alert alert-danger'>Registration failed! Please try again.</div>";
+        } elseif (isset($_GET['message']) && $_GET['message'] == "success") {
+            echo "<div class='alert alert-success'>Registration successful! You can now <a href='login.php'>login here</a>.</div>";
         }
         ?>
-        <form action="cek_login.php" method="post">
-            <input type="text" class="form-control" placeholder="Enter your username" name="username" required>
-            <input type="password" class="form-control" placeholder="Enter password" name="password" required>
-            <div class="remember-me">
-                <label>
-                    <input type="checkbox" name="remember"> Remember me
-                </label>
-            </div>
-            <button type="submit" class="btn-login">Login</button>
-            <p class="signup-link">Don't have an account? <a href="register.php">Sign up here</a>.</p>
+        <form action="proses_register.php" method="post">
+            <input type="text" class="form-control" name="username" placeholder="Username" required>
+            <input type="email" class="form-control" name="email" placeholder="Email" required>
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            <select class="form-control" name="level" required>
+                <option value="" disabled selected>Select your level</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <button type="submit" class="btn-register">Register</button>
+            <p class="signup-link">Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
     </div>
 </body>

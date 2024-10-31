@@ -110,7 +110,7 @@
           </a>
         </li>
         <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">MANAJEMEN SITUS</h6>
         </li>
         <li class="nav-item">
           <a class="nav-link  " href="../pages/profile.html">
@@ -130,7 +130,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Profile</span>
+            <span class="nav-link-text ms-1">Admin/User</span>
           </a>
         </li>
         <li class="nav-item">
@@ -150,7 +150,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Media Sosial</span>
           </a>
         </li>
         <li class="nav-item">
@@ -172,7 +172,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
+            <span class="nav-link-text ms-1">Pengaturan</span>
           </a>
         </li>
       </ul>
