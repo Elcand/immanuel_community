@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <link rel="icon" href="../assets/img/logo.png">
     <style>
         html {
@@ -62,6 +63,39 @@
         .navbar-toggler.active {
             background-color: #000000;
             border-radius: 5px;
+        }
+
+        #pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+        }
+
+        .button {
+            background-color: #04AA6D;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 2px 1px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button5 {
+            background-color: #555555;
+            color: white;
+            border: 2px solid #555555;
+            border-radius: 2px;
+        }
+
+        .button5:hover {
+            background-color: #383838FF;
+            color: white;
         }
 
         .footer {
@@ -160,46 +194,43 @@
     </nav>
 
     <section class="church-section" style="margin-top: 6rem;">
-        <?php
-        $apiKey = 'AIzaSyClGPoaKLO3KKMdn3aEZqsiXhP2EtMcGM8'; // Ganti dengan API Key Anda
-        $folderId = '1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4'; // ID folder Anda
+        <div id="pdf-viewer"></div>
 
-        // URL untuk mengambil file dalam folder
-        $url = "https://www.googleapis.com/drive/v3/files?q='$folderId'+in+parents&key=$apiKey&fields=files(id,name,thumbnailLink)";
+        <script>
+            const url = 'https://drive.google.com/uc?export=download&id=1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4'; // Ganti FILE_ID dengan ID file PDF dari Google Drive
 
-        // Inisialisasi cURL
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/bootstrap/pdfjs-4.7.76-dist/build/pdf.worker.mjs';
 
-        if (curl_errno($ch)) {
-            echo 'Error: ' . curl_error($ch);
-        } else {
-            curl_close($ch);
-            $files = json_decode($response, true);
-            if (!empty($files['files'])) {
-                foreach ($files['files'] as $file) {
-                    $fileName = $file['name'];
-                    $fileId = $file['id'];
-                    $fileUrl = "https://drive.google.com/file/d/$fileId/view?usp=sharing";
 
-                    // Cek apakah thumbnailLink tersedia
-                    $thumbnailLink = isset($file['thumbnailLink']) ? $file['thumbnailLink'] : 'default-thumbnail.jpg'; // gunakan gambar default jika thumbnailLink tidak ada
+            async function displayPDF() {
+                const pdf = await pdfjsLib.getDocument(url).promise;
+                const viewer = document.getElementById('pdf-viewer');
 
-                    // Menampilkan thumbnail dengan link ke file
-                    echo "<div style='display: inline-block; text-align: center; margin: 10px; justify-content: center'>
-                        <a href='$fileUrl' target='_blank'>
-                            <img src='$thumbnailLink' style='width: 150px; height: auto;'>
-                            <p>$fileName</p>
-                        </a>
-                      </div>";
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    const page = await pdf.getPage(pageNum);
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    const viewport = page.getViewport({
+                        scale: 1.5
+                    });
+
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    await page.render({
+                        canvasContext: context,
+                        viewport: viewport
+                    }).promise;
+                    viewer.appendChild(canvas);
                 }
-            } else {
-                echo "No files found in the folder.";
             }
-        }
-        ?>
+
+            displayPDF();
+        </script>
+        <br>
+        <button class="button button5">
+            <a href="https://drive.google.com/drive/folders/<?php echo $folderId; ?>?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
+        </button>
 
 
 
