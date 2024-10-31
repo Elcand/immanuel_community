@@ -22,25 +22,30 @@
 
 /******/ // The require scope
 /******/ var __webpack_require__ = {};
-/******/ 
+/******/
 /************************************************************************/
 /******/ /* webpack/runtime/define property getters */
 /******/ (() => {
 /******/ 	// define getter functions for harmony exports
 /******/ 	__webpack_require__.d = (exports, definition) => {
-/******/ 		for(var key in definition) {
-/******/ 			if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 		for (var key in definition) {
+/******/ 			if (__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 			}
-/******/ 		}
-/******/ 	};
-/******/ })();
-/******/ 
+        /******/
+}
+      /******/
+}
+    /******/
+};
+  /******/
+})();
+/******/
 /******/ /* webpack/runtime/hasOwnProperty shorthand */
 /******/ (() => {
 /******/ 	__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ })();
-/******/ 
+  /******/
+})();
+/******/
 /************************************************************************/
 var __webpack_exports__ = globalThis.pdfjsWorker = {};
 
@@ -383,14 +388,14 @@ function createValidAbsoluteUrl(url, baseUrl = null, options = null) {
       if (options.tryConvertEncoding) {
         try {
           url = stringToUTF8String(url);
-        } catch {}
+        } catch { }
       }
     }
     const absoluteUrl = baseUrl ? new URL(url, baseUrl) : new URL(url);
     if (_isValidProtocol(absoluteUrl)) {
       return absoluteUrl;
     }
-  } catch {}
+  } catch { }
   return null;
 }
 function shadow(obj, prop, value, nonSerializable = false) {
@@ -724,7 +729,7 @@ function stringToPDFString(str) {
   for (let i = 0, ii = str.length; i < ii; i++) {
     const charCode = str.charCodeAt(i);
     if (charCode === 0x1b) {
-      while (++i < ii && str.charCodeAt(i) !== 0x1b) {}
+      while (++i < ii && str.charCodeAt(i) !== 0x1b) { }
       continue;
     }
     const code = PDFStringTranslateTable[charCode];
@@ -1791,7 +1796,7 @@ class ChunkedStream extends Stream {
     } else if (start >= this.progressiveDataLength) {
       this.ensureByte(start);
     }
-    function ChunkedStreamSubstream() {}
+    function ChunkedStreamSubstream() { }
     ChunkedStreamSubstream.prototype = Object.create(this);
     ChunkedStreamSubstream.prototype.getMissingChunks = function () {
       const chunkSize = this.chunkSize;
@@ -6336,7 +6341,7 @@ class Jbig2Stream extends DecodeStream {
   get bytes() {
     return shadow(this, "bytes", this.stream.getBytes(this.maybeLength));
   }
-  ensureBuffer(requested) {}
+  ensureBuffer(requested) { }
   readBlock() {
     this.decodeImage();
   }
@@ -7573,7 +7578,7 @@ class JpegStream extends DecodeStream {
   get bytes() {
     return shadow(this, "bytes", this.stream.getBytes(this.maybeLength));
   }
-  ensureBuffer(requested) {}
+  ensureBuffer(requested) { }
   readBlock() {
     this.decodeImage();
   }
@@ -7723,7 +7728,7 @@ var OpenJPEG = (() => {
           return Promise.reject(new Error(response.status + " : " + response.url));
         }).then(onload, onerror);
       };
-    } else {}
+    } else { }
     var out = Module["print"] || console.log.bind(console);
     var err = Module["printErr"] || console.error.bind(console);
     Object.assign(Module, moduleOverrides);
@@ -7925,7 +7930,7 @@ var OpenJPEG = (() => {
         wasmMemory.grow(pages);
         updateMemoryViews();
         return 1;
-      } catch (e) {}
+      } catch (e) { }
     };
     var _emscripten_resize_heap = requestedSize => {
       var oldSize = HEAPU8.length;
@@ -7961,7 +7966,7 @@ var OpenJPEG = (() => {
           _: getExecutableName()
         };
         for (var x in ENV) {
-          if (ENV[x] === undefined) delete env[x];else env[x] = ENV[x];
+          if (ENV[x] === undefined) delete env[x]; else env[x] = ENV[x];
         }
         var strings = [];
         for (var x in env) {
@@ -8243,7 +8248,7 @@ class JpxStream extends DecodeStream {
   get bytes() {
     return shadow(this, "bytes", this.stream.getBytes(this.maybeLength));
   }
-  ensureBuffer(requested) {}
+  ensureBuffer(requested) { }
   readBlock(decoderOptions) {
     this.decodeImage(null, decoderOptions);
   }
@@ -8745,8 +8750,8 @@ class Parser {
       CR = 0xd,
       NUL = 0x0;
     const {
-        knownCommands
-      } = this.lexer,
+      knownCommands
+    } = this.lexer,
       startPos = stream.pos,
       n = 15;
     let state = 0,
@@ -8783,7 +8788,7 @@ class Parser {
             continue;
           }
           const tmpLexer = new Lexer(new Stream(followingBytes.slice()), knownCommands);
-          tmpLexer._hexStringWarn = () => {};
+          tmpLexer._hexStringWarn = () => { };
           let numArgs = 0;
           while (true) {
             const nextObj = tmpLexer.getObj();
@@ -10166,209 +10171,209 @@ const CharstringValidationData = [null, {
   stackClearing: true,
   stem: true
 }, null, {
-  id: "vstem",
-  min: 2,
-  stackClearing: true,
-  stem: true
-}, {
-  id: "vmoveto",
-  min: 1,
-  stackClearing: true
-}, {
-  id: "rlineto",
-  min: 2,
-  resetStack: true
-}, {
-  id: "hlineto",
-  min: 1,
-  resetStack: true
-}, {
-  id: "vlineto",
-  min: 1,
-  resetStack: true
-}, {
-  id: "rrcurveto",
-  min: 6,
-  resetStack: true
-}, null, {
-  id: "callsubr",
-  min: 1,
-  undefStack: true
-}, {
-  id: "return",
-  min: 0,
-  undefStack: true
-}, null, null, {
-  id: "endchar",
-  min: 0,
-  stackClearing: true
-}, null, null, null, {
-  id: "hstemhm",
-  min: 2,
-  stackClearing: true,
-  stem: true
-}, {
-  id: "hintmask",
-  min: 0,
-  stackClearing: true
-}, {
-  id: "cntrmask",
-  min: 0,
-  stackClearing: true
-}, {
-  id: "rmoveto",
-  min: 2,
-  stackClearing: true
-}, {
-  id: "hmoveto",
-  min: 1,
-  stackClearing: true
-}, {
-  id: "vstemhm",
-  min: 2,
-  stackClearing: true,
-  stem: true
-}, {
-  id: "rcurveline",
-  min: 8,
-  resetStack: true
-}, {
-  id: "rlinecurve",
-  min: 8,
-  resetStack: true
-}, {
-  id: "vvcurveto",
-  min: 4,
-  resetStack: true
-}, {
-  id: "hhcurveto",
-  min: 4,
-  resetStack: true
-}, null, {
-  id: "callgsubr",
-  min: 1,
-  undefStack: true
-}, {
-  id: "vhcurveto",
-  min: 4,
-  resetStack: true
-}, {
-  id: "hvcurveto",
-  min: 4,
-  resetStack: true
-}];
+    id: "vstem",
+    min: 2,
+    stackClearing: true,
+    stem: true
+  }, {
+    id: "vmoveto",
+    min: 1,
+    stackClearing: true
+  }, {
+    id: "rlineto",
+    min: 2,
+    resetStack: true
+  }, {
+    id: "hlineto",
+    min: 1,
+    resetStack: true
+  }, {
+    id: "vlineto",
+    min: 1,
+    resetStack: true
+  }, {
+    id: "rrcurveto",
+    min: 6,
+    resetStack: true
+  }, null, {
+    id: "callsubr",
+    min: 1,
+    undefStack: true
+  }, {
+    id: "return",
+    min: 0,
+    undefStack: true
+  }, null, null, {
+    id: "endchar",
+    min: 0,
+    stackClearing: true
+  }, null, null, null, {
+    id: "hstemhm",
+    min: 2,
+    stackClearing: true,
+    stem: true
+  }, {
+    id: "hintmask",
+    min: 0,
+    stackClearing: true
+  }, {
+    id: "cntrmask",
+    min: 0,
+    stackClearing: true
+  }, {
+    id: "rmoveto",
+    min: 2,
+    stackClearing: true
+  }, {
+    id: "hmoveto",
+    min: 1,
+    stackClearing: true
+  }, {
+    id: "vstemhm",
+    min: 2,
+    stackClearing: true,
+    stem: true
+  }, {
+    id: "rcurveline",
+    min: 8,
+    resetStack: true
+  }, {
+    id: "rlinecurve",
+    min: 8,
+    resetStack: true
+  }, {
+    id: "vvcurveto",
+    min: 4,
+    resetStack: true
+  }, {
+    id: "hhcurveto",
+    min: 4,
+    resetStack: true
+  }, null, {
+    id: "callgsubr",
+    min: 1,
+    undefStack: true
+  }, {
+    id: "vhcurveto",
+    min: 4,
+    resetStack: true
+  }, {
+    id: "hvcurveto",
+    min: 4,
+    resetStack: true
+  }];
 const CharstringValidationData12 = [null, null, null, {
   id: "and",
   min: 2,
   stackDelta: -1
 }, {
-  id: "or",
-  min: 2,
-  stackDelta: -1
-}, {
-  id: "not",
-  min: 1,
-  stackDelta: 0
-}, null, null, null, {
-  id: "abs",
-  min: 1,
-  stackDelta: 0
-}, {
-  id: "add",
-  min: 2,
-  stackDelta: -1,
-  stackFn(stack, index) {
-    stack[index - 2] = stack[index - 2] + stack[index - 1];
-  }
-}, {
-  id: "sub",
-  min: 2,
-  stackDelta: -1,
-  stackFn(stack, index) {
-    stack[index - 2] = stack[index - 2] - stack[index - 1];
-  }
-}, {
-  id: "div",
-  min: 2,
-  stackDelta: -1,
-  stackFn(stack, index) {
-    stack[index - 2] = stack[index - 2] / stack[index - 1];
-  }
-}, null, {
-  id: "neg",
-  min: 1,
-  stackDelta: 0,
-  stackFn(stack, index) {
-    stack[index - 1] = -stack[index - 1];
-  }
-}, {
-  id: "eq",
-  min: 2,
-  stackDelta: -1
-}, null, null, {
-  id: "drop",
-  min: 1,
-  stackDelta: -1
-}, null, {
-  id: "put",
-  min: 2,
-  stackDelta: -2
-}, {
-  id: "get",
-  min: 1,
-  stackDelta: 0
-}, {
-  id: "ifelse",
-  min: 4,
-  stackDelta: -3
-}, {
-  id: "random",
-  min: 0,
-  stackDelta: 1
-}, {
-  id: "mul",
-  min: 2,
-  stackDelta: -1,
-  stackFn(stack, index) {
-    stack[index - 2] = stack[index - 2] * stack[index - 1];
-  }
-}, null, {
-  id: "sqrt",
-  min: 1,
-  stackDelta: 0
-}, {
-  id: "dup",
-  min: 1,
-  stackDelta: 1
-}, {
-  id: "exch",
-  min: 2,
-  stackDelta: 0
-}, {
-  id: "index",
-  min: 2,
-  stackDelta: 0
-}, {
-  id: "roll",
-  min: 3,
-  stackDelta: -2
-}, null, null, null, {
-  id: "hflex",
-  min: 7,
-  resetStack: true
-}, {
-  id: "flex",
-  min: 13,
-  resetStack: true
-}, {
-  id: "hflex1",
-  min: 9,
-  resetStack: true
-}, {
-  id: "flex1",
-  min: 11,
-  resetStack: true
-}];
+    id: "or",
+    min: 2,
+    stackDelta: -1
+  }, {
+    id: "not",
+    min: 1,
+    stackDelta: 0
+  }, null, null, null, {
+    id: "abs",
+    min: 1,
+    stackDelta: 0
+  }, {
+    id: "add",
+    min: 2,
+    stackDelta: -1,
+    stackFn(stack, index) {
+      stack[index - 2] = stack[index - 2] + stack[index - 1];
+    }
+  }, {
+    id: "sub",
+    min: 2,
+    stackDelta: -1,
+    stackFn(stack, index) {
+      stack[index - 2] = stack[index - 2] - stack[index - 1];
+    }
+  }, {
+    id: "div",
+    min: 2,
+    stackDelta: -1,
+    stackFn(stack, index) {
+      stack[index - 2] = stack[index - 2] / stack[index - 1];
+    }
+  }, null, {
+    id: "neg",
+    min: 1,
+    stackDelta: 0,
+    stackFn(stack, index) {
+      stack[index - 1] = -stack[index - 1];
+    }
+  }, {
+    id: "eq",
+    min: 2,
+    stackDelta: -1
+  }, null, null, {
+    id: "drop",
+    min: 1,
+    stackDelta: -1
+  }, null, {
+    id: "put",
+    min: 2,
+    stackDelta: -2
+  }, {
+    id: "get",
+    min: 1,
+    stackDelta: 0
+  }, {
+    id: "ifelse",
+    min: 4,
+    stackDelta: -3
+  }, {
+    id: "random",
+    min: 0,
+    stackDelta: 1
+  }, {
+    id: "mul",
+    min: 2,
+    stackDelta: -1,
+    stackFn(stack, index) {
+      stack[index - 2] = stack[index - 2] * stack[index - 1];
+    }
+  }, null, {
+    id: "sqrt",
+    min: 1,
+    stackDelta: 0
+  }, {
+    id: "dup",
+    min: 1,
+    stackDelta: 1
+  }, {
+    id: "exch",
+    min: 2,
+    stackDelta: 0
+  }, {
+    id: "index",
+    min: 2,
+    stackDelta: 0
+  }, {
+    id: "roll",
+    min: 3,
+    stackDelta: -2
+  }, null, null, null, {
+    id: "hflex",
+    min: 7,
+    resetStack: true
+  }, {
+    id: "flex",
+    min: 13,
+    resetStack: true
+  }, {
+    id: "hflex1",
+    min: 9,
+    resetStack: true
+  }, {
+    id: "flex1",
+    min: 11,
+    resetStack: true
+  }];
 class CFFParser {
   constructor(file, properties, seacAnalysisEnabled) {
     this.bytes = file.getBytes();
@@ -17611,7 +17616,7 @@ function compileGlyf(code, cmds, font) {
       if (subglyph) {
         cmds.add(FontRenderOps.SAVE);
         cmds.add(FontRenderOps.TRANSFORM, [scaleX, scale01, scale10, scaleY, x, y]);
-        if (!(flags & 0x02)) {}
+        if (!(flags & 0x02)) { }
         compileGlyf(subglyph, cmds, font);
         cmds.add(FontRenderOps.RESTORE);
       }
@@ -21746,7 +21751,7 @@ class CompositeGlyph {
     }
     return pos - spos;
   }
-  scale(x, factor) {}
+  scale(x, factor) { }
 }
 
 ;// ./src/core/opentype_file_builder.js
@@ -22460,7 +22465,7 @@ function getHeaderBlock(stream, suggestedLength) {
   try {
     headerBytes = stream.getBytes(suggestedLength);
     headerBytesLength = headerBytes.length;
-  } catch {}
+  } catch { }
   if (headerBytesLength === suggestedLength) {
     block = findBlock(headerBytes, EEXEC_SIGNATURE, suggestedLength - 2 * EEXEC_SIGNATURE.length);
     if (block.found && block.length === suggestedLength) {
@@ -28859,14 +28864,14 @@ class NullOptimizer {
   constructor(queue) {
     this.queue = queue;
   }
-  _optimize() {}
+  _optimize() { }
   push(fn, args) {
     this.queue.fnArray.push(fn);
     this.queue.argsArray.push(args);
     this._optimize();
   }
-  flush() {}
-  reset() {}
+  flush() { }
+  reset() { }
 }
 class QueueOptimizer extends NullOptimizer {
   constructor(queue) {
@@ -30892,7 +30897,7 @@ class PartialEvaluator {
           const tilingPatternIR = getTilingPatternIR(localTilingPattern.operatorListIR, localTilingPattern.dict, color);
           operatorList.addOp(fn, tilingPatternIR);
           return undefined;
-        } catch {}
+        } catch { }
       }
       const pattern = this.xref.fetchIfRef(rawPattern);
       if (pattern) {
@@ -31653,7 +31658,7 @@ class PartialEvaluator {
       if (translated.font.isType3Font) {
         try {
           await translated.loadType3Data(self, resources, task);
-        } catch {}
+        } catch { }
       }
       textState.loadedName = translated.loadedName;
       textState.font = translated.font;
@@ -34658,14 +34663,14 @@ class XMLParserBase {
   onResolveEntity(name) {
     return `&${name};`;
   }
-  onPi(name, value) {}
-  onComment(text) {}
-  onCdata(text) {}
-  onDoctype(doctypeContent) {}
-  onText(text) {}
-  onBeginElement(name, attributes, isEmpty) {}
-  onEndElement(name) {}
-  onError(code) {}
+  onPi(name, value) { }
+  onComment(text) { }
+  onCdata(text) { }
+  onDoctype(doctypeContent) { }
+  onText(text) { }
+  onBeginElement(name, attributes, isEmpty) { }
+  onEndElement(name) { }
+  onError(code) { }
 }
 class SimpleDOMNode {
   constructor(nodeName, nodeValue) {
@@ -40047,9 +40052,9 @@ class XFAObject {
   [$hasSettableValue]() {
     return this.hasOwnProperty("value");
   }
-  [$setValue](_) {}
-  [$onText](_) {}
-  [$finalize]() {}
+  [$setValue](_) { }
+  [$onText](_) { }
+  [$finalize]() { }
   [$clean](builder) {
     delete this[_hasChildren];
     if (this[$cleanup]) {
@@ -40165,7 +40170,7 @@ class XFAObject {
   [$addHTML](html, bbox) {
     this[$extra].children.push(html);
   }
-  [$getAvailableSpace]() {}
+  [$getAvailableSpace]() { }
   [$childrenToHTML]({
     filter = null,
     include = true
@@ -40663,7 +40668,7 @@ class ContentObject extends XFAObject {
   [$onText](text) {
     this[$content] += text;
   }
-  [$finalize]() {}
+  [$finalize]() { }
 }
 class OptionObject extends ContentObject {
   constructor(nsId, name, options) {
@@ -44634,7 +44639,7 @@ class Para extends XFAObject {
     if (this.tabDefault !== "") {
       style.tabSize = measureToString(this.tabDefault);
     }
-    if (this.tabStops.length > 0) {}
+    if (this.tabStops.length > 0) { }
     if (this.hyphenatation) {
       Object.assign(style, this.hyphenatation[$toStyle]());
     }
@@ -50973,7 +50978,7 @@ class WidgetAnnotation extends Annotation {
     }
     return mk.size > 0 ? mk : null;
   }
-  amendSavedDict(annotationStorage, dict) {}
+  amendSavedDict(annotationStorage, dict) { }
   async save(evaluator, task, annotationStorage) {
     const storageEntry = annotationStorage?.get(this.data.id);
     const flags = this._buildFlags(storageEntry?.noView, storageEntry?.noPrint);
@@ -50997,7 +51002,7 @@ class WidgetAnnotation extends Annotation {
       if (appearance === null && flags === undefined) {
         return null;
       }
-    } else {}
+    } else { }
     let needAppearances = false;
     if (appearance?.needAppearances) {
       needAppearances = true;
@@ -53173,7 +53178,7 @@ class DatasetReader {
       });
       try {
         parser.parseFromString(data["xdp:xdp"]);
-      } catch {}
+      } catch { }
       this.node = parser.node;
     }
   }
@@ -54350,7 +54355,7 @@ class Page {
     const contentStreamPromise = this.getContentStream();
     const resourcesPromise = this.loadResources(["ExtGState", "Font", "Properties", "XObject"]);
     const langPromise = this.pdfManager.ensureCatalog("lang");
-    const [contentStream,, lang] = await Promise.all([contentStreamPromise, resourcesPromise, langPromise]);
+    const [contentStream, , lang] = await Promise.all([contentStreamPromise, resourcesPromise, langPromise]);
     const partialEvaluator = new PartialEvaluator({
       xref: this.xref,
       handler,
@@ -55162,7 +55167,7 @@ class PDFDocument {
         let promise;
         if (pageDict instanceof Error) {
           promise = Promise.reject(pageDict);
-          promise.catch(() => {});
+          promise.catch(() => { });
         } else {
           promise = Promise.resolve(new Page({
             pdfManager,
@@ -55420,7 +55425,7 @@ class LocalPdfManager extends BasePdfManager {
   requestLoadedStream(noFetch = false) {
     return this._loadedStreamPromise;
   }
-  terminate(reason) {}
+  terminate(reason) { }
 }
 class NetworkPdfManager extends BasePdfManager {
   constructor(args) {
@@ -56068,7 +56073,7 @@ class WorkerMessageHandler {
       if (isPureXfa) {
         const task = new WorkerTask("loadXfaFonts");
         startWorkerTask(task);
-        await Promise.all([pdfManager.loadXfaFonts(handler, task).catch(reason => {}).then(() => finishWorkerTask(task)), pdfManager.loadXfaImages()]);
+        await Promise.all([pdfManager.loadXfaFonts(handler, task).catch(reason => { }).then(() => finishWorkerTask(task)), pdfManager.loadXfaImages()]);
       }
       const [numPages, fingerprints] = await Promise.all([pdfManager.ensureDoc("numPages"), pdfManager.ensureDoc("fingerprints")]);
       const htmlForXfa = isPureXfa ? await pdfManager.ensureDoc("htmlForXfa") : null;
