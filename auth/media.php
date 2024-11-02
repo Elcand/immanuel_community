@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <link rel="icon" href="../assets/img/logo.png">
     <style>
         html {
@@ -196,10 +196,13 @@
     <section class="church-section" style="margin-top: 6rem;">
         <div id="pdf-viewer"></div>
 
+        <script src="../assets/bootstrap/pdfjs-4.7.76-dist/build/pdf.js"></script>
+        <script src="../assets/bootstrap/pdfjs-4.7.76-dist/build/pdf.worker.js"></script>
+
         <script>
             const url = 'https://drive.google.com/uc?export=download&id=1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4'; // Ganti FILE_ID dengan ID file PDF dari Google Drive
 
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/bootstrap/pdfjs-4.7.76-dist/build/pdf.worker.mjs';
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/bootstrap/pdfjs-4.7.76-dist/build/pdf.worker.js';
 
 
             async function displayPDF() {
