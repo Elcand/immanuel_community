@@ -27,4 +27,15 @@
             }
         }
 
+        function getAll($tableNama)
+        {
+            global $conn;
+
+            $table = validate($tableNama);
+
+            $query = "SELECT * FROM $table";
+            $result = mysqli_query($conn, $query);
+            return $result;
+        }
+
     ?>

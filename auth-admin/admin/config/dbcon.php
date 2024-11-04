@@ -1,19 +1,14 @@
 <?php
 
-define('DB_SERVE', "localhost");
-define('DB_USERNAME', "root");
-define('DB_PASSWORD', "");
-define('DB_DATABASE', "gereja");
+    define('DB_SERVE',"localhost");
+    define('DB_USERNAME',"root");
+    define('DB_PASSWORD',"");
+    define('DB_DATABASE',"im");
 
-$conn = mysqli_connect(DB_SERVE, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+    $conn = mysqli_connect(DB_SERVE,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
-// Periksa koneksi
-if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
-} else {
-    echo "Connected successfully"; // Tambahkan pesan sukses untuk konfirmasi
-}
+    if($conn){
+        die("Connection Failed: ".mysqli_connect_error());
+    }
 
-// Tutup koneksi jika tidak diperlukan lagi
-mysqli_close($conn);
 ?>

@@ -17,27 +17,48 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>No Phone</th>
+                            <th>Role</th>
+                            <th>Is Ban</th>
                             <th>Action</th>
                         </tr>
+                    </thead>
                     <tbody>
                         <?php 
-                        
+                            $user = getAll('user'); // Mengambil semua data dari tabel 'user'
+                            if(mysqli_num_rows($user) > 0)
+                            {
+                                foreach($user as $userItem)
+                                {
+                                    ?>
+                                    <tr>
+                                        <td><?= $userItem['id']; ?></td>
+                                        <td><?= $userItem['nama']; ?></td>
+                                        <td><?= $userItem['email']; ?></td>
+                                        <td><?= $userItem['phone']; ?></td> <!-- Pastikan nama kolom benar -->
+                                        <td><?= $userItem['role']; ?></td>
+                                        <td><?= $userItem['is_ban'] == 1 ? 'Banned' : 'Active'; ?></td>
+                                        <td>
+                                            <a href="user-edit.php?id=<?= $userItem['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="user-delete.php?id=<?= $userItem['id']; ?>" class="btn btn-danger btn-sm mx-2">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                            else
+                            {
+                                ?> 
+                                <tr>
+                                    <td colspan="7">No Record Found</td>
+                                </tr>
+                                <?php
+                            }
                         ?>
-                        <tr>
-                            <td>1</td>
-                            <td>nama</td>
-                            <td>email</td>
-                            <td>no phone</td>
-                            <td>
-                                <a href="user-edit.php" class="btn btn-success btn-sm">Edit</a>
-                                <a href="user-delete.php" class="btn btn-danger btn-sm mx-2">Hapus</a>
-                            </td>
-                        </tr>
                     </tbody>
-                    </thead>
                 </table>
             </div>
         </div>
     </div>
 </div>
+
 <?php include('includes/footer.php'); ?>
