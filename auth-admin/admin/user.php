@@ -10,9 +10,6 @@
                 </h4>
             </div>
             <div class="card-body">
-
-                <?php alertMessage(); ?>
-
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -23,6 +20,9 @@
                             <th>Action</th>
                         </tr>
                     <tbody>
+                        <?php 
+                        
+                        ?>
                         <tr>
                             <td>1</td>
                             <td>nama</td>
@@ -40,3 +40,4 @@
         </div>
     </div>
 </div>
+<?php include('includes/footer.php'); ?>

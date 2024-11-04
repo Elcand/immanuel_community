@@ -1,3 +1,116 @@
+<style>
+  /* Sidebar Content */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #3a4a7a; /* Darker text for better contrast */
+}
+
+/* User Profile Section */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* Bright gradient */
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.user-profile:hover {
+    transform: translateY(-5px);
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 1.2em; /* Slightly larger font size */
+}
+
+.user-role {
+    font-size: 0.9em; /* Increased font size for better readability */
+    color: #e1d4ff; /* Light purple for contrast */
+}
+
+/* Help Section */
+.help-section {
+    background: linear-gradient(135deg, #ffffff, #d9e1f1); /* Soft background gradient */
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow for contrast */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.help-section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+    transform: translateY(-5px);
+}
+
+.help-text {
+    font-size: 1em; /* Slightly larger font size */
+    color: #3a4a7a; /* Darker text */
+    margin-bottom: 10px;
+}
+
+.doc-button {
+    background-color: #6a82fb; /* Bright button color */
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.doc-button:hover {
+    background-color: #4b66d4; /* Darker shade on hover */
+    box-shadow: 0 4px 8px rgba(106, 130, 251, 0.4);
+}
+
+/* Upgrade Section */
+.upgrade-section {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.upgrade-button {
+    background: linear-gradient(135deg, #ff7b2b, #ffb84d); /* Bright gradient for the upgrade button */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.upgrade-button:hover {
+    background: linear-gradient(135deg, #ff6f1b, #ff9d3b); /* Slightly darker gradient on hover */
+    box-shadow: 0 4px 8px rgba(255, 123, 27, 0.4);
+    transform: translateY(-3px);
+}
+
+</style>
+
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
 <div class="sidenav-header d-flex align-items-center justify-content-between p-3">
     <i class="fas fa-times cursor-pointer text-secondary opacity-5 d-xl-none" aria-hidden="true" id="iconSidenav"></i>
@@ -113,7 +226,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">MANAJEMEN SITUS</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/profile.html">
+          <a class="nav-link" href="user.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -183,4 +296,15 @@
         </div>
       </div>
     </div>
+    <!-- Documentation Section -->
+    <div class="help-section">
+        <p class="help-text">Need help?<br>Please check our docs</p>
+        <button class="doc-button">DOCUMENTATION</button>
+    </div>
+
+    <!-- Upgrade Button -->
+    <div class="upgrade-section">
+        <button class="upgrade-button">UPGRADE TO PRO</button>
+    </div>
+</div>
   </aside>
