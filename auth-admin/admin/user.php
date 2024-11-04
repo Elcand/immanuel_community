@@ -24,7 +24,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                            $user = getAll('user'); // Mengambil semua data dari tabel 'user'
+                            $user = getAll('user');
                             if(mysqli_num_rows($user) > 0)
                             {
                                 foreach($user as $userItem)
@@ -34,12 +34,15 @@
                                         <td><?= $userItem['id']; ?></td>
                                         <td><?= $userItem['nama']; ?></td>
                                         <td><?= $userItem['email']; ?></td>
-                                        <td><?= $userItem['phone']; ?></td> <!-- Pastikan nama kolom benar -->
+                                        <td><?= $userItem['phone']; ?></td>
                                         <td><?= $userItem['role']; ?></td>
                                         <td><?= $userItem['is_ban'] == 1 ? 'Banned' : 'Active'; ?></td>
                                         <td>
                                             <a href="user-edit.php?id=<?= $userItem['id']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="user-delete.php?id=<?= $userItem['id']; ?>" class="btn btn-danger btn-sm mx-2">Hapus</a>
+                                            <a href="user-delete.php?id=<?= $userItem['id']; ?>" 
+                                            class="btn btn-danger btn-sm mx-2"
+                                             onclick="return confirm('Apakah Anda yakin ingin Menghapus Data ini?')"
+                                            >Hapus</a>
                                         </td>
                                     </tr>
                                     <?php
