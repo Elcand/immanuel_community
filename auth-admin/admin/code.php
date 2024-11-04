@@ -1,6 +1,6 @@
 <?php 
 
-    require '../config/function.php';
+    require '../admin/config/function.php';
 
     if(isset($_POST['saveUser']))
     {

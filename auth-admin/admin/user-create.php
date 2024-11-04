@@ -11,7 +11,7 @@
             </div>
             <div class="card-body">
 
-                    <?= alertMessage(); ?>
+        
 
                 <form action="code.php" method="POST">
                     <div class="row">
@@ -39,8 +39,6 @@
                                 <input type="password" name="password" class="form-control">
                             </div>
                         </div>
-
-
                   
                     <div class="mb-3">
                         <label>Pilih Role</label>
