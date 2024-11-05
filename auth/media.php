@@ -194,9 +194,10 @@
 
     <section class="church-section" style="margin-top: 6rem;">
         <div id="pdf-viewer"></div>
-        <script src="node_modules/pdfjs-dist/build/pdf.mjs"></script>
+        <script src="http://localhost/immanuel_community/node_modules/pdfjs-dist/build/pdf.js"></script>
         <script>
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'node_modules/pdfjs-dist/build/pdf.worker.mjs';
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'http://localhost/immanuel_community/node_modules/pdfjs-dist/build/pdf.worker.js';
+
 
             const url = 'https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing';
 
