@@ -196,17 +196,10 @@
     </nav>
 
     <section class="church-section" style="margin-top: 6rem;">
-        <div id="pdf-viewer-container">
-            <div id="pdf-viewer"></div>
-
-            <!-- Memuat PDF.js sebagai modul -->
-            <script type="module" src="/immanuel_community/assets/pdf/pdf.js"></script>
-
-            <script type="module">
-                import * as pdfjsLib from '/immanuel_community/assets/pdf/pdf.js';
-
-                // Menetapkan worker PDF.js
-                pdfjsLib.GlobalWorkerOptions.workerSrc = '/immanuel_community/assets/pdf/pdf.worker.js';
+        <div id="pdf-viewer"></div>
+        <script src="node_modules/pdfjs-dist/build/pdf.mjs"></script>
+        <script>
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'node_modules/pdfjs-dist/build/pdf.worker.mjs';
 
                 // URL file PDF
                 const url = '/immanuel_community/assets/pdf/example.pdf';
