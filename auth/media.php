@@ -64,10 +64,13 @@
             border-radius: 5px;
         }
 
-        #pdf-viewer {
-            width: 100%;
-            height: 600px;
-            border: 1px solid #ddd;
+        #pdf-viewer-container {
+            max-height: 500px;
+            /* Sesuaikan tinggi maksimalnya sesuai kebutuhan */
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f9f4f2;
+            /* Sesuaikan warna latar belakang jika perlu */
         }
 
         .button {
@@ -198,41 +201,45 @@
         <script>
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'node_modules/pdfjs-dist/build/pdf.worker.mjs';
 
-            const url = 'https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing';
+                // URL file PDF
+                const url = '/immanuel_community/assets/pdf/example.pdf';
 
-            async function displayPDF() {
-                try {
-                    const pdf = await pdfjsLib.getDocument(url).promise;
-                    const viewer = document.getElementById('pdf-viewer');
+                async function displayPDF() {
+                    try {
+                        const pdf = await pdfjsLib.getDocument(url).promise;
+                        const viewer = document.getElementById('pdf-viewer');
 
-                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                        const page = await pdf.getPage(pageNum);
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
-                        const viewport = page.getViewport({
-                            scale: 1.5
-                        });
+                        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                            const page = await pdf.getPage(pageNum);
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+                            const viewport = page.getViewport({
+                                scale: 1.5
+                            });
 
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
+                            canvas.height = viewport.height;
+                            canvas.width = viewport.width;
 
-                        await page.render({
-                            canvasContext: context,
-                            viewport: viewport
-                        }).promise;
-                        viewer.appendChild(canvas);
+                            await page.render({
+                                canvasContext: context,
+                                viewport: viewport
+                            }).promise;
+                            viewer.appendChild(canvas);
+                        }
+                    } catch (error) {
+                        console.error('Error displaying PDF:', error);
                     }
-                } catch (error) {
-                    console.error('Error displaying PDF:', error);
                 }
-            }
 
-            window.onload = displayPDF;
-        </script>
-        <br>
+                window.onload = displayPDF;
+            </script>
+        </div>
+
         <button class="button button5">
-            <a href="https://drive.google.com/drive/folders/<?php echo $folderId; ?>?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
+            <a href="https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
         </button>
+
+
 
 
 
@@ -427,16 +434,6 @@
         navbarToggler.addEventListener('click', function() {
             navbarToggler.classList.toggle('active');
         });
-
-        setInterval(function() {
-            $.ajax({
-                url: 'get_latest_warta.php',
-                method: 'GET',
-                success: function(data) {
-                    $('#latestWarta').html(data);
-                }
-            });
-        }, 60000);
     </script>
 </body>
 
