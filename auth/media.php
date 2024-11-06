@@ -64,10 +64,13 @@
             border-radius: 5px;
         }
 
-        #pdf-viewer {
-            width: 100%;
-            height: 600px;
-            border: 1px solid #ddd;
+        #pdf-viewer-container {
+            max-height: 500px;
+            /* Sesuaikan tinggi maksimalnya sesuai kebutuhan */
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f9f4f2;
+            /* Sesuaikan warna latar belakang jika perlu */
         }
 
         .button {
@@ -193,46 +196,57 @@
     </nav>
 
     <section class="church-section" style="margin-top: 6rem;">
-        <div id="pdf-viewer"></div>
-        <script src="node_modules/pdfjs-dist/build/pdf.mjs"></script>
-        <script>
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'node_modules/pdfjs-dist/build/pdf.worker.mjs';
+        <div id="pdf-viewer-container">
+            <div id="pdf-viewer"></div>
 
-            const url = 'https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing';
+            <!-- Memuat PDF.js sebagai modul -->
+            <script type="module" src="/immanuel_community/assets/pdf/pdf.js"></script>
 
-            async function displayPDF() {
-                try {
-                    const pdf = await pdfjsLib.getDocument(url).promise;
-                    const viewer = document.getElementById('pdf-viewer');
+            <script type="module">
+                import * as pdfjsLib from '/immanuel_community/assets/pdf/pdf.js';
 
-                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                        const page = await pdf.getPage(pageNum);
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
-                        const viewport = page.getViewport({
-                            scale: 1.5
-                        });
+                // Menetapkan worker PDF.js
+                pdfjsLib.GlobalWorkerOptions.workerSrc = '/immanuel_community/assets/pdf/pdf.worker.js';
 
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
+                // URL file PDF
+                const url = '/immanuel_community/assets/pdf/example.pdf';
 
-                        await page.render({
-                            canvasContext: context,
-                            viewport: viewport
-                        }).promise;
-                        viewer.appendChild(canvas);
+                async function displayPDF() {
+                    try {
+                        const pdf = await pdfjsLib.getDocument(url).promise;
+                        const viewer = document.getElementById('pdf-viewer');
+
+                        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                            const page = await pdf.getPage(pageNum);
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+                            const viewport = page.getViewport({
+                                scale: 1.5
+                            });
+
+                            canvas.height = viewport.height;
+                            canvas.width = viewport.width;
+
+                            await page.render({
+                                canvasContext: context,
+                                viewport: viewport
+                            }).promise;
+                            viewer.appendChild(canvas);
+                        }
+                    } catch (error) {
+                        console.error('Error displaying PDF:', error);
                     }
-                } catch (error) {
-                    console.error('Error displaying PDF:', error);
                 }
-            }
 
-            window.onload = displayPDF;
-        </script>
-        <br>
+                window.onload = displayPDF;
+            </script>
+        </div>
+
         <button class="button button5">
-            <a href="https://drive.google.com/drive/folders/<?php echo $folderId; ?>?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
+            <a href="https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
         </button>
+
+
 
 
 
@@ -427,16 +441,6 @@
         navbarToggler.addEventListener('click', function() {
             navbarToggler.classList.toggle('active');
         });
-
-        setInterval(function() {
-            $.ajax({
-                url: 'get_latest_warta.php',
-                method: 'GET',
-                success: function(data) {
-                    $('#latestWarta').html(data);
-                }
-            });
-        }, 60000);
     </script>
 </body>
 
