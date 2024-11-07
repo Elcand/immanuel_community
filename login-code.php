@@ -23,7 +23,7 @@ if(isset($_POST['loginBtn']))
                 if($row['role'] == 'admin')
                 {
                     if($row['is_ban'] == 1){
-                        redirect('login.php', 'Akun Anda telah diblokir. Silakan hubungi Admin');
+                        redirect('login.php','Your account has banned. Please contact Admin');
                     }
 
                     $_SESSION['auth'] = true;
@@ -33,13 +33,12 @@ if(isset($_POST['loginBtn']))
                         'email' => $row['email'],
                     ];
 
-                    redirect('admin/index.php', 'Selamat datang');
-                    
+                    redirect('admin/index.php','Welcome');
                 }
                 else
                 {
                     if ($row['is_ban'] == 1) {
-                        redirect('login.php', 'Akun Anda telah diblokir. Silakan hubungi Admin');
+                        redirect('login.php', 'Your account has banned. Please contact Admin');
                     }
 
                     $_SESSION['auth'] = true;
@@ -49,22 +48,22 @@ if(isset($_POST['loginBtn']))
                         'email' => $row['email'],
                     ];
                     
-                    redirect('index.php', 'Berhasil Masuk');
+                    redirect('index.php','Logged In Successfully');
                 }
             }
             else
             {
-                redirect('login.php', 'Email atau Kata Sandi Tidak Valid');
+                redirect('login.php','Invalid Email Id or Password');
             }
         }
         else
         {
-            redirect('login.php','');
+            redirect('login.php','Something Went Wrong');
         }
     }
     else
     {
-        redirect('login.php', 'Semua Bidang bersifat wajib diisi');
+        redirect('login.php','All Fields are mandetory');
     }
 }
 
