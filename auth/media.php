@@ -64,29 +64,89 @@
             border-radius: 5px;
         }
 
+        /* Gaya dasar untuk tampilan desktop */
         #pdf-viewer-container {
-            max-height: 500px;
-            /* Sesuaikan tinggi maksimalnya sesuai kebutuhan */
-            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 750px;
+            overflow-y: visible;
+            overflow-x: hidden;
             padding: 10px;
-            background-color: #f9f4f2;
-            /* Sesuaikan warna latar belakang jika perlu */
+            background-color: whitesmoke;
+            margin: 0 auto;
+            width: 50%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
+
+        #pdf-viewer-container::-webkit-scrollbar {
+            display: none;
+            /* Menyembunyikan scroll bar di Chrome, Safari, dan Edge */
+        }
+
+        #pdf-viewer-container {
+            -ms-overflow-style: none;
+            /* Menyembunyikan scroll bar di Internet Explorer dan Edge */
+            scrollbar-width: none;
+            /* Menyembunyikan scroll bar di Firefox */
+        }
+
+        #pdf-viewer {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            #pdf-viewer-container {
+                width: 90%;
+                max-height: 400px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #pdf-viewer-container {
+                width: 100%;
+                max-height: 300px;
+                padding: 5px;
+                margin: 0 10px;
+            }
+
+            #pdf-viewer {
+                width: 100%;
+            }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            #pdf-viewer canvas {
+                background-color: none;
+                max-width: 90%;
+            }
+        }
+
 
         .button {
             background-color: #04AA6D;
-            /* Green */
             border: none;
             color: white;
-            padding: 16px 32px;
+            padding: 8px 26px;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
             font-size: 15px;
-            margin: 2px 1px;
+            margin: 20px 1px;
             transition-duration: 0.4s;
             cursor: pointer;
+            float: center;
         }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            /* Menempatkan tombol di tengah secara horizontal */
+            width: 100%;
+        }
+
 
         .button5 {
             background-color: #555555;
@@ -196,10 +256,17 @@
     </nav>
 
     <section class="church-section" style="margin-top: 6rem;">
-        <div id="pdf-viewer"></div>
-        <script src="node_modules/pdfjs-dist/build/pdf.mjs"></script>
-        <script>
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'node_modules/pdfjs-dist/build/pdf.worker.mjs';
+        <div id="pdf-viewer-container">
+            <div id="pdf-viewer"></div>
+
+            <!-- Memuat PDF.js sebagai modul -->
+            <script type="module" src="/immanuel_community/assets/pdf/pdf.js"></script>
+
+            <script type="module">
+                import * as pdfjsLib from '/immanuel_community/assets/pdf/pdf.js';
+
+                // Menetapkan worker PDF.js
+                pdfjsLib.GlobalWorkerOptions.workerSrc = '/immanuel_community/assets/pdf/pdf.worker.js';
 
                 // URL file PDF
                 const url = '/immanuel_community/assets/pdf/example.pdf';
@@ -234,17 +301,16 @@
                 window.onload = displayPDF;
             </script>
         </div>
-
-        <button class="button button5">
-            <a href="https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
-        </button>
-
-
+        <div class="button-container">
+            <button class="button button5">
+                <a href="https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
+            </button>
+        </div>
 
 
 
         <div class="container">
-            <h1 class="text-center mt-5 mb-5">MEDIA SOSIAL Immanuel Community</h1>
+            <h1 class="text-center mt-5 mb-5" style="margin-top: 2rem;">MEDIA SOSIAL Immanuel Community</h1>
             <div class="row">
                 <div class="col-md-4">
                     <div class="church-card text-center bg-secondary rounded mb-2 p-5">
