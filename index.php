@@ -258,6 +258,8 @@
       <i class="fas fa-bars" style="color: white;"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+
+
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="#home">Home</a>
