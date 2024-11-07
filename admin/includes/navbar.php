@@ -21,7 +21,7 @@
     <i class="fa fa-user me-sm-1"></i>
   </a>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="signInDropdown">
-    <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
   </ul>
 </li>
 

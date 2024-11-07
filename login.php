@@ -1,6 +1,14 @@
 <?php
 require 'config/function.php';
+
+include ('includes/header.php');
+
+        if (isset($_SESSION['auth'])) {
+            redirect('index.php', 'Anda sudah masuk');
+        }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +17,7 @@ require 'config/function.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="icon" href="assets/img/logo.png">
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
