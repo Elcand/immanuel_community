@@ -11,9 +11,10 @@ include('authentication.php');
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="assets-admin/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets-admin/img/logoaja.png">
-  <title>
-    Admin|Immanuel Community
-  </title>
+  <title><?php if(isset($pageTitle)) { echo $pageTitle;}else{ echo WebSetting('title') ?? 'Immanuel Community';} ?></title>
+
+  <meta name="description" content="<?= WebSetting('meta_description') ?? 'Meta Desc'; ?>">
+  <meta name="keyword" content="<?= WebSetting('meta_keyword') ?? 'Meta Keyword'; ?>">
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 

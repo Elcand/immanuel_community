@@ -259,6 +259,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
 
+      <?= alertMessage(); ?>
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -276,6 +277,10 @@
         <li class="nav-item">
           <a class="nav-link" href="auth/contact.php">Contact us</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.php">Admin</a>
+        </li>
+
       </ul>
     </div>
   </nav>

@@ -33,7 +33,7 @@ if(isset($_POST['loginBtn']))
                         'email' => $row['email'],
                     ];
 
-                    redirect('admin/index.php','Welcome');
+                    redirect('admin/index.php','Something Went Wrong');
                 }
                 else
                 {
