@@ -259,7 +259,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
 
-      <?= alertMessage(); ?>
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">

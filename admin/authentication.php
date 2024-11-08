@@ -19,7 +19,7 @@ if (isset($_SESSION['auth'])) {
                 if ($row['role'] != 'admin') {
 
                     logoutSession();
-                    redirect('../login.php', 'Akses ditolak');
+                    redirect('../login.php', 'Hallo Admin/User Immanuel Community');
                 }
 
                 if ($row['is_ban'] == 1) {
