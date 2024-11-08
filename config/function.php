@@ -102,7 +102,7 @@ function getById($tableName, $id)
     {
         $response = [
             'status' => 500,
-            'message' => 'Ada yang Salah'
+            'message' => 'Ada Yang Salah'
         ];
         return $response;
     }

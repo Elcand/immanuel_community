@@ -13,7 +13,7 @@ if(is_numeric($paraResult)){
         $userDelete = deleteQuery('users', $userId);
         if($userDeleteRes){
 
-            redirect('users.php', 'Ada yang Salah');
+            redirect('users.php', 'Hallo Admin');
         }else{
 
             redirect('users.php', 'Pengguna/Admin Sukses Dihapus');
