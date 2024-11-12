@@ -150,6 +150,44 @@
                 height: 40px;
             }
         }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 2rem;
+            height: 2rem;
+            background-color: transparent;
+            border: none;
+            font-size: 2rem;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: none;
+        }
+
+        .carousel-control-prev i,
+        .carousel-control-next i {
+            color: black;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control-prev {
+            left: 10px;
+        }
+
+        .carousel-control-next {
+            right: 10px;
+        }
+
+        main {
+            margin-top: 20px;
+        }
     </style>
     <title>Churches - Immanuel Community</title>
 </head>
@@ -185,15 +223,34 @@
     </nav>
 
     <section class="church-select-section" style="min-height: 100vh; background-color: #FFFFFFFF; margin-bottom: 6rem;">
-        <div id="churchCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../assets/img/img_1.png" class="d-block w-100" alt="Church Image 1">
-                </div>
-            </div>
-        </div>
 
         <div class="container text-center">
+
+            <!-- batas -->
+            <section>
+                <div id="churchCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../assets/img/img_10.png" class="d-block mx-auto w-10" alt="Service Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/img/img_11.png" class="d-block mx-auto w-10" alt="Service Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/img/img_12.png" class="d-block mx-auto w-10" alt="Service Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#serviceCarousel" data-bs-slide="prev">
+                        <i class="fa-solid fa-caret-left"></i>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#serviceCarousel" data-bs-slide="next">
+                        <i class="fa-solid fa-caret-right"></i>
+                    </button>
+
+                </div>
+            </section>
+            <!-- batas -->
+
             <h1 class="mb-4">Daftar Gereja Immanuel community</h1>
 
             <form method="GET" action="" id="churchForm">
@@ -264,10 +321,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125</p>
+
                         <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
                         <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
-                        <p><i class="fas fa-calendar-alt"></i> Hari Ibadah: Minggu, 09:00 AM & 18:00 PM</p>
                     </div>
                 </div>
             </div>
@@ -281,6 +338,33 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var kidsCarousel = new bootstrap.Carousel('#kidsCarousel');
+            var youthCarousel = new bootstrap.Carousel('#youthCarousel');
+            var professionalCarousel = new bootstrap.Carousel('#professionalCarousel');
+            var serviceCarousel = new bootstrap.Carousel('#serviceCarousel');
+            var elderCarousel = new bootstrap.Carousel('#elderCarousel');
+
+            document.querySelectorAll('.carousel-control-prev').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var target = this.getAttribute('data-bs-target');
+                    var carousel = new bootstrap.Carousel(target);
+                    carousel.prev();
+                });
+            });
+
+            document.querySelectorAll('.carousel-control-next').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var target = this.getAttribute('data-bs-target');
+                    var carousel = new bootstrap.Carousel(target);
+                    carousel.next();
+                });
+            });
+        });
+    </script>
+
     <script>
         // Navbar toggler
         const navbarToggler = document.querySelector('.navbar-toggler');
