@@ -237,6 +237,15 @@
       margin-top: 1rem;
     }
 
+    .footer .contact-info2 {
+      margin-top: 2px;
+    }
+
+    .footer .contact-info2 p {
+      margin-left: 40px;
+
+    }
+
     .footer .contact-info p {
       margin: 0.25rem 0;
     }
@@ -279,10 +288,10 @@
         <li class="nav-item">
           <a class="nav-link" href="login.php">Admin</a>
         </li>
-
       </ul>
     </div>
   </nav>
+
 
   <?php include "auth/home.php"; ?>
 
@@ -299,10 +308,10 @@
         </div>
         <div class="col-md-6">
           <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau No.10, Karangtempel, Kec. Semarang Tim., Kota Semarang, Jawa Tengah</p>
+            <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125</p>
+
             <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
             <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
-            <p><i class="fas fa-calendar-alt"></i> Hari Ibadah: Minggu, 09:00 AM & 18:00 PM</p>
           </div>
         </div>
       </div>

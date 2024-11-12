@@ -9,35 +9,169 @@
 
 <section id="churches" class="churches-section py-5" style="padding-top: 50px;">
     <div class="container">
-        <h2 class="text-center mb-4 display-3 font-weight-bold">Immanuel Community </h2>
-        <p class="text-center mb-4" style="font-weight: normal; font-size: 16px">
-            Immanuel Community Church adalah sebuah gereja yang berfokus pada komunitas Kristen, dengan tujuan untuk membangun iman dan memberikan pelayanan bagi jemaatnya. Gereja ini berkomitmen untuk menciptakan lingkungan yang mendukung pengembangan spiritual melalui ibadah, pengajaran Alkitab, dan kegiatan pelayanan sosial.
-            Gereja ini juga mungkin menekankan pentingnya komunitas dalam kehidupan iman, mendorong anggotanya untuk berpartisipasi dalam kelompok kecil, pelayanan, serta kegiatan sosial yang bertujuan untuk mendukung satu sama lain. Fokusnya adalah pada penguatan hubungan antara jemaat dengan Tuhan serta dengan sesama dalam konteks kehidupan sehari-hari.
-        </p>
-        <div class="row mt-5">
-            <div class="col-md-6">
-                <h3 class="display-4 text-center font-weight-bold">Visi</h3>
-                <p class="text-left" style="font-weight: normal; font-size: 16px">
-                    Membangun Gereja Menuju Kepenuhan Kristus </p>
-            </div>
-            <div class="col-md-6">
-                <h3 class="display-4 text-center font-weight-bold">Misi</h3>
-                <p class="text-left" style="font-weight: normal; font-size: 16px">
+        <h2 class="text-center mb-4 display-3 font-weight-bold">Visi Immanuel Community </h2>
 
-                </p>
-            </div>
-        </div>
+        <p style="font-weight: normal; font-size: 25px; text-align: center;">
+            Membangun Gereja Menuju Kepenuhan Kristus </p>
     </div>
+
 </section>
 <section class="section-imani" id="pengakuan-iman">
     <div class="container">
-        <h2 style="margin-bottom: 5%;">Pengakuan Iman</h2>
+        <h2 style="margin-bottom: 5%;">Immanuel Vision</h2>
         <p class="mb-4"></p>
-        <button class="btn-opacity" id="toggleButton" style="border-radius: 1rem;"><a href="auth/iman.php" style="text-decoration: none; color : black;">Lihat Selengkapnya</a></button>
+        <div id="pdf-viewer-container">
+            <div id="pdf-viewer"></div>
+
+            <!-- Memuat PDF.js sebagai modul -->
+            <script type="module" src="/immanuel_community/assets/pdf/pdf.js"></script>
+
+            <script type="module">
+                import * as pdfjsLib from '/immanuel_community/assets/pdf/pdf.js';
+
+                // Menetapkan worker PDF.js
+                pdfjsLib.GlobalWorkerOptions.workerSrc = '/immanuel_community/assets/pdf/pdf.worker.js';
+
+                // URL file PDF
+                const url = '/immanuel_community/assets/pdf/example.pdf';
+
+                async function displayPDF() {
+                    try {
+                        const pdf = await pdfjsLib.getDocument(url).promise;
+                        const viewer = document.getElementById('pdf-viewer');
+
+                        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                            const page = await pdf.getPage(pageNum);
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+                            const viewport = page.getViewport({
+                                scale: 1.5
+                            });
+
+                            canvas.height = viewport.height;
+                            canvas.width = viewport.width;
+
+                            await page.render({
+                                canvasContext: context,
+                                viewport: viewport
+                            }).promise;
+                            viewer.appendChild(canvas);
+                        }
+                    } catch (error) {
+                        console.error('Error displaying PDF:', error);
+                    }
+                }
+
+                window.onload = displayPDF;
+            </script>
+        </div>
+        <div class="button-container">
+            <button class="button button5">
+                <a href="https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
+            </button>
+        </div>
+
+    </div>
 </section>
 <section class="section-lokasi" id="lokasi">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsMjkj0lMJPs5Mm2YXVQLr1IO0SgFMx3k"></script>
     <style>
+        /* Gaya dasar untuk tampilan desktop */
+        #pdf-viewer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 750px;
+            overflow-y: visible;
+            overflow-x: hidden;
+            padding: 10px;
+            background-color: whitesmoke;
+            margin: 0 auto;
+            width: 80%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        #pdf-viewer-container::-webkit-scrollbar {
+            display: none;
+            /* Menyembunyikan scroll bar di Chrome, Safari, dan Edge */
+        }
+
+        #pdf-viewer-container {
+            -ms-overflow-style: none;
+            /* Menyembunyikan scroll bar di Internet Explorer dan Edge */
+            scrollbar-width: none;
+            /* Menyembunyikan scroll bar di Firefox */
+        }
+
+        #pdf-viewer {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            #pdf-viewer-container {
+                width: 90%;
+                max-height: 400px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #pdf-viewer-container {
+                width: 100%;
+                max-height: 300px;
+                padding: 5px;
+                margin: 0 10px;
+            }
+
+            #pdf-viewer {
+                width: 100%;
+            }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            #pdf-viewer canvas {
+                background-color: none;
+                max-width: 90%;
+            }
+        }
+
+
+        .button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 8px 26px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            margin: 20px 1px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            float: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            /* Menempatkan tombol di tengah secara horizontal */
+            width: 100%;
+        }
+
+
+        .button5 {
+            background-color: #555555;
+            color: white;
+            border: 2px solid #555555;
+            border-radius: 2px;
+        }
+
+        .button5:hover {
+            background-color: #383838FF;
+            color: white;
+        }
+
         #map-container {
             display: flex;
             justify-content: center;
@@ -156,7 +290,7 @@
                 lat: -7.018796627455877,
                 lng: 110.44595025061057,
                 link: 'https://maps.app.goo.gl/mkFbUQtsEraCHqiFA',
-                name: 'Soin CC'
+                name: 'Sion CC'
             }
         ];
 
