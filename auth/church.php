@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" href="../assets/img/logo.png">
     <style>
         html {
@@ -63,6 +65,93 @@
             background-color: #000000;
             border-radius: 5px;
         }
+
+        .card {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            /* Full height for alignment */
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+            /* Set minimum height for consistency */
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 8px;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #555;
+            flex-grow: 1;
+            /* Allow text to grow while keeping buttons aligned */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .card-img-top {
+            height: fill;
+            /* Fixed height for consistent image size */
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .container text-center {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 3px 26px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            margin: 20px 1px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            /* Menempatkan tombol di tengah secara horizontal */
+            width: 100%;
+        }
+
+
+        .button5 {
+            background-color: #555555;
+            color: white;
+            border: 2px solid #555555;
+            border-radius: 2px;
+        }
+
+        .button5:hover {
+            background-color: #383838FF;
+            color: white;
+        }
+
 
         .footer {
             background-color: #000000;
@@ -224,88 +313,285 @@
 
     <section class="church-select-section" style="min-height: 100vh; background-color: #FFFFFFFF; margin-bottom: 6rem;">
 
+        <section>
+            <div id="churchCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../assets/img/img_10.png" class="d-block mx-auto w-10" alt="Service Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/img/img_11.png" class="d-block mx-auto w-10" alt="Service Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/img/img_12.png" class="d-block mx-auto w-10" alt="Service Image 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#serviceCarousel" data-bs-slide="prev">
+                    <i class="fa-solid fa-caret-left"></i>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#serviceCarousel" data-bs-slide="next">
+                    <i class="fa-solid fa-caret-right"></i>
+                </button>
+
+            </div>
+        </section>
+        <h1 class="mb-4" style="text-align: center;">Daftar Gereja Immanuel community</h1>
+        <hr>
         <div class="container text-center">
-
             <!-- batas -->
-            <section>
-                <div id="churchCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../assets/img/img_10.png" class="d-block mx-auto w-10" alt="Service Image 1">
+            <div class="container my-4">
+                <div class="container my-4">
+                    <div class="row row-cols-1 row-cols-md-4 g-3">
+                        <!-- Card 1 -->
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Petra Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Petra Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. MT. Haryono No.844-846, Karangturi, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50124 Telp : 8414445
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="../auth/gereja/petra.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="../assets/img/img_11.png" class="d-block mx-auto w-10" alt="Service Image 2">
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Efrata Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Efrata Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126 Telp : 024-3546878
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="../assets/img/img_12.png" class="d-block mx-auto w-10" alt="Service Image 3">
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Hermon Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hermon Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Pasirmas Raya No.143b, Panggung Lor, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50177 Telp: 3547809
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Eben Haezer Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Eben Haezer Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Kedungmundu No.128, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274 Telp : 6700002
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Mahanaim Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mahanaim Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Puri Anjasmoro Blk. K6 No.7 blok p, Tawangsari, Semarang Barat, Semarang City, Central Java 50144 Telp : 7612248
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Filadelfia Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Filadelfia Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Padi Raya No.12, Gebangsari, Kec. Genuk, Kota Semarang, Jawa Tengah 50117 Telp : 6582766
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Karmel Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Karmel Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Nangka Sel. No.43, Lamper Kidul, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249 Telp : 8443375
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Sinai Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sinai Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Muradi No.52, Kalibanteng Kulon, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50183 Telp: 7606167 HP: 08995854173
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Kana Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kana Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Kawi No.5 / 111, Tegalsari, Kec. Candisari, Kota Semarang, Jawa Tengah 50252 Telp : 6716328
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Getsemani Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Getsemani Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Jatiluhur Bar. I No.172 A, Ngesrep, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50261 Telp : 76401050
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm rounded">
+                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Sion Community Church">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sion Community Church</h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt"></i>
+                                        Jl. Kaba Raya No.51, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274
+                                    </p>
+                                    <div class="button-container">
+                                        <button class="button button5">
+                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#serviceCarousel" data-bs-slide="prev">
-                        <i class="fa-solid fa-caret-left"></i>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#serviceCarousel" data-bs-slide="next">
-                        <i class="fa-solid fa-caret-right"></i>
-                    </button>
-
                 </div>
-            </section>
-            <!-- batas -->
-
-            <h1 class="mb-4">Daftar Gereja Immanuel community</h1>
-
-            <form method="GET" action="" id="churchForm">
-                <div class="row justify-content-center mb-5">
-                    <div class="col-md-6">
-                        <select name="church" class="form-select form-select-lg mb-4" onchange="this.form.submit()" style="color: #ffffff; background: #191919; border: none;">
-                            <option value="" selected>Pilih Gereja</option>
-                            <option value="petra" <?php if (isset($_GET['church']) && $_GET['church'] == 'petra') echo 'selected'; ?>>Petra Community Church</option>
-                            <option value="efrata" <?php if (isset($_GET['church']) && $_GET['church'] == 'efrata') echo 'selected'; ?>>Efrata Community Church</option>
-                            <option value="hermon" <?php if (isset($_GET['church']) && $_GET['church'] == 'hermon') echo 'selected'; ?>>Hermon Community Church</option>
-                            <option value="eben-haezer" <?php if (isset($_GET['church']) && $_GET['church'] == 'eben-haezer') echo 'selected'; ?>>Eben Haezer Community Church</option>
-                            <option value="mahanaim" <?php if (isset($_GET['church']) && $_GET['church'] == 'mahanaim') echo 'selected'; ?>>Mahanaim Community Church</option>
-                            <option value="filadelfia" <?php if (isset($_GET['church']) && $_GET['church'] == 'filadelfia') echo 'selected'; ?>>Filadelfia Community Church</option>
-                            <option value="karmel" <?php if (isset($_GET['church']) && $_GET['church'] == 'karmel') echo 'selected'; ?>>Karmel Community Church</option>
-                            <option value="sinai" <?php if (isset($_GET['church']) && $_GET['church'] == 'sinai') echo 'selected'; ?>>Sinai Community Church</option>
-                            <option value="kana" <?php if (isset($_GET['church']) && $_GET['church'] == 'kana') echo 'selected'; ?>>Kana Community Church</option>
-                            <option value="getsemani" <?php if (isset($_GET['church']) && $_GET['church'] == 'getsemani') echo 'selected'; ?>>Getsemani Community Church</option>
-                            <option value="sion" <?php if (isset($_GET['church']) && $_GET['church'] == 'sion') echo 'selected'; ?>>Sion Community Church</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
-
-            <div id="churchDetails" class="mt-5">
-                <?php
-                if (isset($_GET['church']) && !empty($_GET['church'])) {
-                    $church = $_GET['church'];
-
-                    if ($church == 'petra') {
-                        include "gereja/petra.php";
-                    } elseif ($church == 'efrata') {
-                        include "gereja/efrata.php";
-                    } elseif ($church == 'hermon') {
-                        include "gereja/hermon.php";
-                    } elseif ($church == 'eben-haezer') {
-                        include "gereja/eben-haezer.php";
-                    } elseif ($church == 'mahanaim') {
-                        include "gereja/mahanaim.php";
-                    } elseif ($church == 'filadelfia') {
-                        include "gereja/filadelfia.php";
-                    } elseif ($church == 'karmel') {
-                        include "gereja/karmel.php";
-                    } elseif ($church == 'sinai') {
-                        include "gereja/sinai.php";
-                    } elseif ($church == 'kana') {
-                        include "gereja/kana.php";
-                    } elseif ($church == 'getsemani') {
-                        include "gereja/getsemani.php";
-                    } elseif ($church == 'sion') {
-                        include "gereja/sion.php";
-                    }
-                }
-                ?>
             </div>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- batas -->
+
+        <!-- <form method="GET" action="" id="churchForm">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-md-6">
+                            <select name="church" class="form-select form-select-lg mb-4" onchange="this.form.submit()" style="color: #ffffff; background: #191919; border: none;">
+                                <option value="" selected>Pilih Gereja</option>
+                                <option value="petra" <?php if (isset($_GET['church']) && $_GET['church'] == 'petra') echo 'selected'; ?>>Petra Community Church</option>
+                                <option value="efrata" <?php if (isset($_GET['church']) && $_GET['church'] == 'efrata') echo 'selected'; ?>>Efrata Community Church</option>
+                                <option value="hermon" <?php if (isset($_GET['church']) && $_GET['church'] == 'hermon') echo 'selected'; ?>>Hermon Community Church</option>
+                                <option value="eben-haezer" <?php if (isset($_GET['church']) && $_GET['church'] == 'eben-haezer') echo 'selected'; ?>>Eben Haezer Community Church</option>
+                                <option value="mahanaim" <?php if (isset($_GET['church']) && $_GET['church'] == 'mahanaim') echo 'selected'; ?>>Mahanaim Community Church</option>
+                                <option value="filadelfia" <?php if (isset($_GET['church']) && $_GET['church'] == 'filadelfia') echo 'selected'; ?>>Filadelfia Community Church</option>
+                                <option value="karmel" <?php if (isset($_GET['church']) && $_GET['church'] == 'karmel') echo 'selected'; ?>>Karmel Community Church</option>
+                                <option value="sinai" <?php if (isset($_GET['church']) && $_GET['church'] == 'sinai') echo 'selected'; ?>>Sinai Community Church</option>
+                                <option value="kana" <?php if (isset($_GET['church']) && $_GET['church'] == 'kana') echo 'selected'; ?>>Kana Community Church</option>
+                                <option value="getsemani" <?php if (isset($_GET['church']) && $_GET['church'] == 'getsemani') echo 'selected'; ?>>Getsemani Community Church</option>
+                                <option value="sion" <?php if (isset($_GET['church']) && $_GET['church'] == 'sion') echo 'selected'; ?>>Sion Community Church</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="churchDetails" class="mt-5">
+                    <?php
+                    if (isset($_GET['church']) && !empty($_GET['church'])) {
+                        $church = $_GET['church'];
+
+                        if ($church == 'petra') {
+                            include "gereja/petra.php";
+                        } elseif ($church == 'efrata') {
+                            include "gereja/efrata.php";
+                        } elseif ($church == 'hermon') {
+                            include "gereja/hermon.php";
+                        } elseif ($church == 'eben-haezer') {
+                            include "gereja/eben-haezer.php";
+                        } elseif ($church == 'mahanaim') {
+                            include "gereja/mahanaim.php";
+                        } elseif ($church == 'filadelfia') {
+                            include "gereja/filadelfia.php";
+                        } elseif ($church == 'karmel') {
+                            include "gereja/karmel.php";
+                        } elseif ($church == 'sinai') {
+                            include "gereja/sinai.php";
+                        } elseif ($church == 'kana') {
+                            include "gereja/kana.php";
+                        } elseif ($church == 'getsemani') {
+                            include "gereja/getsemani.php";
+                        } elseif ($church == 'sion') {
+                            include "gereja/sion.php";
+                        }
+                    }
+                    ?>
+                </div>
+            </div>-->
     </section>
 
     <footer class="footer">
