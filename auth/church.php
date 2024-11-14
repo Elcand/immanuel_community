@@ -350,7 +350,10 @@
                                     <h5 class="card-title">Petra Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. MT. Haryono No.844-846, Karangturi, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50124 Telp : 8414445
+                                        Jl. MT. Haryono No.844-846, Karangturi, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50124
+                                        <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp : 8414445
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -367,11 +370,13 @@
                                     <h5 class="card-title">Efrata Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126 Telp : 024-3546878
+                                        Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126 <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp : 024-3546878
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/efrata.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -384,11 +389,13 @@
                                     <h5 class="card-title">Hermon Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Pasirmas Raya No.143b, Panggung Lor, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50177 Telp: 3547809
+                                        Jl. Pasirmas Raya No.143b, Panggung Lor, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50177 <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp: 3547809
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/hermon.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -401,11 +408,13 @@
                                     <h5 class="card-title">Eben Haezer Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Kedungmundu No.128, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274 Telp : 6700002
+                                        Jl. Kedungmundu No.128, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274 <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp : 6700002
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/eben-haezer.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -418,11 +427,13 @@
                                     <h5 class="card-title">Mahanaim Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Puri Anjasmoro Blk. K6 No.7 blok p, Tawangsari, Semarang Barat, Semarang City, Central Java 50144 Telp : 7612248
+                                        Jl. Puri Anjasmoro Blk. K6 No.7 blok p, Tawangsari, Semarang Barat, Semarang City, Central Java 50144 <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp : 7612248
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/mahanaim.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -435,11 +446,13 @@
                                     <h5 class="card-title">Filadelfia Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Padi Raya No.12, Gebangsari, Kec. Genuk, Kota Semarang, Jawa Tengah 50117 Telp : 6582766
+                                        Jl. Padi Raya No.12, Gebangsari, Kec. Genuk, Kota Semarang, Jawa Tengah 50117 <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp : 6582766
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/filadelfia.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -452,11 +465,13 @@
                                     <h5 class="card-title">Karmel Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Nangka Sel. No.43, Lamper Kidul, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249 Telp : 8443375
+                                        Jl. Nangka Sel. No.43, Lamper Kidul, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249 <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp : 8443375
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/karmel.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -469,11 +484,14 @@
                                     <h5 class="card-title">Sinai Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Muradi No.52, Kalibanteng Kulon, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50183 Telp: 7606167 HP: 08995854173
+                                        Jl. Muradi No.52, Kalibanteng Kulon, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50183
+                                        <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp: 7606167 HP: 08995854173
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/sinai.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -486,11 +504,13 @@
                                     <h5 class="card-title">Kana Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Kawi No.5 / 111, Tegalsari, Kec. Candisari, Kota Semarang, Jawa Tengah 50252 Telp : 6716328
+                                        Jl. Kawi No.5 / 111, Tegalsari, Kec. Candisari, Kota Semarang, Jawa Tengah 50252 <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp : 6716328
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/kana.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -503,11 +523,13 @@
                                     <h5 class="card-title">Getsemani Community Church</h5>
                                     <p class="card-text">
                                         <i class="bi bi-geo-alt"></i>
-                                        Jl. Jatiluhur Bar. I No.172 A, Ngesrep, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50261 Telp : 76401050
+                                        Jl. Jatiluhur Bar. I No.172 A, Ngesrep, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50261 <br>
+                                        <i class="fa-solid fa-phone"></i>
+                                        Telp : 76401050
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/getsemani.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -524,7 +546,7 @@
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
-                                            <a href="" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
+                                            <a href="../auth/gereja/sion.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
                                         </button>
                                     </div>
                                 </div>
@@ -540,58 +562,58 @@
         <!-- batas -->
 
         <!-- <form method="GET" action="" id="churchForm">
-                    <div class="row justify-content-center mb-5">
-                        <div class="col-md-6">
-                            <select name="church" class="form-select form-select-lg mb-4" onchange="this.form.submit()" style="color: #ffffff; background: #191919; border: none;">
-                                <option value="" selected>Pilih Gereja</option>
-                                <option value="petra" <?php if (isset($_GET['church']) && $_GET['church'] == 'petra') echo 'selected'; ?>>Petra Community Church</option>
-                                <option value="efrata" <?php if (isset($_GET['church']) && $_GET['church'] == 'efrata') echo 'selected'; ?>>Efrata Community Church</option>
-                                <option value="hermon" <?php if (isset($_GET['church']) && $_GET['church'] == 'hermon') echo 'selected'; ?>>Hermon Community Church</option>
-                                <option value="eben-haezer" <?php if (isset($_GET['church']) && $_GET['church'] == 'eben-haezer') echo 'selected'; ?>>Eben Haezer Community Church</option>
-                                <option value="mahanaim" <?php if (isset($_GET['church']) && $_GET['church'] == 'mahanaim') echo 'selected'; ?>>Mahanaim Community Church</option>
-                                <option value="filadelfia" <?php if (isset($_GET['church']) && $_GET['church'] == 'filadelfia') echo 'selected'; ?>>Filadelfia Community Church</option>
-                                <option value="karmel" <?php if (isset($_GET['church']) && $_GET['church'] == 'karmel') echo 'selected'; ?>>Karmel Community Church</option>
-                                <option value="sinai" <?php if (isset($_GET['church']) && $_GET['church'] == 'sinai') echo 'selected'; ?>>Sinai Community Church</option>
-                                <option value="kana" <?php if (isset($_GET['church']) && $_GET['church'] == 'kana') echo 'selected'; ?>>Kana Community Church</option>
-                                <option value="getsemani" <?php if (isset($_GET['church']) && $_GET['church'] == 'getsemani') echo 'selected'; ?>>Getsemani Community Church</option>
-                                <option value="sion" <?php if (isset($_GET['church']) && $_GET['church'] == 'sion') echo 'selected'; ?>>Sion Community Church</option>
-                            </select>
-                        </div>
-                    </div>
-                </form>
-
-                <div id="churchDetails" class="mt-5">
-                    <?php
-                    if (isset($_GET['church']) && !empty($_GET['church'])) {
-                        $church = $_GET['church'];
-
-                        if ($church == 'petra') {
-                            include "gereja/petra.php";
-                        } elseif ($church == 'efrata') {
-                            include "gereja/efrata.php";
-                        } elseif ($church == 'hermon') {
-                            include "gereja/hermon.php";
-                        } elseif ($church == 'eben-haezer') {
-                            include "gereja/eben-haezer.php";
-                        } elseif ($church == 'mahanaim') {
-                            include "gereja/mahanaim.php";
-                        } elseif ($church == 'filadelfia') {
-                            include "gereja/filadelfia.php";
-                        } elseif ($church == 'karmel') {
-                            include "gereja/karmel.php";
-                        } elseif ($church == 'sinai') {
-                            include "gereja/sinai.php";
-                        } elseif ($church == 'kana') {
-                            include "gereja/kana.php";
-                        } elseif ($church == 'getsemani') {
-                            include "gereja/getsemani.php";
-                        } elseif ($church == 'sion') {
-                            include "gereja/sion.php";
-                        }
-                    }
-                    ?>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-6">
+                    <select name="church" class="form-select form-select-lg mb-4" onchange="this.form.submit()" style="color: #ffffff; background: #191919; border: none;">
+                        <option value="" selected>Pilih Gereja</option>
+                        <option value="petra" <?php if (isset($_GET['church']) && $_GET['church'] == 'petra') echo 'selected'; ?>>Petra Community Church</option>
+                        <option value="efrata" <?php if (isset($_GET['church']) && $_GET['church'] == 'efrata') echo 'selected'; ?>>Efrata Community Church</option>
+                        <option value="hermon" <?php if (isset($_GET['church']) && $_GET['church'] == 'hermon') echo 'selected'; ?>>Hermon Community Church</option>
+                        <option value="eben-haezer" <?php if (isset($_GET['church']) && $_GET['church'] == 'eben-haezer') echo 'selected'; ?>>Eben Haezer Community Church</option>
+                        <option value="mahanaim" <?php if (isset($_GET['church']) && $_GET['church'] == 'mahanaim') echo 'selected'; ?>>Mahanaim Community Church</option>
+                        <option value="filadelfia" <?php if (isset($_GET['church']) && $_GET['church'] == 'filadelfia') echo 'selected'; ?>>Filadelfia Community Church</option>
+                        <option value="karmel" <?php if (isset($_GET['church']) && $_GET['church'] == 'karmel') echo 'selected'; ?>>Karmel Community Church</option>
+                        <option value="sinai" <?php if (isset($_GET['church']) && $_GET['church'] == 'sinai') echo 'selected'; ?>>Sinai Community Church</option>
+                        <option value="kana" <?php if (isset($_GET['church']) && $_GET['church'] == 'kana') echo 'selected'; ?>>Kana Community Church</option>
+                        <option value="getsemani" <?php if (isset($_GET['church']) && $_GET['church'] == 'getsemani') echo 'selected'; ?>>Getsemani Community Church</option>
+                        <option value="sion" <?php if (isset($_GET['church']) && $_GET['church'] == 'sion') echo 'selected'; ?>>Sion Community Church</option>
+                    </select>
                 </div>
-            </div>-->
+            </div>
+        </form>
+
+        <div id="churchDetails" class="mt-5">
+            <?php
+            if (isset($_GET['church']) && !empty($_GET['church'])) {
+                $church = $_GET['church'];
+
+                if ($church == 'petra') {
+                    include "gereja/petra.php";
+                } elseif ($church == 'efrata') {
+                    include "gereja/efrata.php";
+                } elseif ($church == 'hermon') {
+                    include "gereja/hermon.php";
+                } elseif ($church == 'eben-haezer') {
+                    include "gereja/eben-haezer.php";
+                } elseif ($church == 'mahanaim') {
+                    include "gereja/mahanaim.php";
+                } elseif ($church == 'filadelfia') {
+                    include "gereja/filadelfia.php";
+                } elseif ($church == 'karmel') {
+                    include "gereja/karmel.php";
+                } elseif ($church == 'sinai') {
+                    include "gereja/sinai.php";
+                } elseif ($church == 'kana') {
+                    include "gereja/kana.php";
+                } elseif ($church == 'getsemani') {
+                    include "gereja/getsemani.php";
+                } elseif ($church == 'sion') {
+                    include "gereja/sion.php";
+                }
+            }
+            ?>
+        </div>
+        </div> -->
     </section>
 
     <footer class="footer">
