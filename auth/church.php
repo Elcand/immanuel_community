@@ -136,7 +136,7 @@
             text-align: center;
             text-decoration: none;
             font-size: 15px;
-            margin: 20px 1px;
+            margin: 5px 2px;
             transition-duration: 0.4s;
             cursor: pointer;
         }
@@ -363,7 +363,7 @@
                                             Jl. MT. Haryono No.844-846, Karangturi, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50124
 
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp : 8414445
                                         </span>
@@ -387,7 +387,7 @@
                                             Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126
                                         </span>
 
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp : 024-3546878
                                         </span>
@@ -411,7 +411,7 @@
                                             <i class="bi bi-geo-alt"></i>
                                             Jl. Pasirmas Raya No.143b, Panggung Lor, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50177
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp: 3547809
                                         </span>
@@ -434,7 +434,7 @@
                                             <i class="bi bi-geo-alt"></i>
                                             Jl. Kedungmundu No.128, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp : 6700002
                                         </span>
@@ -457,7 +457,7 @@
                                             <i class="bi bi-geo-alt"></i>
                                             Jl. Puri Anjasmoro Blk. K6 No.7 blok p, Tawangsari, Semarang Barat, Semarang City, Central Java 50144
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp : 7612248
                                         </span>
@@ -480,7 +480,7 @@
                                             <i class="bi bi-geo-alt"></i>
                                             Jl. Padi Raya No.12, Gebangsari, Kec. Genuk, Kota Semarang, Jawa Tengah 50117
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp : 6582766
                                         </span>
@@ -503,7 +503,7 @@
                                             <i class="bi bi-geo-alt"></i>
                                             Jl. Nangka Sel. No.43, Lamper Kidul, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp : 8443375
                                         </span>
@@ -526,9 +526,11 @@
                                             <i class="bi bi-geo-alt"></i>
                                             Jl. Muradi No.52, Kalibanteng Kulon, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50183
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
-                                            Telp: 7606167 HP: 08995854173
+                                            Telp: 7606167
+                                            <br>
+                                            HP: 08995854173
                                         </span>
                                     </p>
                                     <div class="button-container">
@@ -549,7 +551,7 @@
                                             <i class="bi bi-geo-alt"></i>
                                             Jl. Kawi No.5 / 111, Tegalsari, Kec. Candisari, Kota Semarang, Jawa Tengah 50252
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp : 6716328
                                         </span>
@@ -572,7 +574,7 @@
                                             <i class="bi bi-geo-alt"></i>
                                             Jl. Jatiluhur Bar. I No.172 A, Ngesrep, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50261
                                         </span>
-                                        <span class="text-icon">
+                                        <span class="text-icon" style="margin-top: 10px;">
                                             <i class="bi bi-telephone"></i>
                                             Telp : 76401050
                                         </span>
