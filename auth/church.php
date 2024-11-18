@@ -96,6 +96,15 @@
             /* Allow text to grow while keeping buttons aligned */
         }
 
+        .text-icon {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+
         .btn-primary {
             background-color: #007bff;
             border: none;
@@ -349,11 +358,15 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Petra Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. MT. Haryono No.844-846, Karangturi, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50124
-                                        <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp : 8414445
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. MT. Haryono No.844-846, Karangturi, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50124
+
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp : 8414445
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -369,11 +382,17 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Efrata Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126 <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp : 024-3546878
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126
+                                        </span>
+
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp : 024-3546878
+                                        </span>
                                     </p>
+
                                     <div class="button-container">
                                         <button class="button button5">
                                             <a href="../auth/gereja/efrata.php" rel="noopener noreferrer" style="color:white; text-decoration: none;">Selengkapnya</a>
@@ -388,10 +407,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Hermon Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Pasirmas Raya No.143b, Panggung Lor, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50177 <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp: 3547809
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Pasirmas Raya No.143b, Panggung Lor, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50177
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp: 3547809
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -407,10 +430,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Eben Haezer Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Kedungmundu No.128, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274 <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp : 6700002
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Kedungmundu No.128, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp : 6700002
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -426,10 +453,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Mahanaim Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Puri Anjasmoro Blk. K6 No.7 blok p, Tawangsari, Semarang Barat, Semarang City, Central Java 50144 <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp : 7612248
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Puri Anjasmoro Blk. K6 No.7 blok p, Tawangsari, Semarang Barat, Semarang City, Central Java 50144
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp : 7612248
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -445,10 +476,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Filadelfia Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Padi Raya No.12, Gebangsari, Kec. Genuk, Kota Semarang, Jawa Tengah 50117 <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp : 6582766
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Padi Raya No.12, Gebangsari, Kec. Genuk, Kota Semarang, Jawa Tengah 50117
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp : 6582766
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -464,10 +499,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Karmel Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Nangka Sel. No.43, Lamper Kidul, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249 <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp : 8443375
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Nangka Sel. No.43, Lamper Kidul, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp : 8443375
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -483,11 +522,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Sinai Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Muradi No.52, Kalibanteng Kulon, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50183
-                                        <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp: 7606167 HP: 08995854173
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Muradi No.52, Kalibanteng Kulon, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50183
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp: 7606167 HP: 08995854173
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -503,10 +545,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Kana Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Kawi No.5 / 111, Tegalsari, Kec. Candisari, Kota Semarang, Jawa Tengah 50252 <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp : 6716328
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Kawi No.5 / 111, Tegalsari, Kec. Candisari, Kota Semarang, Jawa Tengah 50252
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp : 6716328
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -522,10 +568,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Getsemani Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Jatiluhur Bar. I No.172 A, Ngesrep, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50261 <br>
-                                        <i class="fa-solid fa-phone"></i>
-                                        Telp : 76401050
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Jatiluhur Bar. I No.172 A, Ngesrep, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50261
+                                        </span>
+                                        <span class="text-icon">
+                                            <i class="bi bi-telephone"></i>
+                                            Telp : 76401050
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
@@ -541,8 +591,10 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Sion Community Church</h5>
                                     <p class="card-text">
-                                        <i class="bi bi-geo-alt"></i>
-                                        Jl. Kaba Raya No.51, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274
+                                        <span class="text-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                            Jl. Kaba Raya No.51, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274
+                                        </span>
                                     </p>
                                     <div class="button-container">
                                         <button class="button button5">
