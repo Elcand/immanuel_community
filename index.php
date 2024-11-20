@@ -267,8 +267,6 @@
       <i class="fas fa-bars" style="color: white;"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-
-
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="#home">Home</a>
@@ -291,6 +289,11 @@
       </ul>
     </div>
   </nav>
+  <div class="w-100 text-center mt-2">
+    <p class="text-white font-weight-bold mb-0" style="font-size: 0.9rem;">
+      Eben Haezer . Efrata . Filadelfia . Getsmani . Hermon . Kana . Karmel . Mahanaim . Petra . Sinai . Sion
+    </p>
+  </div>
 
 
   <?php include "auth/home.php"; ?>
