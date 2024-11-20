@@ -70,12 +70,36 @@
             margin-right: 4rem;
             margin-bottom: 6.5rem;
         }
+        
+        .contact-section {
+            padding: 30px 15px;
+        }
 
-        /* Untuk layar kecil (mobile) */
+        .card h1 {
+            font-size: 1.8rem;
+        }
+
+        .card-body h5 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        /* Media Queries */
+
+        /* Untuk layar kecil (max-width: 576px) */
         @media (max-width: 576px) {
             .contact-section {
-                padding-top: 20px;
-                padding-bottom: 20px;
+                padding: 20px 10px;
+            }
+
+            .card h1 {
+                font-size: 1.5rem;
             }
 
             .card-body h5 {
@@ -89,23 +113,16 @@
             p {
                 font-size: 1rem;
             }
-
-            /* Menyusun ulang kolom untuk layar lebih kecil */
-            .row {
-                flex-direction: column;
-            }
-
-            /* Membuat tombol lebih besar di perangkat kecil */
-            .btn {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
         }
 
-        /* Untuk tablet (layar medium) */
+        /* Untuk layar sedang (max-width: 768px) */
         @media (max-width: 768px) {
-            .card-body h5 {
-                font-size: 1.1rem;
+            .contact-section {
+                padding: 25px 15px;
+            }
+
+            .card h1 {
+                font-size: 1.6rem;
             }
 
             h3 {
@@ -113,19 +130,14 @@
             }
 
             p {
-                font-size: 1.2rem;
-            }
-
-            /* Menjaga layout 2 kolom */
-            .row {
-                flex-direction: row;
+                font-size: 1.1rem;
             }
         }
 
-        /* Untuk layar besar (desktop) */
+        /* Untuk layar besar (min-width: 992px) */
         @media (min-width: 992px) {
-            .card-body h5 {
-                font-size: 1.2rem;
+            .card h1 {
+                font-size: 2rem;
             }
 
             h3 {
@@ -135,13 +147,8 @@
             p {
                 font-size: 1.3rem;
             }
-
-            /* Menjaga kolom tetap berdampingan pada layar besar */
-            .row {
-                display: flex;
-                justify-content: space-between;
-            }
         }
+
 
         .footer {
             background-color: #000000;
@@ -227,23 +234,23 @@
 
             <div class="col-md-6" style="text-align: left;">
                 <h3 class="mt-5"> IBADAH RAYA - MINGGU</h3>
-                <p style="font-size : 1.3rem;">Ibadah I : 07.00 WIB <br>
+                <p>Ibadah I : 07.00 WIB <br>
                     Ibadah II : 09.30 WIB (disertai Live Streaming) <br>
                     Ibadah III : 17.00 WIB
                 </p>
                 <hr>
 
                 <h3 class="mt-4"> DOA PAGI</h3>
-                <p style="font-size : 1.3rem;">Setiap Selasa, Kamis, Sabtu | 04.30 WIB
+                <p>Setiap Selasa, Kamis, Sabtu | 04.30 WIB
                     di Youtube Petra Media</p>
                 <hr>
 
                 <h3 class="mt-4"> IBADAH GEN-U</h3>
-                <p style="font-size : 1.3rem;">Setiap Sabtu | 17.00 WIB di Gedung Utama </p>
+                <p>Setiap Sabtu | 17.00 WIB di Gedung Utama </p>
                 <hr>
 
                 <h3 class="mt-4"> IBADAH SEKOLAH MINGGU</h3>
-                <p style="font-size : 1.3rem;">Setiap Minggu di lantai 2 | 07.00 WIB, 09.30 WIB, & 17.00 WIB </p>
+                <p>Setiap Minggu di lantai 2 | 07.00 WIB, 09.30 WIB, & 17.00 WIB </p>
             </div>
         </div>
     </section>

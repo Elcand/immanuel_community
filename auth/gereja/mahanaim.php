@@ -71,6 +71,80 @@
             margin-bottom: 6.5rem;
         }
 
+        .card h1 {
+            font-size: 1.8rem;
+        }
+
+        .card-body h5 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        /* Media Queries */
+
+        /* Untuk layar kecil (max-width: 576px) */
+        @media (max-width: 576px) {
+            .contact-section {
+                padding: 20px 10px;
+            }
+
+            .card h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-body h5 {
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Untuk layar sedang (max-width: 768px) */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 25px 15px;
+            }
+
+            .card h1 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Untuk layar besar (min-width: 992px) */
+        @media (min-width: 992px) {
+            .card h1 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+
         .footer {
             background-color: #000000;
             color: #ffffff;
@@ -156,11 +230,11 @@
 
             <div class="col-md-6" style="text-align: left;">
                 <h3 class="mt-5"> IBADAH RAYA</h3>
-                <p style="font-size : 1.3rem;">Setiap Minggu | 07.00 WIB & 09.00 WIB</p>
+                <p>Setiap Minggu | 07.00 WIB & 09.00 WIB</p>
                 <hr>
 
                 <h3 class="mt-4"> DOA FAJAR </h3>
-                <p style="font-size : 1.3rem;">Setiap Selasa-Sabtu | 05.00 - 06.00 WIB
+                <p>Setiap Selasa-Sabtu | 05.00 - 06.00 WIB
                     Di Ruang Mujizat</p>
                 <hr>
             </div>

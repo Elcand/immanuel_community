@@ -71,6 +71,80 @@
             margin-bottom: 6.5rem;
         }
 
+        .card h1 {
+            font-size: 1.8rem;
+        }
+
+        .card-body h5 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        /* Media Queries */
+
+        /* Untuk layar kecil (max-width: 576px) */
+        @media (max-width: 576px) {
+            .contact-section {
+                padding: 20px 10px;
+            }
+
+            .card h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-body h5 {
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Untuk layar sedang (max-width: 768px) */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 25px 15px;
+            }
+
+            .card h1 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Untuk layar besar (min-width: 992px) */
+        @media (min-width: 992px) {
+            .card h1 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+
         .footer {
             background-color: #000000;
             color: #ffffff;
@@ -157,25 +231,25 @@
             <div class="col-md-6" style="text-align: left;">
 
                 <h3 class="mt-5"> IBADAH RAYA - MINGGU </h3>
-                <p style="font-size : 1.3rem;">Ibadah I : 06.00 WIB<br>
+                <p>Ibadah I : 06.00 WIB<br>
                     Ibadah II : 09.00 WIB (disertai Live Streaming)<br>
                     Ibadah III : 16.30 WIB</p>
                 <hr>
 
                 <h3 class="mt-4"> IBADAH WANITA KEZIA</h3>
-                <p style="font-size : 1.3rem;">Setiap Selasa | 18.30 WIB</p>
+                <p>Setiap Selasa | 18.30 WIB</p>
                 <hr>
 
                 <h3 class="mt-4"> DOA MALAM</h3>
-                <p style="font-size : 1.3rem;">Setiap Rabu ke-2 & ke-4 | 19.00 WIB </p>
+                <p>Setiap Rabu ke-2 & ke-4 | 19.00 WIB </p>
                 <hr>
 
                 <h3 class="mt-4"> KOMSEL </h3>
-                <p style="font-size : 1.3rem;">Setiap Jumat | 18.30 WIB</p>
+                <p>Setiap Jumat | 18.30 WIB</p>
                 <hr>
 
                 <h3 class="mt-4"> IBADAH YOUTH EL-SHADDAY </h3>
-                <p style="font-size : 1.3rem;">Setiap Sabtu | 18.00 WIB di Gereja</p>
+                <p>Setiap Sabtu | 18.00 WIB di Gereja</p>
             </div>
         </div>
     </section>
