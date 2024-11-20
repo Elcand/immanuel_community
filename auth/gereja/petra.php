@@ -71,6 +71,78 @@
             margin-bottom: 6.5rem;
         }
 
+        /* Untuk layar kecil (mobile) */
+        @media (max-width: 576px) {
+            .contact-section {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .card-body h5 {
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            /* Menyusun ulang kolom untuk layar lebih kecil */
+            .row {
+                flex-direction: column;
+            }
+
+            /* Membuat tombol lebih besar di perangkat kecil */
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* Untuk tablet (layar medium) */
+        @media (max-width: 768px) {
+            .card-body h5 {
+                font-size: 1.1rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            /* Menjaga layout 2 kolom */
+            .row {
+                flex-direction: row;
+            }
+        }
+
+        /* Untuk layar besar (desktop) */
+        @media (min-width: 992px) {
+            .card-body h5 {
+                font-size: 1.2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+
+            /* Menjaga kolom tetap berdampingan pada layar besar */
+            .row {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
         .footer {
             background-color: #000000;
             color: #ffffff;
@@ -137,7 +209,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <section class="contact-section py-5">
         <div class="row">
             <div class="col-md-6 mb-5">

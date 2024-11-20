@@ -161,6 +161,124 @@
             color: white;
         }
 
+        @media (max-width: 768px) {
+            .card {
+                text-align: center;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                height: auto;
+                /* Memastikan card tidak terlalu tinggi */
+                margin: 10px;
+                /* Memberikan jarak antar card */
+            }
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 200px;
+                padding: 12px;
+                /* Menurunkan padding agar lebih kompak */
+            }
+
+            .card-title {
+                font-weight: bold;
+                font-size: 1rem;
+                /* Mengurangi ukuran font title */
+                margin-top: 6px;
+            }
+
+            .card-text {
+                font-size: 0.85rem;
+                /* Mengurangi ukuran font untuk teks */
+                color: #555;
+                flex-grow: 1;
+                text-align: justify;
+            }
+
+            .text-icon {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                gap: 0.4rem;
+                margin-top: auto;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border: none;
+                border-radius: 4px;
+                margin-top: 8px;
+                /* Mengurangi margin atas tombol */
+                padding: 6px 12px;
+                /* Mengurangi padding tombol */
+                font-size: 0.85rem;
+                /* Menurunkan ukuran font tombol */
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+
+            .card-img-top {
+                height: 180px;
+                /* Menurunkan tinggi gambar agar lebih kompak */
+                object-fit: cover;
+                width: 100%;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+
+            .container.text-center {
+                margin-top: 18px;
+            }
+
+            .button {
+                background-color: #04AA6D;
+                border: none;
+                color: white;
+                padding: 8px 22px;
+                /* Menurunkan padding tombol */
+                text-align: center;
+                text-decoration: none;
+                font-size: 13px;
+                /* Menurunkan ukuran font tombol */
+                margin: 15px 0;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+
+            .button-container {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                flex-wrap: wrap;
+                /* Tombol bisa membungkus jika ruang terbatas */
+            }
+
+            .button5 {
+                background-color: #555555;
+                color: white;
+                border: 2px solid #555555;
+                border-radius: 2px;
+            }
+
+            .button5:hover {
+                background-color: #383838FF;
+                color: white;
+            }
+
+            /* Tombol dengan ukuran lebih kecil */
+            .button,
+            .button5 {
+                font-size: 13px;
+                /* Menurunkan ukuran font untuk tombol */
+            }
+        }
+
+
+
 
         .footer {
             background-color: #000000;
