@@ -7,7 +7,7 @@
     </div>
 </section>
 
-<section id="churches" class="churches-section py-5" style="padding-top: 50px;">
+<section id="churches" class="churches-section  py-5" style="padding-top: 50px;">
     <div class="container">
         <h2 class="text-center mb-4 display-3 font-weight-bold">Visi Immanuel Community </h2>
 

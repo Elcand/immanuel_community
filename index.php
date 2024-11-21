@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
   <link rel="icon" href="assets/img/logo.png">
   <style>
@@ -109,6 +110,42 @@
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
     }
 
+    @media (max-width: 768px) {
+      .nav-span {
+        justify-content: flex-start;
+        /* Mulai dari kiri */
+        overflow-x: auto;
+        /* Aktifkan scroll horizontal */
+        white-space: nowrap;
+        /* Cegah elemen membungkus ke bawah */
+        padding: 0.5rem;
+      }
+
+      .navbar-span {
+        flex-wrap: nowrap;
+        /* Elemen tetap dalam satu baris */
+        gap: 0.5rem;
+        /* Kurangi jarak antar elemen */
+      }
+
+      .span-item a {
+        padding: 0.5rem 0.8rem;
+        /* Sesuaikan ukuran padding */
+        font-size: 0.9rem;
+        /* Perkecil ukuran font */
+      }
+
+      /* Hilangkan Scrollbar */
+      .nav-span::-webkit-scrollbar {
+        display: none;
+        /* Untuk Chrome, Safari */
+      }
+
+      .nav-span {
+        scrollbar-width: none;
+        /* Untuk Firefox */
+      }
+    }
 
     .home-section {
       position: relative;
@@ -321,7 +358,7 @@
           <a class="nav-link" href="auth/contact.php">Contact us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Admin</a>
+          <a class="nav-link" href="login.php"><i class="bi bi-person-lock"></i></a>
         </li>
       </ul>
     </div>
@@ -341,10 +378,6 @@
       <li class="span-item"><a href="sauth/gereja/sion.php">Sion</a></li>
     </ul>
   </span>
-
-
-
-
 
   <?php include "auth/home.php"; ?>
 
