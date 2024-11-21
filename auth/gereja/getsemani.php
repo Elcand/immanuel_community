@@ -71,6 +71,80 @@
             margin-bottom: 6.5rem;
         }
 
+        .card h1 {
+            font-size: 1.8rem;
+        }
+
+        .card-body h5 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        /* Media Queries */
+
+        /* Untuk layar kecil (max-width: 576px) */
+        @media (max-width: 576px) {
+            .contact-section {
+                padding: 20px 10px;
+            }
+
+            .card h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-body h5 {
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Untuk layar sedang (max-width: 768px) */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 25px 15px;
+            }
+
+            .card h1 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Untuk layar besar (min-width: 992px) */
+        @media (min-width: 992px) {
+            .card h1 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+
         .footer {
             background-color: #000000;
             color: #ffffff;
@@ -155,20 +229,20 @@
 
             <div class="col-md-6" style="text-align: left;">
                 <h3 class="mt-5"> IBADAH RAYA </h3>
-                <p style="font-size : 1.3rem;">Setiap Minggu | 06.30 WIB & 08.30 WIB</p>
+                <p>Setiap Minggu | 06.30 WIB & 08.30 WIB</p>
                 <hr>
 
                 <h3 class="mt-4"> KOMSEL</h3>
-                <p style="font-size : 1.3rem;">Setiap Kamis | 18.30 WIB</p>
+                <p>Setiap Kamis | 18.30 WIB</p>
                 <hr>
 
                 <h3 class="mt-4"> DOA PAGI</h3>
-                <p style="font-size : 1.3rem;">Setiap Selasa - Sabtu | 04.30 - 05.30 WIB
+                <p>Setiap Selasa - Sabtu | 04.30 - 05.30 WIB
                     di Gereja </p>
                 <hr>
 
                 <h3 class="mt-4"> ARROW SABTU CERIA (Anak-anak) </h3>
-                <p style="font-size : 1.3rem;">Setiap Minggu | 08.30 - 09.30 WIB</p>
+                <p>Setiap Minggu | 08.30 - 09.30 WIB</p>
 
             </div>
         </div>

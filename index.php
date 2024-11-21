@@ -15,6 +15,8 @@
 
     body {
       overflow-x: hidden;
+      padding-top: 6rem;
+      /* Sama dengan tinggi navbar */
     }
 
     .custom-navbar {
@@ -61,9 +63,52 @@
     }
 
     .navbar-toggler.active {
-      background-color: #000000;
+      background-color: #fff;
       border-radius: 5px;
     }
+
+    .nav-span {
+      display: flex;
+      /* Mengatur elemen flex untuk rata tengah */
+      justify-content: center;
+      /* Konten diratakan di tengah secara horizontal */
+      margin: 0;
+      /* Hilangkan margin default */
+      padding: 0;
+      /* Hilangkan padding default */
+      background: #333;
+      /* Latar belakang transparan agar menyatu */
+    }
+
+    .navbar-span {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+    }
+
+    .span-item {
+      margin: 0;
+    }
+
+    .span-item a {
+      text-decoration: none;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      font-weight: 500;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .span-item a:hover {
+      background-color: #222;
+      color: #e3e3e3;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    }
+
 
     .home-section {
       position: relative;
@@ -111,14 +156,6 @@
 
     .churches-section {
       font-weight: bold;
-    }
-
-    .font-weight-bold {
-      font-weight: 700;
-    }
-
-    .fixed-top {
-      z-index: 1030;
     }
 
     .section-imani {
@@ -289,11 +326,24 @@
       </ul>
     </div>
   </nav>
-  <div class="w-100 text-center mt-2">
-    <p class="text-white font-weight-bold mb-0" style="font-size: 0.9rem;">
-      Eben Haezer . Efrata . Filadelfia . Getsmani . Hermon . Kana . Karmel . Mahanaim . Petra . Sinai . Sion
-    </p>
-  </div>
+  <span class="nav-span">
+    <ul class="navbar-span">
+      <li class="span-item"><a href="auth/gereja/petra.php">Petra</a></li>
+      <li class="span-item"><a href="auth/gereja/efrata.php">Efrata</a></li>
+      <li class="span-item"><a href="auth/gereja/hermon.php">Hermon</a></li>
+      <li class="span-item"><a href="auth/gereja/eben-haezer.php">Eben Haezer</a></li>
+      <li class="span-item"><a href="auth/gereja/mahanaim.php">Mahanain</a></li>
+      <li class="span-item"><a href="auth/gereja/filadelfia.php">Filadelfia</a></li>
+      <li class="span-item"><a href="auth/gereja/karmel.php">Karmel</a></li>
+      <li class="span-item"><a href="auth/gereja/sinai.php">sinai</a></li>
+      <li class="span-item"><a href="auth/gereja/kana.php">Kana</a></li>
+      <li class="span-item"><a href="auth/gereja/getsemani.php">Getsemani</a></li>
+      <li class="span-item"><a href="sauth/gereja/sion.php">Sion</a></li>
+    </ul>
+  </span>
+
+
+
 
 
   <?php include "auth/home.php"; ?>
