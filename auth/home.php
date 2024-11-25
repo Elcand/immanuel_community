@@ -1,13 +1,173 @@
-<section id="home" class="home-section d-flex align-items-center justify-content-center" style="margin-bottom: -20px;">
+<style>
+    .background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        /* memastikan video ada di belakang teks */
+    }
+
+    /* Home section */
+    #home {
+        position: relative;
+        min-height: 25vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Welcome text */
+    .welcome-text {
+        position: relative;
+        z-index: 1;
+    }
+
+    .welcome-text h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        font-family: "Alex Brush", cursive;
+    }
+
+
+
+    /* Gaya dasar untuk tampilan desktop */
+    #pdf-viewer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 750px;
+        overflow-y: visible;
+        overflow-x: hidden;
+        padding: 10px;
+        background-color: whitesmoke;
+        margin: 0 auto;
+        width: 80%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    #pdf-viewer-container::-webkit-scrollbar {
+        display: none;
+        /* Menyembunyikan scroll bar di Chrome, Safari, dan Edge */
+    }
+
+    #pdf-viewer-container {
+        -ms-overflow-style: none;
+        /* Menyembunyikan scroll bar di Internet Explorer dan Edge */
+        scrollbar-width: none;
+        /* Menyembunyikan scroll bar di Firefox */
+    }
+
+    #pdf-viewer {
+        width: 100%;
+    }
+
+    /* Buttons styling */
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: #04aa6d;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: #036d4c;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        /* Menempatkan tombol di tengah secara horizontal */
+        width: 100%;
+    }
+
+
+    .button5 {
+        background-color: #555555;
+        color: white;
+        border: 2px solid #555555;
+        border-radius: 2px;
+    }
+
+    .button5:hover {
+        background-color: #383838FF;
+        color: white;
+    }
+
+    #map-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+    }
+
+    #map {
+        height: 500px;
+        width: 80%;
+        max-width: 800px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+        #pdf-viewer-container {
+            width: 90%;
+            max-height: 400px;
+            padding: 8px;
+        }
+
+        #pdf-viewer canvas {
+            background-color: none;
+            max-width: 90%;
+        }
+
+
+        .background-video {
+            height: auto;
+        }
+
+        .home-section {
+            height: auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #pdf-viewer-container {
+            width: 100%;
+            max-height: 300px;
+            padding: 5px;
+            margin: 0 10px;
+        }
+
+        #pdf-viewer {
+            width: 100%;
+        }
+
+        .background-video {
+            height: auto;
+        }
+    }
+</style>
+
+
+<section id="home" class="home-section d-flex align-items-center justify-content-center">
     <video autoplay muted loop playsinline class="background-video">
         <source src="assets/video/welcome.mp4" type="video/mp4">
     </video>
-    <div class="welcome-text text-center">
-        <h1 class="display-4 text-white" style="font-size: 100px; font-weight: bold; font-family: alex brushS"></h1>
-    </div>
 </section>
 
-<section id="churches" class="churches-section  py-5" style="padding-top: 50px;">
+<section id="churches" class="churches-section  py-5">
     <div class="container">
         <h2 class="text-center mb-4 display-3 font-weight-bold">Visi Immanuel Community </h2>
 
@@ -75,142 +235,6 @@
 </section>
 <section class="section-lokasi" id="lokasi">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsMjkj0lMJPs5Mm2YXVQLr1IO0SgFMx3k"></script>
-    <style>
-        /* Gaya dasar untuk tampilan desktop */
-        #pdf-viewer-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-height: 750px;
-            overflow-y: visible;
-            overflow-x: hidden;
-            padding: 10px;
-            background-color: whitesmoke;
-            margin: 0 auto;
-            width: 80%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        #pdf-viewer-container::-webkit-scrollbar {
-            display: none;
-            /* Menyembunyikan scroll bar di Chrome, Safari, dan Edge */
-        }
-
-        #pdf-viewer-container {
-            -ms-overflow-style: none;
-            /* Menyembunyikan scroll bar di Internet Explorer dan Edge */
-            scrollbar-width: none;
-            /* Menyembunyikan scroll bar di Firefox */
-        }
-
-        #pdf-viewer {
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            #pdf-viewer-container {
-                width: 90%;
-                max-height: 400px;
-                padding: 8px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #pdf-viewer-container {
-                width: 100%;
-                max-height: 300px;
-                padding: 5px;
-                margin: 0 10px;
-            }
-
-            #pdf-viewer {
-                width: 100%;
-            }
-        }
-
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            #pdf-viewer canvas {
-                background-color: none;
-                max-width: 90%;
-            }
-        }
-
-
-        .button {
-            background-color: #04AA6D;
-            border: none;
-            color: white;
-            padding: 8px 26px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 15px;
-            margin: 20px 1px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-            float: center;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            /* Menempatkan tombol di tengah secara horizontal */
-            width: 100%;
-        }
-
-
-        .button5 {
-            background-color: #555555;
-            color: white;
-            border: 2px solid #555555;
-            border-radius: 2px;
-        }
-
-        .button5:hover {
-            background-color: #383838FF;
-            color: white;
-        }
-
-        #map-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px;
-        }
-
-        #map {
-            height: 500px;
-            width: 80%;
-            max-width: 800px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            #map {
-                height: 300px;
-                width: 80%;
-                max-width: 500px;
-                border: 2px solid #ddd;
-                border-radius: 8px;
-            }
-
-            .background-video {
-                height: 600px;
-                width: 100%;
-            }
-
-            #home {
-                margin-bottom: -20px;
-                /* Sesuaikan untuk tampilan kecil */
-            }
-
-            #churches-section {
-                padding-top: 20px;
-                /* Sesuaikan untuk tampilan kecil */
-            }
-        }
-    </style>
 
     <h1 style="font-weight:bold;">Lokasi Gereja Immanuel Community</h1>
     <div id="map-container">

@@ -85,7 +85,7 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 4rem;
       padding: 0;
       margin: 0;
       justify-content: center;
@@ -343,7 +343,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="auth/church.php">Churches</a>
