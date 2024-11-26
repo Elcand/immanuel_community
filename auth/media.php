@@ -162,7 +162,6 @@
 
     <section class="church-section" style="margin-top: 6rem;">
         <div class="container">
-            <h1 class="text-center mt-5 mb-5" style="margin-top: 2rem;">MEDIA SOSIAL Immanuel Community</h1>
             <div class="row">
                 <div class="col-md-4">
                     <div class="church-card text-center bg-secondary rounded mb-2 p-5">

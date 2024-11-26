@@ -1,40 +1,21 @@
 <style>
-    .background-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-        /* memastikan video ada di belakang teks */
-    }
-
-    /* Home section */
     #home {
-        position: relative;
-        min-height: 25vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
-    /* Welcome text */
-    .welcome-text {
-        position: relative;
-        z-index: 1;
+    .background-video {
+        margin-bottom: -5px;
+        display: block;
+        width: 100%;
+        height: 65%;
     }
 
-    .welcome-text h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        color: white;
-        font-family: "Alex Brush", cursive;
+    #churches {
+        padding-top: 20px;
+        margin-top: 0;
     }
 
-
-
-    /* Gaya dasar untuk tampilan desktop */
     #pdf-viewer-container {
         display: flex;
         justify-content: center;
@@ -169,8 +150,7 @@
 
 <section id="churches" class="churches-section  py-5">
     <div class="container">
-        <h2 class="text-center mb-4 display-3 font-weight-bold">Visi Immanuel Community </h2>
-
+        <h2 class="text-center display-3 font-weight-bold">Visi Immanuel Community </h2>
         <p style="font-weight: normal; font-size: 25px; text-align: center;">
             Membangun Gereja Menuju Kepenuhan Kristus </p>
     </div>
