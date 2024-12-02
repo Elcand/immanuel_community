@@ -48,33 +48,8 @@
     }
 
     .custom-navbar .nav-link:hover {
-      color: #FF8A16FF !important;
+      color: #dddddd !important;
     }
-
-    /* Gaya untuk link aktif */
-    .navbar-nav .nav-item.active .nav-link {
-      color: #fff !important;
-      /* Warna teks */
-      background-color: #222;
-      /* Warna latar belakang */
-      border-radius: 5px;
-      /* Radius untuk tampilan melengkung */
-      padding: 0.5rem 1rem;
-      /* Padding agar terlihat lebih rapi */
-      font-weight: bold;
-    }
-
-    /* Transisi untuk efek halus */
-    .navbar-nav .nav-item .nav-link {
-      transition: all 0.3s ease-in-out;
-    }
-
-    /* Hover tetap berfungsi */
-    .navbar-nav .nav-item:hover {
-      color: #e3e3e3 !important;
-      background-color: #333;
-    }
-
 
     .navbar-nav {
       flex-direction: column;
@@ -367,28 +342,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">
+        <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
         </li>
-        <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'church.php' ? 'active' : ''; ?>">
+        <li class="nav-item">
           <a class="nav-link" href="auth/church.php">Churches</a>
         </li>
-        <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'services.php' ? 'active' : ''; ?>">
+        <li class="nav-item">
           <a class="nav-link" href="auth/services.php">Services</a>
         </li>
-        <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'media.php' ? 'active' : ''; ?>">
+        <li class="nav-item">
           <a class="nav-link" href="auth/media.php">Media</a>
         </li>
-        <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active' : ''; ?>">
+        <li class="nav-item">
           <a class="nav-link" href="auth/contact.php">Contact us</a>
         </li>
-        <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>">
+        <li class="nav-item">
           <a class="nav-link" href="login.php"><i class="bi bi-person-lock"></i></a>
         </li>
       </ul>
     </div>
   </nav>
-
   <span class="nav-span">
     <ul class="navbar-span">
       <li class="span-item"><a href="auth/gereja/petra.php">Petra</a></li>
