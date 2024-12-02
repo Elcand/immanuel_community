@@ -5,47 +5,64 @@
     }
 
     .background-video {
-        margin-bottom: -5px;
+        margin-bottom: 0 !important;
         display: block;
         width: 100%;
-        height: 65%;
+        height: 72%;
     }
 
-    #churches {
-        padding-top: 20px;
-        margin-top: 0;
+    #churches .container {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
     }
+
 
     #pdf-viewer-container {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         max-height: 750px;
-        overflow-y: visible;
-        overflow-x: hidden;
-        padding: 10px;
-        background-color: whitesmoke;
-        margin: 0 auto;
+        overflow: auto;
+        /* Aktifkan scroll untuk konten panjang */
+        padding: 20px;
+        background-color: #f9f9f9;
+        /* Warna latar lebih terang */
+        margin: 20px auto;
         width: 80%;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        /* Bayangan lebih lembut */
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        /* Tambahkan border untuk batas */
     }
 
     #pdf-viewer-container::-webkit-scrollbar {
-        display: none;
-        /* Menyembunyikan scroll bar di Chrome, Safari, dan Edge */
+        width: 8px;
+        /* Lebar scrollbar */
     }
 
-    #pdf-viewer-container {
-        -ms-overflow-style: none;
-        /* Menyembunyikan scroll bar di Internet Explorer dan Edge */
-        scrollbar-width: none;
-        /* Menyembunyikan scroll bar di Firefox */
+    #pdf-viewer-container::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        /* Warna scrollbar */
+        border-radius: 4px;
     }
 
-    #pdf-viewer {
-        width: 100%;
+    #pdf-viewer-container::-webkit-scrollbar-thumb:hover {
+        background-color: #aaa;
+        /* Warna scrollbar saat hover */
     }
+
+    #pdf-viewer canvas {
+        display: block;
+        margin: 10px auto;
+        /* Beri jarak antar halaman PDF */
+        max-width: 100%;
+        /* Pastikan kanvas responsif */
+        height: auto;
+        /* Sesuaikan tinggi proporsional */
+    }
+
 
     /* Buttons styling */
     .button-container {
@@ -210,7 +227,6 @@
                 <a href="https://drive.google.com/drive/folders/1-yrd5aWTamIL8G0F3hIQxrueM6Kmt7j4?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">Lainnya</a>
             </button>
         </div>
-
     </div>
 </section>
 <section class="section-lokasi" id="lokasi">

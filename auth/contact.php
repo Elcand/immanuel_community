@@ -58,15 +58,40 @@
 
         .contact-info p {
             font-size: 1.2rem;
+            /* Ukuran font yang seragam */
+            line-height: 1.8;
+            /* Jarak antar baris */
+            margin-bottom: 1rem;
+            /* Jarak antar paragraf */
+            display: flex;
+            /* Gunakan flex untuk mengatur ikon dan teks */
+            align-items: center;
+            /* Vertikal rata tengah */
+        }
+
+        .contact-info i {
+            font-size: 1.5rem;
+            /* Ukuran ikon */
+            margin-right: 10px;
+            /* Jarak antara ikon dan teks */
+        }
+
+        .contact-info a,
+        .contact-info span {
+            color: #000;
+            /* Warna teks */
+            text-decoration: none;
+            /* Hilangkan garis bawah */
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+            /* Efek garis bawah saat hover */
         }
 
         .contact-info .mb-3 {
             text-decoration: none;
             font-size: 27px;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
         }
 
         .footer {
@@ -118,7 +143,9 @@
 
             .contact-info p {
                 font-size: 1rem;
-                margin-top: 3%;
+                /* Ukuran font lebih kecil untuk layar kecil */
+                line-height: 1.5;
+                /* Jarak antar baris lebih rapat */
             }
 
             .contact-info a {
