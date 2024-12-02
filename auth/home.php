@@ -170,10 +170,10 @@ include_once("inc/inc_fungsi.php");
                 <img src="<?php echo ambil_gambar('23')?>" class="d-block mx-auto w-10" alt="Kids Image 1">
             </div>
             <div class="carousel-item">
-                <img src="../assets/img/img_2.png" class="d-block mx-auto w-10" alt="Kids Image 2">
+                <img src="<?php echo ambil_gambar('23')?>" class="d-block mx-auto w-10" alt="Kids Image 2">
             </div>
             <div class="carousel-item">
-                <img src="../assets/img/img_3.png" class="d-block mx-auto w-10" alt="Kids Image 3">
+                <img src="<?php echo ambil_gambar('23')?>" class="d-block mx-auto w-10" alt="Kids Image 3">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#kidsCarousel" data-bs-slide="prev">
@@ -188,7 +188,7 @@ include_once("inc/inc_fungsi.php");
 
 <section id="churches" class="churches-section  py-5">
     <div class="container">
-        <h2 class="text-center display-3 font-weight-bold"><?php echo ambil_judul('26') ?></h2>
+        <h2 class="text-center display-3 font-weight-bold"><?php echo ambil_judul('26')?></h2>
         <p style="font-weight: normal; font-size: 25px; text-align: center;">
         <?php echo ambil_isi('26')?>
         </p>

@@ -1,4 +1,4 @@
-<?php include("inc_header.php"); ?>
+<?php include("inc_header.php") ?>
 
 <?php
 $sukses = "";
@@ -8,31 +8,32 @@ if (isset($_GET['op'])) {
 } else {
     $op = "";
 }
-
 if ($op == 'delete') {
     $id = $_GET['id'];
-    $sql1 = "DELETE FROM halaman_churches WHERE id ='$id'";
+    $sql1 = "DELETE FROM halaman WHERE id ='$id'";
     $q1   = mysqli_query($koneksi, $sql1);
     if ($q1) {
         $sukses = "Berhasil Menghapus Data";
-    } else {
-        $sukses = "Gagal Menghapus Data";
     }
 }
 ?>
 
-<h1>Halaman Admin Churches</h1>
+<h1>Halaman Admin Contact Us</h1>
 <p>
     <a href="halaman_input.php">
         <input type="button" class="btn btn-primary" value="Buat Halaman">
     </a>
 </p>
 
-<?php if ($sukses) { ?>
+<?php
+if ($sukses) {
+?>
     <div class="alert alert-primary" role="alert">
-        <?php echo $sukses; ?>
+        <?php echo $sukses ?>
     </div>
-<?php } ?>
+<?php
+}
+?>
 
 <form class="row g-3" method="get">
     <div class="col-auto">
@@ -54,7 +55,7 @@ if ($op == 'delete') {
     </thead>
     <tbody>
         <?php
-        $per_halaman = 5; 
+        $per_halaman = 5;
         $sqltambahan = "";
 
         if ($katakunci != '') {
@@ -65,7 +66,7 @@ if ($op == 'delete') {
             $sqltambahan = "WHERE " . implode(" OR ", $sqlcari);
         }
 
-        $sql_count = "SELECT COUNT(*) as total FROM halaman_churches $sqltambahan";
+        $sql_count = "SELECT COUNT(*) as total FROM halaman $sqltambahan";
         $result_count = mysqli_query($koneksi, $sql_count);
         $data_count = mysqli_fetch_assoc($result_count);
         $total = $data_count['total'];
@@ -74,38 +75,44 @@ if ($op == 'delete') {
         $mulai = ($page > 1) ? ($page * $per_halaman) - $per_halaman : 0;
         $pages = ceil($total / $per_halaman);
 
-        $sql1  = "SELECT * FROM halaman_churches $sqltambahan ORDER BY id DESC LIMIT $mulai, $per_halaman";
+        $sql1  = "SELECT * FROM halaman $sqltambahan ORDER BY id DESC LIMIT $mulai, $per_halaman";
         $q1    = mysqli_query($koneksi, $sql1);
         $nomor = $mulai + 1;
 
         while ($r1 = mysqli_fetch_array($q1)) {
         ?>
             <tr>
-                <td><?php echo $nomor++; ?></td>
-                <td><?php echo htmlspecialchars($r1['judul']); ?></td>
-                <td><?php echo substr(strip_tags($r1['isi']), 0, 50) . '...'; ?></td>
+                <td><?php echo $nomor++ ?></td>
+                <td><?php echo $r1['judul'] ?></td>
+                <td><?php echo $r1['isi'] ?></td>
                 <td>
-                    <a href="halaman_input.php?id=<?php echo $r1['id']; ?>" class="badge bg-warning text-dark">
+                    <a href="halaman_input.php?id=<?php echo $r1['id'] ?>" class="badge bg-warning text-dark">
                         Edit
                     </a>
-                    <a href="halaman.php?op=delete&id=<?php echo $r1['id']; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?')" class="badge bg-danger">
+                    <a href="halaman.php?op=delete&id=<?php echo $r1['id'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?')" class="badge bg-danger">
                         Delete
                     </a>
                 </td>
             </tr>
-        <?php } ?>
+        <?php
+        }
+        ?>
     </tbody>
 </table>
 
 <nav aria-label="Page navigation example">
     <ul class="pagination">
-        <?php for ($i = 1; $i <= $pages; $i++) { 
-            $active = ($i == $page) ? 'active' : ''; ?>
-            <li class="page-item <?php echo $active; ?>">
-                <a class="page-link" href="halaman.php?katakunci=<?php echo $katakunci; ?>&page=<?php echo $i; ?>"><?php echo $i; ?></a>
+        <?php
+        for ($i = 1; $i <= $pages; $i++) {
+            $active = ($i == $page) ? 'active' : '';
+        ?>
+            <li class="page-item <?php echo $active ?>">
+                <a class="page-link" href="halaman.php?katakunci=<?php echo $katakunci ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
             </li>
-        <?php } ?>
+        <?php
+        }
+        ?>
     </ul>
 </nav>
 
-<?php include("inc_footer.php"); ?>
+<?php include("inc_footer.php") ?>
