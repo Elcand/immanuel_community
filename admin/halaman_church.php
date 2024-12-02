@@ -18,7 +18,7 @@ if ($op == 'delete') {
 }
 ?>
 
-<h1>Halaman Admin Home</h1>
+<h1>Halaman Admin Churches</h1>
 <p>
     <a href="halaman_input.php">
         <input type="button" class="btn btn-primary" value="Buat Halaman">
