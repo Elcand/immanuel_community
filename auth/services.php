@@ -223,7 +223,7 @@
                     <div class="section-content p-5 text-center">
                         <h2>KIDS</h2>
                         <p>
-                            Sekolah Minggu adalah program pendidikan agama Kristen untuk anak-anak di gereja, diadakan setiap Minggu selama ibadah orang dewasa.
+                        Sekolah Minggu adalah program pendidikan agama Kristen untuk anak-anak di gereja, diadakan setiap Minggu selama ibadah orang dewasa.
                             Tujuannya adalah mengajarkan prinsip-prinsip iman Kristen dengan metode yang sesuai untuk anak-anak, seperti cerita, lagu rohani,
                             dan aktivitas kreatif. Program ini membantu anak-anak memahami nilai-nilai moral, doa, Alkitab, dan kasih Allah, sambil melibatkan
                             orang tua dalam dukungan dan partisipasi mereka.
