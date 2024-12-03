@@ -193,9 +193,12 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6">
                     <div class="section-content p-5 text-center">
-                        <h2><?php echo ambil_judul('29')?></h2>
+                        <h2>KIDS</h2>
                         <p>
-                        <?php echo ambil_isi('29')?>
+                            Sekolah Minggu adalah program pendidikan agama Kristen untuk anak-anak di gereja, diadakan setiap Minggu selama ibadah orang dewasa.
+                            Tujuannya adalah mengajarkan prinsip-prinsip iman Kristen dengan metode yang sesuai untuk anak-anak, seperti cerita, lagu rohani,
+                            dan aktivitas kreatif. Program ini membantu anak-anak memahami nilai-nilai moral, doa, Alkitab, dan kasih Allah, sambil melibatkan
+                            orang tua dalam dukungan dan partisipasi mereka.
                         </p>
                     </div>
                 </div>
