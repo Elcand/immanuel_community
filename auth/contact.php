@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" href="../assets/img/logo.png">
     <style>
         html {
@@ -54,6 +55,29 @@
         .navbar-toggler.active {
             background-color: #000000;
             border-radius: 5px;
+        }
+
+        .navbar-nav .nav-item.active .nav-link {
+            color: #fff !important;
+            /* Warna teks */
+            background-color: #222;
+            /* Warna latar belakang */
+            border-radius: 5px;
+            /* Radius untuk tampilan melengkung */
+            padding: 0.5rem 1rem;
+            /* Padding agar terlihat lebih rapi */
+            font-weight: bold;
+        }
+
+        /* Transisi untuk efek halus */
+        .navbar-nav .nav-item .nav-link {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover tetap berfungsi */
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #e3e3e3 !important;
+            background-color: #333;
         }
 
         .contact-info p {
@@ -255,20 +279,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../index.php">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'church.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../auth/church.php">Churches</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'services.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../auth/services.php">Services</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'media.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../auth/media.php">Media</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../auth/contact.php">Contact us</a>
+                </li>
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="login.php"><i class="bi bi-person-lock"></i></a>
                 </li>
             </ul>
         </div>
