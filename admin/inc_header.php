@@ -1,5 +1,6 @@
 <?php
 include("../inc/db.php");
+require("../inc/inc_fungsi.php");
 ?>
 
 <!DOCTYPE html>
