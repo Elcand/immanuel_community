@@ -1,5 +1,12 @@
 <?php
+// Start the session before any output is sent
+session_start();
 include_once("inc_header.php");
+require '../config/fungsi-users.php';
+
+// Optional: Check if there's a status message set in the session to display
+$statusMessage = isset($_SESSION['status']) ? $_SESSION['status'] : null;
+unset($_SESSION['status']); // Remove the message after it is displayed
 ?>
 
 <div class="row">
@@ -8,41 +15,48 @@ include_once("inc_header.php");
             <div class="card-header">
                 <h4>
                     Tambah Pengguna Baru
-                    <a href="user.php" class="btn btn-outline-success float-end">Kembali</a>
+                    <a href="users.php" class="btn btn-outline-success float-end">Kembali</a>
                 </h4>
             </div>
             <div class="card-body">
-    
-                <form action="../config/fungsi-user.php" method="POST">
+                
+                <!-- Show alert message if set in session -->
+                <?php if ($statusMessage): ?>
+                    <div id="alert-container" class="alert alert-success">
+                        <?php echo $statusMessage; ?>
+                    </div>
+                <?php endif; ?>
+
+                <form action="code.php" method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Nama Pengguna</label>
-                                <input type="text" name="nama" class="form-control">
+                                <input type="text" name="name" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label>No.Phone</label>
-                                <input type="text" name="phone" class="form-control">
+                                <label>No. Phone</label>
+                                <input type="text" name="phone" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Email</label>
-                                <input type="email" name="email" class="form-control">
+                                <input type="email" name="email" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Password</label>
-                                <input type="password" name="password" class="form-control">
+                                <input type="password" name="password" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Pilih Role</label>
-                                <select name="role" class="form-select">
+                                <select name="role" class="form-select" required>
                                     <option value="">Pilih Role</option>
                                     <option value="verifikator">Verifikator</option>
                                     <option value="editor">Editor</option>
@@ -51,15 +65,14 @@ include_once("inc_header.php");
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="b-3">
+                            <div class="mb-3">
                                 <label>Aktivitas</label>
-                                <br />
-                                <input type="checkbox" name="di_ban" style="width:30px;height:30px" />
+                                <input type="checkbox" name="is_ban" style="width:30px;height:30px" />
                             </div>
                         </div>
-                        <div class="col-md"  style="text-align: center;">
+                        <div class="col-md" style="text-align: center;">
                             <div class="mb-3">
-                                <button type="submit" name="simpanPengguna" class="btn btn-primary">Simpan</button>
+                                <button type="submit" name="saveUser" class="btn btn-primary">Simpan</button>
                             </div>
                         </div>
                     </div>
@@ -68,6 +81,7 @@ include_once("inc_header.php");
         </div>
     </div>
 </div>
+
 <?php
 include_once("inc_footer.php");
 ?>

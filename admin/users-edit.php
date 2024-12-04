@@ -1,14 +1,13 @@
 <?php
 include_once("inc_header.php");
 ?>
-
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
                 <h4>
                     Edit Pengguna
-                    <a href="user.php" class="btn btn-outline-success float-end">Kembali</a>
+                    <a href="users.php" class="btn btn-outline-success float-end">Kembali</a>
                 </h4>
             </div>
             <div class="card-body">
@@ -17,7 +16,7 @@ include_once("inc_header.php");
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Nama Pengguna</label>
-                                <input type="text" name="nama" class="form-control">
+                                <input type="text" name="name" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -53,12 +52,12 @@ include_once("inc_header.php");
                             <div class="b-3">
                                 <label>Aktivitas</label>
                                 <br />
-                                <input type="checkbox" name="di_ban" style="width:30px;height:30px" />
+                                <input type="checkbox" name="is_ban" style="width:30px;height:30px" />
                             </div>
                         </div>
                         <div class="col-md"  style="text-align: center;">
                             <div class="mb-3">
-                                <button type="submit" name="simpanPengguna" class="btn btn-primary">Edit</button>
+                                <button type="submit" name="saveUser" class="btn btn-primary">Edit</button>
                             </div>
                         </div>
                     </div>

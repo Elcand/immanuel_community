@@ -44,6 +44,7 @@ require("../inc/inc_fungsi.php");
                         <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Media</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="users.php">Pengguna</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown">
