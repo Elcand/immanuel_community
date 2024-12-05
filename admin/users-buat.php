@@ -4,9 +4,6 @@ session_start();
 include_once("inc_header.php");
 require '../config/fungsi-users.php';
 
-// Optional: Check if there's a status message set in the session to display
-$statusMessage = isset($_SESSION['status']) ? $_SESSION['status'] : null;
-unset($_SESSION['status']); // Remove the message after it is displayed
 ?>
 
 <div class="row">
@@ -20,12 +17,7 @@ unset($_SESSION['status']); // Remove the message after it is displayed
             </div>
             <div class="card-body">
                 
-                <!-- Show alert message if set in session -->
-                <?php if ($statusMessage): ?>
-                    <div id="alert-container" class="alert alert-success">
-                        <?php echo $statusMessage; ?>
-                    </div>
-                <?php endif; ?>
+                <!-- Removed alert message block -->
 
                 <form action="code.php" method="POST">
                     <div class="row">

@@ -382,8 +382,8 @@
         <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active' : ''; ?>">
           <a class="nav-link" href="auth/contact.php">Contact us</a>
         </li>
-        <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>">
-          <a class="nav-link" href="login.php"><i class="bi bi-person-lock"></i></a>
+        <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'admin/login.php' ? 'active' : ''; ?>">
+          <a class="nav-link" href="admin/login.php"><i class="bi bi-person-lock"></i></a>
         </li>
       </ul>
     </div>
