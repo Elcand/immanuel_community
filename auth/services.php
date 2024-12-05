@@ -88,6 +88,46 @@
             background-color: #333;
         }
 
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #04aa6d;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #036d4c;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            /* Menempatkan tombol di tengah secara horizontal */
+            width: 100%;
+        }
+
+
+        .button5 {
+            background-color: #555555;
+            color: white;
+            border: 2px solid #555555;
+            border-radius: 2px;
+        }
+
+        .button5:hover {
+            background-color: #383838FF;
+            color: white;
+        }
+
         .footer {
             background-color: #000000;
             color: #ffffff;
@@ -223,7 +263,7 @@
                     <div class="section-content p-5 text-center">
                         <h2>KIDS</h2>
                         <p>
-                        Sekolah Minggu adalah program pendidikan agama Kristen untuk anak-anak di gereja, diadakan setiap Minggu selama ibadah orang dewasa.
+                            Sekolah Minggu adalah program pendidikan agama Kristen untuk anak-anak di gereja, diadakan setiap Minggu selama ibadah orang dewasa.
                             Tujuannya adalah mengajarkan prinsip-prinsip iman Kristen dengan metode yang sesuai untuk anak-anak, seperti cerita, lagu rohani,
                             dan aktivitas kreatif. Program ini membantu anak-anak memahami nilai-nilai moral, doa, Alkitab, dan kasih Allah, sambil melibatkan
                             orang tua dalam dukungan dan partisipasi mereka.
@@ -374,6 +414,12 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="button-container">
+                <button class="button button5">
+                    <a href="#"
+                        rel="noopener noreferrer" style="color:white; text-decoration: none;">..........</a>
+                </button>
             </div>
         </section>
 

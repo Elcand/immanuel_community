@@ -95,29 +95,32 @@
 
     .nav-span {
       display: flex;
-      /* Mengatur elemen flex untuk rata tengah */
+      overflow-x: auto;
+      /* Tambahkan scroll horizontal */
+      white-space: nowrap;
+      /* Pastikan item tidak wrap ke baris baru */
       justify-content: center;
-      /* Konten diratakan di tengah secara horizontal */
+      /* Awal konten berada di kiri */
       margin: 0;
-      /* Hilangkan margin default */
-      padding: 0;
-      /* Hilangkan padding default */
+      padding: 10px 0;
+      /* Tambahkan padding agar ada ruang di atas dan bawah */
       background: #333;
-      /* Latar belakang transparan agar menyatu */
+      /* Tetap menggunakan warna latar */
     }
 
     .navbar-span {
+      display: inline-flex;
+      /* Inline flex agar mendukung scroll horizontal */
       list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4rem;
+      gap: 2rem;
+      /* Atur jarak antar item */
       padding: 0;
       margin: 0;
-      justify-content: center;
     }
 
     .span-item {
-      margin: 0;
+      flex-shrink: 0;
+      /* Pastikan item tidak mengecil */
     }
 
     .span-item a {
@@ -127,6 +130,7 @@
       border-radius: 3px;
       font-weight: 500;
       transition: all 0.2s ease-in-out;
+      display: inline-block;
     }
 
     .span-item a:hover {
@@ -134,6 +138,7 @@
       color: #e3e3e3;
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
     }
+
 
     @media (max-width: 768px) {
       .nav-span {
@@ -389,21 +394,24 @@
     </div>
   </nav>
 
-  <span class="nav-span">
-    <ul class="navbar-span">
-      <li class="span-item"><a href="auth/gereja/petra.php">Petra</a></li>
-      <li class="span-item"><a href="auth/gereja/efrata.php">Efrata</a></li>
-      <li class="span-item"><a href="auth/gereja/hermon.php">Hermon</a></li>
-      <li class="span-item"><a href="auth/gereja/eben-haezer.php">Eben Haezer</a></li>
-      <li class="span-item"><a href="auth/gereja/mahanaim.php">Mahanain</a></li>
-      <li class="span-item"><a href="auth/gereja/filadelfia.php">Filadelfia</a></li>
-      <li class="span-item"><a href="auth/gereja/karmel.php">Karmel</a></li>
-      <li class="span-item"><a href="auth/gereja/sinai.php">sinai</a></li>
-      <li class="span-item"><a href="auth/gereja/kana.php">Kana</a></li>
-      <li class="span-item"><a href="auth/gereja/getsemani.php">Getsemani</a></li>
-      <li class="span-item"><a href="sauth/gereja/sion.php">Sion</a></li>
-    </ul>
-  </span>
+  <div style="overflow-x: hidden;">
+    <span class="nav-span">
+      <ul class="navbar-span">
+        <li class="span-item"><a href="auth/gereja/petra.php">Petra</a></li>
+        <li class="span-item"><a href="auth/gereja/efrata.php">Efrata</a></li>
+        <li class="span-item"><a href="auth/gereja/hermon.php">Hermon</a></li>
+        <li class="span-item"><a href="auth/gereja/eben-haezer.php">Eben Haezer</a></li>
+        <li class="span-item"><a href="auth/gereja/mahanaim.php">Mahanain</a></li>
+        <li class="span-item"><a href="auth/gereja/filadelfia.php">Filadelfia</a></li>
+        <li class="span-item"><a href="auth/gereja/karmel.php">Karmel</a></li>
+        <li class="span-item"><a href="auth/gereja/sinai.php">Sinai</a></li>
+        <li class="span-item"><a href="auth/gereja/kana.php">Kana</a></li>
+        <li class="span-item"><a href="auth/gereja/getsemani.php">Getsemani</a></li>
+        <li class="span-item"><a href="auth/gereja/sion.php">Sion</a></li>
+      </ul>
+    </span>
+  </div>
+
 
   <?php include "auth/home.php"; ?>
 
@@ -420,7 +428,7 @@
         </div>
         <div class="col-md-6">
           <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125</p>
+            <p><i class="fas fa-map-marker-alt"></i> Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125</p>
 
             <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
             <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
