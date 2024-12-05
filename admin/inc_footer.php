@@ -2,7 +2,7 @@
 
 <footer class="bg-light">
     <div class="text-center p-3" style="background:#CCCCCC">
-        Copyright & copy; 2024 Imanuel Community. All Rights Reserved. Created with ❤️ by YourTeam.
+        Copyright & copy; 2024 Imanuel Community. All Rights Reserved. Created with ❤️ by MyTeam.
     </div>
 </footer>
 <script>
