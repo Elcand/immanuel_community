@@ -1,5 +1,6 @@
 <?php
 include_once("inc_header.php");
+require_once '../config/fungsi-users.php';
 ?>
 
 <div class="row">
@@ -8,11 +9,10 @@ include_once("inc_header.php");
             <div class="card-header">
                 <h4>
                     List Para Pengguna
-                    <a href="users-buat.php" class="btn btn-primary float-end"> Tambah Pengguna</a>
+                    <a href="users-buat.php" class="btn btn-primary float-end">Tambah Pengguna</a>
                 </h4>
             </div>
             <div class="card-body">
-
 
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -29,9 +29,11 @@ include_once("inc_header.php");
                     <tbody>
 
                         <?php
+                        // Retrieve all users from the database
                         $users = getAll('users');
                         if (mysqli_num_rows($users) > 0) {
-                            foreach ($users as $userItem); {
+                            // Loop through each user and display the data
+                            foreach ($users as $userItem) {
                         ?>
                                 <tr>
                                     <td><?= $userItem['id']; ?></td>
@@ -39,10 +41,14 @@ include_once("inc_header.php");
                                     <td><?= $userItem['email']; ?></td>
                                     <td><?= $userItem['phone']; ?></td>
                                     <td><?= $userItem['role']; ?></td>
-                                    <td><?= $userItem['is_ban']; ?></td>
+                                    <td><?= $userItem['is_ban'] == 1 ? 'Banned' : 'Aktif'; ?></td>
                                     <td>
-                                        <a href="users-edit.php" class="btn btn-success btn-sm">Edit</a>
-                                        <a href="users-delete.php" class="btn btn-danger btn-sm mx-2">Hapus</a>
+                                        <a href="users-edit.php?id=<?= $userItem['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                        <a href="users-delete.php?id=<?= $userItem['id']; ?>"
+                                            class="btn btn-danger btn-sm mx-2"
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus pengguna ini?');">
+                                            Hapus
+                                        </a>
                                     </td>
                                 </tr>
                             <?php
@@ -50,7 +56,7 @@ include_once("inc_header.php");
                         } else {
                             ?>
                             <tr>
-                                <td colspan="7">No Record Found</td>
+                                <td colspan="7">Tidak Ada Catatan yang Ditemukan</td>
                             </tr>
                         <?php
                         }
@@ -62,6 +68,7 @@ include_once("inc_header.php");
         </div>
     </div>
 </div>
+
 <?php
 include_once("inc_footer.php");
 ?>
