@@ -570,7 +570,7 @@
                         </div>
                         <div class="col">
                             <div class="card shadow-sm rounded">
-                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Eben Haezer Community Church">
+                                <img src="../assets/foto_gereja/Gereja EBEN HAEZER.jpg" class="card-img-top" alt="Eben Haezer Community Church">
                                 <div class="card-body">
                                     <h5 class="card-title">Eben Haezer Community Church</h5>
                                     <p class="card-text">
@@ -639,7 +639,7 @@
                         </div>
                         <div class="col">
                             <div class="card shadow-sm rounded">
-                                <img src="../assets/img/sementara.jpg" class="card-img-top" alt="Karmel Community Church">
+                                <img src="../assets/foto_gereja/Gereja Karmel.jpg" class="card-img-top" alt="Karmel Community Church">
                                 <div class="card-body">
                                     <h5 class="card-title">Karmel Community Church</h5>
                                     <p class="card-text">
@@ -836,7 +836,7 @@
             </div>
         </div>
         <div class="copyright" style="text-align: center; margin-top: 3rem; font-size: 15px;">
-            <p>&copy; 2024 <a style="font-weight: bold; text-align:center;">Immanuel Community</a>. All Rights Reserved.</p>
+            <p>&copy; 2024 <a style="font-weight: bold; text-align:center;">software engineering</a>. All Rights Reserved.</p>
         </div>
     </footer>
 

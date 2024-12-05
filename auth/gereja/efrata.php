@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="icon" href="../../assets/img/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
@@ -59,9 +60,27 @@
             border: none;
         }
 
-        .navbar-toggler.active {
-            background-color: #000000;
+        .navbar-nav .nav-item.active .nav-link {
+            color: #fff !important;
+            /* Warna teks */
+            background-color: #222;
+            /* Warna latar belakang */
             border-radius: 5px;
+            /* Radius untuk tampilan melengkung */
+            padding: 0.5rem 1rem;
+            /* Padding agar terlihat lebih rapi */
+            font-weight: bold;
+        }
+
+        /* Transisi untuk efek halus */
+        .navbar-nav .nav-item .nav-link {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover tetap berfungsi */
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #e3e3e3 !important;
+            background-color: #333;
         }
 
         .contact-section {
@@ -69,6 +88,13 @@
             margin-left: 4rem;
             margin-right: 4rem;
             margin-bottom: 6.5rem;
+        }
+
+        .card {
+            margin-left: auto;
+            margin-right: 3rem;
+            height: auto;
+            max-width: 80%;
         }
 
         .card h1 {
@@ -81,69 +107,66 @@
         }
 
         .card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* QR Section */
+        .qr-section {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 3rem;
+            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* Mengatur QR Code agar rata tengah dan responsif */
+        }
+
+        .qr-item {
+            text-align: center;
+            background-color: #f8f9fa;
+            /* Latar belakang terang untuk QR Code */
+            padding: 20px;
+            border-radius: 10px;
+            /* Sudut melengkung */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Bayangan halus */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Animasi transformasi */
+            max-width: 180px;
+            width: 100%;
+            margin: 10px;
+        }
+
+        .qr-item:hover {
+            transform: scale(1.05);
+            /* Zoom in saat hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            /* Bayangan lebih tajam saat hover */
+        }
+
+        .qr-item img {
             width: 100%;
             height: auto;
-
+            border-radius: 8px;
+            /* Sudut melengkung pada gambar */
+            margin-bottom: 15px;
         }
 
-        /* Media Queries */
-
-        /* Untuk layar kecil (max-width: 576px) */
-        @media (max-width: 576px) {
-            .contact-section {
-                padding: 20px 10px;
-            }
-
-            .card h1 {
-                font-size: 1.5rem;
-            }
-
-            .card-body h5 {
-                font-size: 1rem;
-            }
-
-            h3 {
-                font-size: 1.2rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
+        .qr-item p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            /* Warna teks yang lebih gelap */
+            margin-top: 10px;
+            text-transform: uppercase;
+            /* Mengubah teks jadi kapital semua */
+            letter-spacing: 1px;
+            /* Spasi antar huruf */
         }
 
-        /* Untuk layar sedang (max-width: 768px) */
-        @media (max-width: 768px) {
-            .contact-section {
-                padding: 25px 15px;
-            }
 
-            .card h1 {
-                font-size: 1.6rem;
-            }
-
-            h3 {
-                font-size: 1.3rem;
-            }
-
-            p {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Untuk layar besar (min-width: 992px) */
-        @media (min-width: 992px) {
-            .card h1 {
-                font-size: 2rem;
-            }
-
-            h3 {
-                font-size: 1.5rem;
-            }
-
-            p {
-                font-size: 1.3rem;
-            }
-        }
 
         .footer {
             background-color: #000000;
@@ -171,12 +194,82 @@
             margin-top: 1rem;
         }
 
-        .footer .contact-info p {
-            margin: 0.25rem 0;
+        .contact-info p {
+            font-size: 18px;
+            /* Jarak antar baris */
+            margin-bottom: 1rem;
+            /* Jarak antar paragraf */
+            display: flex;
+            /* Gunakan flex untuk mengatur ikon dan teks */
+            align-items: center;
+            /* Vertikal rata tengah */
         }
 
-        .footer .contact-info i {
-            margin-right: 0.5rem;
+        .contact-info i {
+            font-size: 1.5rem;
+            /* Ukuran ikon */
+            margin-right: 10px;
+            /* Jarak antara ikon dan teks */
+        }
+
+        /* Media Queries */
+
+        @media (max-width: 576px) {
+            .contact-section {
+                padding: 20px 10px;
+            }
+
+            .card h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-body h5 {
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 25px 15px;
+            }
+
+            .card h1 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .card h1 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+
+            .qr-item img {
+                width: 120px;
+            }
         }
     </style>
     <title>Efrata CC - Immanuel Community</title>
@@ -193,25 +286,29 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../../index.php">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'church.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../../auth/church.php">Churches</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'services.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../../auth/services.php">Services</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'media.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../../auth/media.php">Media</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active' : ''; ?>">
                     <a class="nav-link" href="../../auth/contact.php">Contact us</a>
+                </li>
+                <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="login.php"><i class="bi bi-person-lock"></i></a>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <!-- Content Section -->
     <section class="contact-section py-5">
         <div class="row">
             <div class="col-md-6 mb-5">
@@ -221,8 +318,22 @@
                     <div class="card-body text-center">
                         <h5><i class="fa-solid fa-location-dot"></i> Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126 <br> Telp : 024-3546878 </h5>
                         <a href="https://maps.app.goo.gl/2hXSr1Jd4Ky6q3Tx6" target="_blank" class="btn btn-primary" style="background-color: #000000; border: none;">
-                            <i class="fa-solid fa-map-marker-alt"></i> Lihat Lokasi
+                            Lihat Lokasi
                         </a>
+                    </div>
+                </div>
+                <div class="qr-section">
+                    <div class="qr-item">
+                        <img src="../../assets/kolekte1/k1-efrata.jpg" alt="QR Code 1">
+                        <p>Kolekte 01</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="../../assets/kolekte2/k2-efrata.jpg" alt="QR Code 2">
+                        <p>Kolekte 02</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="../../assets/perpuluhan/p-efrata.jpg" alt="QR Code 3">
+                        <p>Perpuluhan</p>
                     </div>
                 </div>
             </div>
@@ -266,8 +377,6 @@
                 <h3 class="mt-4"> EFRATA KIDS COMMUNITY</h3>
                 <br>Setiap Sabtu | 16.30 WIB<br>
                 Setiap Minggu | 07.15 & 09.15 & 17.15 WIB
-
-
             </div>
         </div>
     </section>
@@ -298,7 +407,6 @@
         </div>
     </footer>
     <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

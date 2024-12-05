@@ -144,13 +144,24 @@
             margin-top: 1rem;
         }
 
-        .footer .contact-info p {
-            margin: 0.25rem 0;
+        .contact-info p {
+            font-size: 18px;
+            /* Jarak antar baris */
+            margin-bottom: 1rem;
+            /* Jarak antar paragraf */
+            display: flex;
+            /* Gunakan flex untuk mengatur ikon dan teks */
+            align-items: center;
+            /* Vertikal rata tengah */
         }
 
-        .footer .contact-info i {
-            margin-right: 0.5rem;
+        .contact-info i {
+            font-size: 1.5rem;
+            /* Ukuran ikon */
+            margin-right: 10px;
+            /* Jarak antara ikon dan teks */
         }
+
 
         @media (max-width: 576px) {
             .custom-navbar .nav-link {
