@@ -2,7 +2,7 @@
 include("../inc/db.php");
 
 // Fetch notifications from the database
-$query = "SELECT title, message FROM notifications ORDER BY created_at DESC LIMIT 10";
+$query = "SELECT title, message, created_at FROM notifications ORDER BY created_at DESC LIMIT 10";
 $result = $koneksi->query($query);
 
 $notifications = [];

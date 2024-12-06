@@ -1,9 +1,11 @@
 <?php
-include("../inc/db.php")
+include("../inc/db.php");
+include_once("../config/fungsi-users.php")
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,17 +22,30 @@ include("../inc/db.php")
     <link href="../css/summernote-image-list.min.css">
     <script src="../js/summernote-image-list.min.js"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
-    
 
-<style>
-    .image-list-content .col-lg-3 { width: 100% ;}
-    .image-list-content img { float:left; width: 20% }
-    .image-list-content p { float: left; padding-left: 20px;}
-    .image-list-item { padding: 10px 0px 10px 0px;}
 
-    .notification-badge {
+    <style>
+        .image-list-content .col-lg-3 {
+            width: 100%;
+        }
+
+        .image-list-content img {
+            float: left;
+            width: 20%
+        }
+
+        .image-list-content p {
+            float: left;
+            padding-left: 20px;
+        }
+
+        .image-list-item {
+            padding: 10px 0px 10px 0px;
+        }
+
+        .notification-badge {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -40,7 +55,7 @@ include("../inc/db.php")
             font-size: 0.8rem;
             padding: 5px 8px;
         }
-</style>
+    </style>
 </head>
 
 <body class="container">
@@ -80,7 +95,7 @@ include("../inc/db.php")
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Logout</a>
+                            <a href="logout.php" class="nav-link">Logout</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown">
@@ -90,6 +105,8 @@ include("../inc/db.php")
                             <ul id="notification-list" class="dropdown-menu dropdown-menu-end">
                                 <li class="dropdown-item text-muted">Tidak Ada Notifikasi Terbaru</li>
                             </ul>
+
+
                         </li>
                     </ul>
                 </div>
@@ -97,35 +114,39 @@ include("../inc/db.php")
         </nav>
     </header>
 
-    
+
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             function fetchNotifications() {
                 $.ajax({
-                    url: 'get_notifications.php',
+                    url: 'get_notifications.php', // Ensure this path is correct
                     method: 'GET',
                     dataType: 'json',
-                    success: function (data) {
+                    success: function(data) {
                         let notificationList = $('#notification-list');
                         notificationList.empty();
 
                         if (data.length > 0) {
                             $('#notification-count').removeClass('d-none').text(data.length);
                             data.forEach(notification => {
+                                let notificationDate = new Date(notification.created_at);
+                                let formattedDate = notificationDate.toLocaleString(); // Adjust format as needed
+
                                 notificationList.append(`
-                                    <li class="dropdown-item">
-                                        <strong>${notification.title}</strong>
-                                        <p>${notification.message}</p>
-                                    </li>
-                                `);
+                                <li class="dropdown-item">
+                                    <strong>${notification.title}</strong><br>
+                                    <p>${notification.message}</p>
+                                    <small>Dipost pada: ${formattedDate}</small>
+                                </li>
+                            `);
                             });
                         } else {
                             $('#notification-count').addClass('d-none');
                             notificationList.append('<li class="dropdown-item text-muted">Tidak Ada Notifikasi Terbaru</li>');
                         }
                     },
-                    error: function (error) {
+                    error: function(error) {
                         console.error('Error fetching notifications:', error);
                     }
                 });
@@ -137,5 +158,5 @@ include("../inc/db.php")
         });
     </script>
 
+
     <main>
-        

@@ -35,13 +35,23 @@ if (isset($_POST['loginBtn'])) {
                     'name' => $row['name'],
                     'email' => $row['email'],
                 ];
-
                 // Hanya izinkan role tertentu untuk login
                 $allowedRoles = ['verifikator', 'editor', 'admin'];
                 if (in_array($row['role'], $allowedRoles)) {
                     redirect('halaman.php', 'Berhasil Masuk');
                 } else {
+                    if ($row['is_ban'] == 1) {
+                        redirect('login.php', 'Akun anda diBanned. Silahkan hubungi Verifikator');
+                    }
                     redirect('login.php', 'Anda tidak memiliki akses ke sistem ini.');
+
+                    $_SESSION['auth'] = true;
+                    $_SESSION['loggedInUserRole'] = $row['role'];
+                    $_SESSION['loggedInUser'] = [
+                        'name' => $row['name'],
+                        'email' => $row['email'],
+                    ];
+
                 }
             } else {
                 redirect('login.php', 'Email atau Password Salah');

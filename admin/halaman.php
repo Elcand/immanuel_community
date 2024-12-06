@@ -24,6 +24,11 @@ if ($op == 'delete') {
         <input type="button" class="btn btn-primary" value="Buat Halaman">
     </a>
 </p>
+<p>
+    <a href="add_notification.php">
+        <input type="button" class="btn btn-primary" value="Masukan Notifikasi">
+    </a>
+</p>
 
 <?php
 if ($sukses) {

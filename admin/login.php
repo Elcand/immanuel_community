@@ -3,7 +3,7 @@ session_start(); // Start the session to access session variables
 require '../config/fungsi-users.php';
 
 if(isset($_SESSION['auth'])){
-    redirect('http://localhost/back%20up%20project%20costa/mas/index.php','Anda sudah login');
+    redirect('','Anda sudah login');
 }
 ?>
 
