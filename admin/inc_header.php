@@ -156,6 +156,8 @@ include_once("../config/fungsi-users.php")
             setInterval(fetchNotifications, 5000);
             fetchNotifications();
         });
+
+        
     </script>
 
 

@@ -2,9 +2,7 @@
 session_start(); // Start the session to access session variables
 require '../config/fungsi-users.php';
 
-if(isset($_SESSION['auth'])){
-    redirect('','Anda sudah login');
-}
+
 ?>
 
 <!DOCTYPE html>

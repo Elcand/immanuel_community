@@ -1,4 +1,5 @@
 <?php include("inc_header.php") ?>
+
 <?php
 $judul  = "";
 $isi    = "";
@@ -19,7 +20,7 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
         $error = "Data tidak ditemukan!";
     }
 } else {
-    $id = ""; 
+    $id = "";
 }
 
 if (isset($_POST['simpan'])) {
@@ -48,15 +49,17 @@ if (isset($_POST['simpan'])) {
 }
 ?>
 
-<h1>Halaman Admin Input Data</h1>
-<div class="mb-3 row">
-    <a href="halaman.php">Kembali</a>
+<div class="d-flex justify-content-between align-items-center">
+    <h1 class="mb-3" style="margin-left: 10px;">Halaman Admin Input Data</h1>
+    <a href="halaman.php" class="btn btn-outline-success">Kembali</a>
 </div>
+
 <?php if ($error) { ?>
     <div class="alert alert-danger" role="alert">
         <?php echo $error; ?>
     </div>
 <?php } ?>
+
 <?php if ($sukses) { ?>
     <div class="alert alert-primary" role="alert">
         <?php echo $sukses; ?>
@@ -83,4 +86,5 @@ if (isset($_POST['simpan'])) {
         </div>
     </div>
 </form>
+
 <?php include("inc_footer.php") ?>

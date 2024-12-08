@@ -19,17 +19,18 @@ if ($op == 'delete') {
 ?>
 
 <h1>Halaman Admin Home</h1>
-<p>
+
+<!-- Tombol Create dan Notifikasi -->
+<div class="d-flex justify-content-between mb-3">
     <a href="halaman_input.php">
         <input type="button" class="btn btn-primary" value="Buat Halaman">
     </a>
-</p>
-<p>
     <a href="add_notification.php">
         <input type="button" class="btn btn-primary" value="Masukan Notifikasi">
     </a>
-</p>
+</div>
 
+<!-- Menampilkan Notifikasi Sukses -->
 <?php
 if ($sukses) {
 ?>
@@ -40,7 +41,8 @@ if ($sukses) {
 }
 ?>
 
-<form class="row g-3" method="get">
+<!-- Form Pencarian -->
+<form class="row g-3 mb-4" method="get">
     <div class="col-auto">
         <input type="text" class="form-control" placeholder="Masukan Kata Kunci" name="katakunci" value="<?php echo $katakunci ?>" />
     </div>
@@ -49,6 +51,7 @@ if ($sukses) {
     </div>
 </form>
 
+<!-- Tabel Data Halaman -->
 <table class="table table-striped">
     <thead>
         <tr>
@@ -105,8 +108,9 @@ if ($sukses) {
     </tbody>
 </table>
 
+<!-- Pagination -->
 <nav aria-label="Page navigation example">
-    <ul class="pagination">
+    <ul class="pagination justify-content-center">
         <?php
         for ($i = 1; $i <= $pages; $i++) {
             $active = ($i == $page) ? 'active' : '';

@@ -167,16 +167,16 @@ include_once("inc/inc_fungsi.php");
 <section id="home" class="home-section d-flex align-items-center justify-content-center">
     <div id="kidsCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="<?php echo ambil_gambar('23') ?>" class="d-block mx-auto w-10" alt="Kids Image 1">
-            </div>
-            <div class="carousel-item">
-                <img src="<?php echo ambil_gambar('23') ?>" class="d-block mx-auto w-10" alt="Kids Image 2">
-            </div>
-            <div class="carousel-item">
-                <img src="<?php echo ambil_gambar('23') ?>" class="d-block mx-auto w-10" alt="Kids Image 3">
-            </div>
-        </div>
+                    <div class="carousel-item active">
+                        <img src="../assets/img/img_4.png" class="d-block mx-auto w-10" alt="Youth Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/img/img_5.png" class="d-block mx-auto w-10" alt="Youth Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/img/img_6.png" class="d-block mx-auto w-10" alt="Youth Image 3">
+                    </div>
+                </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#kidsCarousel" data-bs-slide="prev">
             <i class="fa-solid fa-caret-left"></i>
         </button>
