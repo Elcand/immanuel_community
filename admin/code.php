@@ -68,4 +68,31 @@ if (isset($_POST['updateUser'])) {
     }
 }
 
+if(isset($_POST['saveSetting']))
+{
+    $judul = validate($_POST['judul']);
+    $deskripsi = validate($_POST['deskripsi']);
+
+    $judul_gereja = validate($_POST['judul_gereja']);
+    $deskripsi_gereja = validate($_POST['deskripsi_gereja']);
+
+    $judul_services = validate($_POST['judul_services']);
+    $deskripsi_services = validate($_POST['deskripsi_services']);
+
+    $judul_media = validate($_POST['judul_media']);
+    $slug = validate($_POST['slug']);
+
+    $judul_contact = validate($_POST['judul_contact']);
+    $adderss = validate($_POST['adderss']);
+    $email = validate($_POST['email']);
+    $phone = validate($_POST['phone']);
+    
+    $settingId = validate($_POST['settingId']);
+
+    if($settingId == 'insert')
+    {
+        $query = "INSERT INTO settings"
+    }
+}
+
 ?>
