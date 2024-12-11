@@ -3,7 +3,6 @@
 session_start();
 include_once("inc_header.php");
 require '../config/fungsi-users.php';
-
 ?>
 
 <div class="row">

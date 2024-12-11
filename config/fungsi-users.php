@@ -67,4 +67,27 @@ if (!function_exists('alertMessage')) {
     }
 }
 
+// Fungsi untuk mengambil data berdasarkan ID dari tabel tertentu
+function getById($table, $id) {
+    // Koneksi ke database (pastikan Anda sudah mengonfigurasi koneksi dengan benar)
+    global $koneksi;
+
+    // Query untuk mengambil data berdasarkan ID
+    $sql = "SELECT * FROM $table WHERE id = ?";
+    $stmt = $koneksi->prepare($sql);
+    $stmt->bind_param("i", $id);  // Bind parameter sebagai integer
+    $stmt->execute();
+
+    // Menyimpan hasilnya
+    $result = $stmt->get_result();
+
+    // Mengembalikan data sebagai array
+    if ($result->num_rows > 0) {
+        return ['data' => $result->fetch_assoc()];
+    } else {
+        return ['data' => null];
+    }
+}
+
+
 ?>

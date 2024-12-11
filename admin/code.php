@@ -68,31 +68,65 @@ if (isset($_POST['updateUser'])) {
     }
 }
 
-if(isset($_POST['saveSetting']))
-{
-    $judul = validate($_POST['judul']);
-    $deskripsi = validate($_POST['deskripsi']);
+if (isset($_POST['saveSetting'])) {
+    // Validasi data input
+    $judul = validate($koneksi, $_POST['judul']);
+    $deskripsi = validate($koneksi, $_POST['deskripsi']);
+    $judul_gereja = validate($koneksi, $_POST['judul_gereja']);
+    $deskripsi_gereja = validate($koneksi, $_POST['deskripsi_gereja']);
+    $judul_services = validate($koneksi, $_POST['judul_services']);
+    $deskripsi_services = validate($koneksi, $_POST['deskripsi_services']);
+    $judul_media = validate($koneksi, $_POST['judul_media']);
+    $slug = validate($koneksi, $_POST['slug']);
+    $judul_contact = validate($koneksi, $_POST['judul_contact']);
+    $adderss = validate($koneksi, $_POST['adderss']); // Typo diperbaiki
+    $email = validate($koneksi, $_POST['email']);
+    $phone = validate($koneksi, $_POST['phone']);
+    $settingId = validate($koneksi, $_POST['settingId']);
 
-    $judul_gereja = validate($_POST['judul_gereja']);
-    $deskripsi_gereja = validate($_POST['deskripsi_gereja']);
+    if ($settingId == 'insert') {
+        // Query untuk insert data ke database
+        $query = "INSERT INTO settings (
+            judul, deskripsi, judul_gereja, deskripsi_gereja, judul_services, deskripsi_services, judul_media, slug, judul_contact, adderss, email, phone
+        ) VALUES (
+            '$judul', '$deskripsi', '$judul_gereja', '$deskripsi_gereja', '$judul_services', '$deskripsi_services', '$judul_media', '$slug', '$judul_contact', '$adderss', '$email', '$phone'
+        )";
 
-    $judul_services = validate($_POST['judul_services']);
-    $deskripsi_services = validate($_POST['deskripsi_services']);
+        $result = mysqli_query($koneksi, $query);
 
-    $judul_media = validate($_POST['judul_media']);
-    $slug = validate($_POST['slug']);
+    } elseif (is_numeric($settingId)) {
+        // Query untuk update data ke database jika settingId valid
+        $query = "UPDATE settings SET 
+            judul='$judul', 
+            deskripsi='$deskripsi', 
+            judul_gereja='$judul_gereja', 
+            deskripsi_gereja='$deskripsi_gereja', 
+            judul_services='$judul_services', 
+            deskripsi_services='$deskripsi_services', 
+            judul_media='$judul_media', 
+            slug='$slug', 
+            judul_contact='$judul_contact', 
+            adderss='$adderss', 
+            email='$email', 
+            phone='$phone' 
+            WHERE id='$settingId'";
 
-    $judul_contact = validate($_POST['judul_contact']);
-    $adderss = validate($_POST['adderss']);
-    $email = validate($_POST['email']);
-    $phone = validate($_POST['phone']);
-    
-    $settingId = validate($_POST['settingId']);
+        $result = mysqli_query($koneksi, $query);
+    } else {
+        // If settingId is not valid
+        redirect('settings.php', 'ID Setting Tidak Valid');
+        exit();
+    }
 
-    if($settingId == 'insert')
-    {
-        $query = "INSERT INTO settings"
+    // Error handling untuk query
+    if ($result) {
+        header("Location: settings.php?status=success&message=Simpan+Setting+Berhasil");
+        exit;
+    } else {
+        header("Location: settings.php?status=error&message=Terjadi+Kesalahan");
+        exit;
     }
 }
+
 
 ?>
