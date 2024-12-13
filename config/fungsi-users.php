@@ -1,14 +1,16 @@
 <?php
 require_once '../inc/db.php';
 
-if (!function_exists('validate')) {
-    function validate($koneksi, $inputData)
-    {
-        if (!is_string($inputData)) {
-            error_log("Input bukan string: " . print_r($inputData, true));
+function validate($koneksi, $inputData)
+{
+    if (is_array($inputData)) {
+        foreach ($inputData as $key => $value) {
+            $inputData[$key] = mysqli_real_escape_string($koneksi, $value);
         }
-        return is_string($inputData) ? mysqli_real_escape_string($koneksi, $inputData) : $inputData;
+        return $inputData;
     }
+
+    return is_string($inputData) ? mysqli_real_escape_string($koneksi, $inputData) : $inputData;
 }
 
 if (!function_exists('redirect')) {
@@ -19,6 +21,15 @@ if (!function_exists('redirect')) {
         header('Location: ' . $url);
         exit(0);
     }
+}
+
+function webSetting($columnName)
+{
+    $setting = getById('settings', 1);
+    if ($setting['data'] !== null) {
+        return $setting['data'][$columnName] ?? null; // Mengembalikan kolom atau null jika tidak ada
+    }
+    return null; // Jika data tidak ditemukan
 }
 
 if (!function_exists('logoutSession')) {
@@ -67,21 +78,25 @@ if (!function_exists('alertMessage')) {
     }
 }
 
-// Fungsi untuk mengambil data berdasarkan ID dari tabel tertentu
-function getById($table, $id) {
-    // Koneksi ke database (pastikan Anda sudah mengonfigurasi koneksi dengan benar)
+function getById($table, $id)
+{
     global $koneksi;
 
-    // Query untuk mengambil data berdasarkan ID
+    if (!$koneksi) {
+        die("Koneksi ke database gagal");
+    }
+
     $sql = "SELECT * FROM $table WHERE id = ?";
     $stmt = $koneksi->prepare($sql);
-    $stmt->bind_param("i", $id);  // Bind parameter sebagai integer
+    if (!$stmt) {
+        die("Kesalahan pada query: " . $koneksi->error);
+    }
+
+    $stmt->bind_param("i", $id);
     $stmt->execute();
 
-    // Menyimpan hasilnya
     $result = $stmt->get_result();
 
-    // Mengembalikan data sebagai array
     if ($result->num_rows > 0) {
         return ['data' => $result->fetch_assoc()];
     } else {

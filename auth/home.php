@@ -164,6 +164,9 @@ include_once("inc/db.php");
 include_once("inc/inc_fungsi.php");
 ?>
 
+<meta name="judul" content="<?= htmlspecialchars(webSetting('judul') ?: 'Judul Default'); ?>">
+<meta name="deskripsi" content="<?= htmlspecialchars(webSetting('deskripsi') ?: 'Deskripsi Default'); ?>">
+
 <section id="home" class="home-section d-flex align-items-center justify-content-center">
     <div id="kidsCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -189,9 +192,9 @@ include_once("inc/inc_fungsi.php");
 
 <section id="churches" class="churches-section  py-5">
     <div class="container">
-        <h2 class="text-center display-3 font-weight-bold"><?php echo ambil_judul('26') ?></h2>
+        <h2 class="text-center display-3 font-weight-bold">Visi Immanuel Community</h2>
         <p style="font-weight: normal; font-size: 25px; text-align: center;">
-            <?php echo ambil_isi('26') ?>
+            Membangun Gereja Menuju Kepenuhan Kristus
         </p>
     </div>
 
