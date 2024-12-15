@@ -660,10 +660,12 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125</p>
+                        <p><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/bcAUNkhwGWQ8wxhi6" target="_blank">
+                                Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125
+                            </a></p>
 
-                        <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
-                        <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
+                        <p><i class="fas fa-building"></i><a href="mailto:yayasan.immanuel.semarang@gmail.com"> yayasan.immanuel.semarang@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i><a href="tel:+62248414207">(024) 8414207 / 8418978</a></p>
                     </div>
                 </div>
             </div>

@@ -104,6 +104,12 @@
         .card-body h5 {
             font-size: 1.2rem;
             margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .card-body h5 a {
+            text-decoration: none;
+            color: #000;
         }
 
         .card img {
@@ -316,7 +322,9 @@
                     <h1 class="mb-3">Efrata Community Chruch</h1>
                     <img src="../../assets/img/img_12.png" class="card-img-top" alt="Church Image">
                     <div class="card-body text-center">
-                        <h5><i class="fa-solid fa-location-dot"></i> Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126 <br> Telp : 024-3546878 </h5>
+                        <h5><i class="fa-solid fa-location-dot"></i> Jl. Citarum Utara III/2-4, Mlatiharjo, Kec. Semarang Tim., Kota Semarang, Jawa Tengah 50126 <br>
+                            <i class="fas fa-phone"></i><a href="tel:+62243546878"> Telp : 024-3546878</a>
+                        </h5>
                         <a href="https://maps.app.goo.gl/2hXSr1Jd4Ky6q3Tx6" target="_blank" class="btn btn-primary" style="background-color: #000000; border: none;">
                             Lihat Lokasi
                         </a>
@@ -394,10 +402,12 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i>Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125</p>
+                        <p><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/bcAUNkhwGWQ8wxhi6" target="_blank">
+                                Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125
+                            </a></p>
 
-                        <p><i class="fas fa-building"></i> yayasan.immanuel.semarang@gmail.com</p>
-                        <p><i class="fas fa-phone"></i>(024) 8414207 / 8418978</p>
+                        <p><i class="fas fa-building"></i><a href="mailto:yayasan.immanuel.semarang@gmail.com"> yayasan.immanuel.semarang@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i><a href="tel:+62248414207">(024) 8414207 / 8418978</a></p>
                     </div>
                 </div>
             </div>
