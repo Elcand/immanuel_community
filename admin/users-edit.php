@@ -1,32 +1,6 @@
 <?php
-include_once("inc_header.php");
-include("../config/fungsi-users.php"); // Include fungsi checkParamId
-
-if (isset($_GET['id'])) {
-    $userId = $_GET['id'];
-
-    // Fetch the user data based on the ID
-    $query = "SELECT * FROM users WHERE id = '$userId'";
-    $result = mysqli_query($koneksi, $query);
-    
-    if (mysqli_num_rows($result) > 0) {
-        $userData = mysqli_fetch_assoc($result);
-    } else {
-        header('Location: users.php');
-        exit();
-    }
-} else {
-    header('Location: users.php');
-    exit();
-}
-
-// Optional: Check if there's a status message set in the session to display
-// The following lines were removed to avoid session messages:
-$statusMessage = isset($_SESSION['status']) ? $_SESSION['status'] : null;
-unset($_SESSION['status']); // Removed
-
+include("includes/header.php");
 ?>
-
 <style>
     /* Styling for the password field and icon */
     .input-group {
@@ -43,7 +17,8 @@ unset($_SESSION['status']); // Removed
         background: none;
         border: none;
         padding: 0;
-        margin-left: 5px; /* Small margin to keep the icon inside the input group */
+        margin-left: 5px;
+        /* Small margin to keep the icon inside the input group */
     }
 
     #togglePassword i {
@@ -51,7 +26,7 @@ unset($_SESSION['status']); // Removed
     }
 
     /* Styling for the form layout */
-    .row > .col-md-6 {
+    .row>.col-md-6 {
         margin-bottom: 15px;
     }
 
@@ -91,7 +66,6 @@ unset($_SESSION['status']); // Removed
         margin-bottom: 15px;
     }
 </style>
-
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -102,87 +76,81 @@ unset($_SESSION['status']); // Removed
                 </h4>
             </div>
             <div class="card-body">
-                <form action="code.php" method="POST">
 
+            <?= alertMessage(); ?>
+
+                <form action="code.php" method="POST">
                     <?php
-                    // Mengambil ID dari URL dan memvalidasinya
                     $paramResult = checkParamId('id');
                     if (!is_numeric($paramResult)) {
-                        echo '<h5>' . $paramResult . '</h5>';
-                        return false;
+                        echo '<h5>Invalid ID parameter.</h5>';
+                        return;
                     }
-
-                    // Fetch data dari database berdasarkan ID
-                    include("../inc/db.php");
-                    $query = "SELECT * FROM users WHERE id = '$paramResult' LIMIT 1";
-                    $result = mysqli_query($koneksi, $query);
-
-                    if (mysqli_num_rows($result) > 0) {
-                        $user = mysqli_fetch_assoc($result);
+                    $user = getById('users', $paramResult);
+                    if ($user['status'] == 200 && isset($user['data'])) {
+                        $userData = $user['data'];
                     } else {
-                        echo "<h5>User not found</h5>";
-                        return false;
+                        echo '<h5>' . ($user['message'] ?? 'Data tidak ditemukan.') . '</h5>';
+                        return;
                     }
                     ?>
+                    <input type="hidden" name="userId" value="<?= $user['data']['id'] ?>" required>
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Nama Pengguna</label>
-                                <input type="text" name="name" value="<?= $user['name'] ?>" required class="form-control">
+                                <input type="text" name="name" value="<?= $user['data']['name'] ?>" required class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>No. Phone</label>
-                                <input type="text" name="phone" value="<?= $user['phone'] ?>" required class="form-control">
+                                <input type="text" name="phone" value="<?= $user['data']['phone'] ?>" required class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Email</label>
-                                <input type="email" name="email" value="<?= $user['email'] ?>" required class="form-control">
+                                <input type="email" name="email" value="<?= $user['data']['email'] ?>" required class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Password</label>
                                 <div class="input-group">
-                                    <input type="password" name="password" id="passwordField" value="<?= $user['password'] ?>" required class="form-control">
+                                    <input type="password" name="password" id="passwordField" value="<?= $user['data']['password'] ?>" required class="form-control">
                                     <button type="button" class="btn btn-outline-secondary" id="togglePassword">
-                                        <i class="fas fa-eye" id="passwordIcon"></i> <!-- Ikon mata -->
+                                        <i class="fas fa-eye" id="passwordIcon"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Pilih Role</label>
                                 <select name="role" required class="form-select">
                                     <option value="">Pilih Role</option>
-                                    <option value="verifikator" <?= $user['role'] == 'verifikator' ? 'selected' : '' ?>>Verifikator</option>
-                                    <option value="editor" <?= $user['role'] == 'editor' ? 'selected' : '' ?>>Editor</option>
-                                    <option value="admin" <?= $user['role'] == 'admin' ? 'selected' : '' ?>>Admin</option>
+                                    <option value="verifikator" <?= $user['data']['role'] == 'verifikator' ? 'selected' : '' ?>>Verifikator</option>
+                                    <option value="editor" <?= $user['data']['role'] == 'editor' ? 'selected' : '' ?>>Editor</option>
+                                    <option value="admin" <?= $user['data']['role'] == 'admin' ? 'selected' : '' ?>>Admin</option>
                                 </select>
                             </div>
                         </div>
-
                         <div class="col-md-6">
-                            <div class="mb-3 checkbox-container">
-                                <label>Aktivitas</label>
-                                <input type="checkbox" name="is_ban" <?= $user['is_ban'] ? 'checked' : '' ?> />
+                            <label for="is_ban" class="form-label">Aktivitas</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="is_ban" id="is_ban" style="width: 50px; height: 25px;" <?= $user['data']['is_ban'] ? 'checked' : '' ?>>
+                                <label class="form-check-label" for="is_ban">Aktifkan jika ingin Membanned</label>
                             </div>
                         </div>
-
                         <div class="col-md" style="text-align: center;">
                             <div class="mb-3">
-                                <button type="submit" name="updateUser" class="btn btn-primary">Edit</button>
+                                <button type="submit" name="updateUser" <?= $user['data']['is_ban'] == true ? 'checked' : '' ?> class="btn btn-primary">Edit</button>
                                 <input type="hidden" name="id" value="<?= $paramResult ?>">
                             </div>
                         </div>
                     </div>
-
             </div>
             </form>
         </div>
@@ -197,7 +165,7 @@ unset($_SESSION['status']); // Removed
     const passwordIcon = document.getElementById('passwordIcon');
 
     // Tambahkan event listener pada tombol untuk toggle password
-    togglePassword.addEventListener('click', function () {
+    togglePassword.addEventListener('click', function() {
         // Toggle tipe input antara 'password' dan 'text'
         const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordField.setAttribute('type', type);
@@ -211,8 +179,7 @@ unset($_SESSION['status']); // Removed
             passwordIcon.classList.add('fa-eye-slash');
         }
     });
-</script>
-
+</script>]
 <?php
-include_once("inc_footer.php");
-?> 
+include("includes/footer.php");
+?>

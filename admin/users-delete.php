@@ -1,33 +1,26 @@
 <?php
-session_start();
-require '../config/fungsi-users.php';
+require '../config/fungsi.php';
 
-// Check if the 'id' parameter is provided
-if (isset($_GET['id']) && $_GET['id']) {
-    $userId = $_GET['id'];
+$paramResult = checkParamId('id');
+if(is_numeric($paramResult)){
 
-    // Validate and sanitize the user ID
-    $userId = validate($koneksi, $userId);
+    $userId = validate($paramResult);
+    $user   = getById('users', $userId);
+    if($user['status'] == 200){
 
-    if ($userId) {
-        // Check if the user exists in the database
-        $query = "SELECT * FROM users WHERE id = '$userId'";
-        $result = mysqli_query($koneksi, $query);
+        $userDeleteRes  = deleteQuery('users',$userId);
+        if($userDeleteRes){
 
-        if ($result && mysqli_num_rows($result) > 0) {
-            // Proceed with deletion if the user exists
-            $deleteQuery = "DELETE FROM users WHERE id = '$userId'";
-            $deleteResult = mysqli_query($koneksi, $deleteQuery);
+            redirect('users.php','Berhasil Menghapus Data Pengguna');
+        }else{
+            redirect('users.php','Terjadi Sesuatu');
+        }
 
-            // Removed the session status messages
-        } 
+    }else{
+        redirect('users.php',$user['message']);
     }
-    // Redirect back to the users list page
-    header('Location: users.php');
-    exit();
-} else {
-    // If the 'id' parameter is missing, redirect back to the users page
-    header('Location: users.php');
-    exit();
+
+}else{
+    redirect('users.php',$paramResult);
 }
 ?>

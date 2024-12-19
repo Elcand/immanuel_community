@@ -1,12 +1,20 @@
-<?php
-session_start(); // Mulai sesi
+<?php 
+require '../config/fungsi.php';
 
-require '../config/fungsi-users.php'; // Pastikan file ini memiliki fungsi logoutSession() dan redirect()
+// Mulai sesi jika belum dimulai
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
+// Periksa apakah pengguna sudah login
 if (isset($_SESSION['auth'])) {
-    logoutSession(); // Hapus sesi
-    redirect('login.php', 'Sukses untuk Keluar'); // Arahkan ke halaman login dengan pesan
+    // Fungsi untuk logout
+    logoutSession();
+    
+    // Arahkan ke halaman login
+    redirect('../login.php', 'Logout Sukses');
 } else {
-    redirect('login.php', 'Anda belum login'); // Jika sesi tidak aktif, arahkan langsung ke login
+    // Jika tidak ada sesi aktif, langsung arahkan ke login
+    redirect('../login.php', 'Anda belum login.');
 }
 ?>
