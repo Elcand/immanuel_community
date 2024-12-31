@@ -5,549 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/gerejaT.css">
     <link rel="icon" href="../../assets/img/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            overflow-x: hidden;
-        }
-
-        .custom-navbar {
-            height: 6rem;
-            background-color: #000000 !important;
-        }
-
-        .custom-navbar .navbar-brand {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .custom-navbar .navbar-brand img {
-            margin-right: 0.5rem;
-        }
-
-        .navbar-collapse {
-            background-color: #000000;
-            padding: 10px;
-        }
-
-        .custom-navbar .nav-link {
-            color: #ffffff !important;
-            margin: 0rem 2rem;
-            font-weight: bold;
-        }
-
-        .custom-navbar .nav-link:hover {
-            color: #dddddd !important;
-        }
-
-        .navbar-nav {
-            flex-direction: column;
-        }
-
-        .nav-item {
-            margin-bottom: 10px;
-        }
-
-        .navbar-toggler {
-            border: none;
-        }
-
-        .navbar-nav .nav-item.active .nav-link {
-            color: #fff !important;
-            /* Warna teks */
-            background-color: #222;
-            /* Warna latar belakang */
-            border-radius: 5px;
-            /* Radius untuk tampilan melengkung */
-            padding: 0.5rem 1rem;
-            /* Padding agar terlihat lebih rapi */
-            font-weight: bold;
-        }
-
-        /* Transisi untuk efek halus */
-        .navbar-nav .nav-item .nav-link {
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Hover tetap berfungsi */
-        .navbar-nav .nav-item .nav-link:hover {
-            color: #e3e3e3 !important;
-            background-color: #333;
-        }
-
-        .contact-section {
-            margin-top: 8rem;
-            margin-left: 4rem;
-            margin-right: 4rem;
-            margin-bottom: 6.5rem;
-        }
-
-        .card {
-            margin-left: auto;
-            margin-right: 3rem;
-            height: auto;
-            max-width: 80%;
-        }
-
-        .card h1 {
-            font-size: 1.8rem;
-        }
-
-        .card-body h5 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .card img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* QR Section */
-        .qr-section {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 3rem;
-            padding: 20px;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            /* Mengatur QR Code agar rata tengah dan responsif */
-        }
-
-        .qr-item {
-            text-align: center;
-            background-color: #f8f9fa;
-            /* Latar belakang terang untuk QR Code */
-            padding: 20px;
-            border-radius: 10px;
-            /* Sudut melengkung */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Bayangan halus */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* Animasi transformasi */
-            max-width: 180px;
-            width: 100%;
-            margin: 10px;
-        }
-
-        .qr-item:hover {
-            transform: scale(1.05);
-            /* Zoom in saat hover */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            /* Bayangan lebih tajam saat hover */
-        }
-
-        .qr-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            /* Sudut melengkung pada gambar */
-            margin-bottom: 15px;
-        }
-
-        .qr-item p {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #333;
-            /* Warna teks yang lebih gelap */
-            margin-top: 10px;
-            text-transform: uppercase;
-            /* Mengubah teks jadi kapital semua */
-            letter-spacing: 1px;
-            /* Spasi antar huruf */
-        }
-
-
-
-        .footer {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 3rem 0;
-        }
-
-        .footer .logo img {
-            width: 50px;
-            height: 50px;
-            margin-right: 1rem;
-        }
-
-        .footer .footer-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .footer a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .footer .contact-info {
-            margin-top: 1rem;
-        }
-
-        .contact-info p {
-            font-size: 18px;
-            /* Jarak antar baris */
-            margin-bottom: 1rem;
-            /* Jarak antar paragraf */
-            display: flex;
-            /* Gunakan flex untuk mengatur ikon dan teks */
-            align-items: center;
-            /* Vertikal rata tengah */
-        }
-
-        .contact-info i {
-            font-size: 1.5rem;
-            /* Ukuran ikon */
-            margin-right: 10px;
-            /* Jarak antara ikon dan teks */
-        }
-
-        /* Media Queries */
-
-        @media (max-width: 576px) {
-            .contact-section {
-                padding: 20px 10px;
-            }
-
-            .card h1 {
-                font-size: 1.5rem;
-            }
-
-            .card-body h5 {
-                font-size: 1rem;
-            }
-
-            h3 {
-                font-size: 1.2rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-section {
-                padding: 25px 15px;
-            }
-
-            .card h1 {
-                font-size: 1.6rem;
-            }
-
-            h3 {
-                font-size: 1.3rem;
-            }
-
-            p {
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .card h1 {
-                font-size: 2rem;
-            }
-
-            h3 {
-                font-size: 1.5rem;
-            }
-
-            p {
-                font-size: 1.3rem;
-            }
-
-            .qr-item img {
-                width: 120px;
-            }
-        }
-    </style>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="icon" href="../../assets/img/logo.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-
-            body {
-                overflow-x: hidden;
-            }
-
-            .custom-navbar {
-                height: 6rem;
-                background-color: #000000 !important;
-            }
-
-            .custom-navbar .navbar-brand {
-                display: flex;
-                align-items: center;
-                font-weight: bold;
-                font-size: 20px;
-            }
-
-            .custom-navbar .navbar-brand img {
-                margin-right: 0.5rem;
-            }
-
-            .navbar-collapse {
-                background-color: #000000;
-                padding: 10px;
-            }
-
-            .custom-navbar .nav-link {
-                color: #ffffff !important;
-                margin: 0rem 2rem;
-                font-weight: bold;
-            }
-
-            .custom-navbar .nav-link:hover {
-                color: #dddddd !important;
-            }
-
-            .navbar-nav {
-                flex-direction: column;
-            }
-
-            .nav-item {
-                margin-bottom: 10px;
-            }
-
-            .navbar-toggler {
-                border: none;
-            }
-
-            .navbar-nav .nav-item.active .nav-link {
-                color: #fff !important;
-                /* Warna teks */
-                background-color: #222;
-                /* Warna latar belakang */
-                border-radius: 5px;
-                /* Radius untuk tampilan melengkung */
-                padding: 0.5rem 1rem;
-                /* Padding agar terlihat lebih rapi */
-                font-weight: bold;
-            }
-
-            /* Transisi untuk efek halus */
-            .navbar-nav .nav-item .nav-link {
-                transition: all 0.3s ease-in-out;
-            }
-
-            /* Hover tetap berfungsi */
-            .navbar-nav .nav-item .nav-link:hover {
-                color: #e3e3e3 !important;
-                background-color: #333;
-            }
-
-            .contact-section {
-                margin-top: 8rem;
-                margin-left: 4rem;
-                margin-right: 4rem;
-                margin-bottom: 6.5rem;
-            }
-
-            .card {
-                margin-left: auto;
-                margin-right: 3rem;
-                height: auto;
-                max-width: 80%;
-            }
-
-            .card h1 {
-                font-size: 1.8rem;
-            }
-
-            .card-body h5 {
-                font-size: 1.2rem;
-                margin-bottom: 20px;
-            }
-
-            .card img {
-                max-width: 100%;
-                height: auto;
-            }
-
-            /* QR Section */
-            .qr-section {
-                display: flex;
-                justify-content: center;
-                gap: 40px;
-                margin-top: 3rem;
-                padding: 20px;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                /* Mengatur QR Code agar rata tengah dan responsif */
-            }
-
-            .qr-item {
-                text-align: center;
-                background-color: #f8f9fa;
-                /* Latar belakang terang untuk QR Code */
-                padding: 20px;
-                border-radius: 10px;
-                /* Sudut melengkung */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                /* Bayangan halus */
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                /* Animasi transformasi */
-                max-width: 180px;
-                width: 100%;
-                margin: 10px;
-            }
-
-            .qr-item:hover {
-                transform: scale(1.05);
-                /* Zoom in saat hover */
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-                /* Bayangan lebih tajam saat hover */
-            }
-
-            .qr-item img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                /* Sudut melengkung pada gambar */
-                margin-bottom: 15px;
-            }
-
-            .qr-item p {
-                font-size: 1.1rem;
-                font-weight: bold;
-                color: #333;
-                /* Warna teks yang lebih gelap */
-                margin-top: 10px;
-                text-transform: uppercase;
-                /* Mengubah teks jadi kapital semua */
-                letter-spacing: 1px;
-                /* Spasi antar huruf */
-            }
-
-
-
-            .footer {
-                background-color: #000000;
-                color: #ffffff;
-                padding: 3rem 0;
-            }
-
-            .footer .logo img {
-                width: 50px;
-                height: 50px;
-                margin-right: 1rem;
-            }
-
-            .footer .footer-logo {
-                font-size: 1.5rem;
-                font-weight: bold;
-            }
-
-            .footer a {
-                color: #ffffff;
-                text-decoration: none;
-            }
-
-            .footer .contact-info {
-                margin-top: 1rem;
-            }
-
-            .contact-info p {
-                font-size: 18px;
-                /* Jarak antar baris */
-                margin-bottom: 1rem;
-                /* Jarak antar paragraf */
-                display: flex;
-                /* Gunakan flex untuk mengatur ikon dan teks */
-                align-items: center;
-                /* Vertikal rata tengah */
-            }
-
-            .contact-info i {
-                font-size: 1.5rem;
-                /* Ukuran ikon */
-                margin-right: 10px;
-                /* Jarak antara ikon dan teks */
-            }
-
-            /* Media Queries */
-
-            @media (max-width: 576px) {
-                .contact-section {
-                    padding: 20px 10px;
-                }
-
-                .card h1 {
-                    font-size: 1.5rem;
-                }
-
-                .card-body h5 {
-                    font-size: 1rem;
-                }
-
-                h3 {
-                    font-size: 1.2rem;
-                }
-
-                p {
-                    font-size: 1rem;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .contact-section {
-                    padding: 25px 15px;
-                }
-
-                .card h1 {
-                    font-size: 1.6rem;
-                }
-
-                h3 {
-                    font-size: 1.3rem;
-                }
-
-                p {
-                    font-size: 1.1rem;
-                }
-            }
-
-            @media (min-width: 992px) {
-                .card h1 {
-                    font-size: 2rem;
-                }
-
-                h3 {
-                    font-size: 1.5rem;
-                }
-
-                p {
-                    font-size: 1.3rem;
-                }
-
-                .qr-item img {
-                    width: 120px;
-                }
-            }
-        </style>
-        <title>Getsemani CC - Immanuel Community</title>
-    </head>
+    <title>Getsemani CC - Immanuel Community</title>
+</head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-dark custom-navbar fixed-top">
@@ -555,7 +18,8 @@
             <img src="../../assets/img/logo.png" width="55" height="55" alt="Logo" class="d-inline-block align-top">
             Immanuel Community
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars" style="color: white;"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -590,8 +54,11 @@
                     <h1 class="mb-3">Getsemani Community Chruch</h1>
                     <img src="../../assets/img/img_12.png" class="card-img-top" alt="Church Image">
                     <div class="card-body text-center">
-                        <h5><i class="fa-solid fa-location-dot"></i> Jl. Jatiluhur Bar. I No.172 A, Ngesrep, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50261 <br> Telp : 76401050</h5>
-                        <a href="https://maps.app.goo.gl/LHgDvotPcW6pisqX6" target="_blank" class="btn btn-primary" style="background-color: #000000; border: none;">
+                        <h5><i class="fa-solid fa-location-dot"></i> Jl. Jatiluhur Bar. I No.172 A, Ngesrep, Kec.
+                            Banyumanik, Kota Semarang, Jawa Tengah 50261 <br> <i class="fas fa-phone"></i><a
+                                href="tel:+627401050"> Telp : 76401050</h5>
+                        <a href="https://maps.app.goo.gl/LHgDvotPcW6pisqX6" target="_blank" class="btn btn-primary"
+                            style="background-color: #000000; border: none;">
                             Lihat Lokasi
                         </a>
                     </div>
@@ -618,17 +85,25 @@
             </div>
         </div>
         <div class="qr-section">
-            <div class="qr-item">
-                <img src="../../assets/kolekte1/k1-getsemani.jpg" alt="QR Code 1">
+            <div class="qr-item" data-info="../../assets/pop_up/k1/10 Getsemani Kolekte 1.jpg">
+                <img src="../../assets/kolekte1/k1-getsemani.jpg" alt="Kolekte 1">
                 <p>Kolekte 01</p>
             </div>
-            <div class="qr-item">
-                <img src="../../assets/kolekte2/k2-getsemani.jpg" alt="QR Code 2">
+            <div class="qr-item" data-info="../../assets/pop_up/k2/10 Getsemani Kolekte 2.jpg">
+                <img src="../../assets/kolekte2/k2-getsemani.jpg" alt="kolekte 2">
                 <p>Kolekte 02</p>
             </div>
-            <div class="qr-item">
-                <img src="../../assets/perpuluhan/p-getsemani.jpg" alt="QR Code 3">
+            <div class="qr-item" data-info="../../assets/pop_up/p/10 Getsemani perpuluhan.jpg">
+                <img src="../../assets/perpuluhan/p-getsemani.jpg" alt="Perpuluhan">
                 <p>Perpuluhan</p>
+            </div>
+        </div>
+
+        <!-- Popup Modal -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close-btn" id="close-btn">&times;</span>
+                <img id="popup-img" alt="Popup Image" style="max-width: 100%; border-radius: 8px;">
             </div>
         </div>
     </section>
@@ -646,21 +121,55 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/bcAUNkhwGWQ8wxhi6" target="_blank">
+                        <p><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/bcAUNkhwGWQ8wxhi6"
+                                target="_blank">
                                 Jl. Krakatau Raya No.10, Kec. Semarang Timur, Semarang 50125
                             </a></p>
 
-                        <p><i class="fas fa-building"></i><a href="mailto:yayasan.immanuel.semarang@gmail.com"> yayasan.immanuel.semarang@gmail.com</a></p>
+                        <p><i class="fas fa-building"></i><a href="mailto:yayasan.immanuel.semarang@gmail.com">
+                                yayasan.immanuel.semarang@gmail.com</a></p>
                         <p><i class="fas fa-phone"></i><a href="tel:+62248414207">(024) 8414207 / 8418978</a></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="copyright" style="text-align: center; margin-top: 3rem; font-size: 15px;">
-            <p>&copy; 2024 <a style="font-weight: bold; text-align:center;">Immanuel Community</a>. All Rights Reserved.</p>
+            <p>&copy; 2024 <a style="font-weight: bold; text-align:center;">Immanuel Community</a>. All Rights
+                Reserved.</p>
         </div>
     </footer>
     <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
+<script>
+// JavaScript untuk menangani popup dengan gambar
+document.addEventListener('DOMContentLoaded', () => {
+    const qrItems = document.querySelectorAll('.qr-item');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+    const closeBtn = document.getElementById('close-btn');
+
+    // Tambahkan event listener untuk setiap .qr-item
+    qrItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const imgSrc = item.getAttribute('data-info'); // Ambil URL gambar dari data-info
+            popupImg.src = imgSrc; // Set src pada elemen img di popup
+            popup.style.display = 'flex'; // Tampilkan popup
+        });
+    });
+
+    // Tutup popup saat tombol close diklik
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    // Tutup popup saat klik di luar konten popup
+    window.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+});
+</script>
